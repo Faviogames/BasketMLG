@@ -1,0 +1,346 @@
+# 🚀 ROADMAP: INTEGRACIÓN DE STATS EN VIVO
+
+## 📋 **RESUMEN EJECUTIVO**
+
+**Objetivo**: Mejorar predicciones Over/Under integrando estadísticas en tiempo real de forma inteligente y medible.
+
+**Estado actual**: MAE 7.57 (XGBoost) - Excelente rendimiento base  
+**Meta**: MAE 7.2-7.4 - Mejora del 3-7%  
+**Duración estimada**: 2-3 semanas  
+**Riesgo**: Bajo (sistema actual se mantiene intacto)
+
+---
+
+## 🎯 **FASE 1: PROOF OF CONCEPT** 
+**Duración**: 3-4 días | **Prioridad**: Alta | **Riesgo**: Bajo
+
+### **Objetivo**
+Implementar las 3 features más prometedoras y medir su impacto real en predicciones.
+
+### **Features a implementar**
+
+#### **1.1 Real Pace Calculation** 🎯
+```python
+# Reemplazar estimación por cálculo real
+def calculate_real_pace(live_stats):
+    home_poss = (live_stats['home_fga'] - live_stats['home_oreb'] + 
+                 live_stats['home_tov'] + (0.44 * live_stats['home_fta']))
+    away_poss = (live_stats['away_fga'] - live_stats['away_oreb'] + 
+                 live_stats['away_tov'] + (0.44 * live_stats['away_fta']))
+    return ((home_poss + away_poss) / 2 / minutes_played) * 48
+```
+
+#### **1.2 Shooting Momentum Detection** 🔥
+```python
+def detect_shooting_momentum(live_stats, season_averages):
+    current_fg = live_stats['fg_made'] / live_stats['fg_attempted']
+    season_fg = season_averages['fg_percentage']
+    return (current_fg - season_fg) / season_fg
+```
+
+#### **1.3 Extra Possessions Rate** ⚡
+```python
+def calculate_extra_possessions(live_stats):
+    extra_poss = live_stats['offensive_rebounds'] - live_stats['turnovers']
+    return extra_poss / minutes_played
+```
+
+### **Entregables**
+- [ ] `core/live_stats_processor.py` - Procesador de estadísticas en vivo
+- [ ] `utils/stats_converter.py` - Convertidor de datos raspados
+- [ ] `test_live_features.py` - Tests unitarios
+- [ ] Documentación de nuevas features
+
+### **Criterio de éxito**
+✅ Features se calculan correctamente  
+✅ No rompe sistema existente  
+✅ Tests unitarios pasan al 100%
+
+---
+
+## 📊 **FASE 2: VALIDACIÓN E INTEGRACIÓN**
+**Duración**: 4-5 días | **Prioridad**: Alta | **Riesgo**: Medio
+
+### **Objetivo**
+Integrar nuevas features al sistema dual y medir impacto en predicciones.
+
+### **Implementación**
+
+#### **2.1 Actualizar Sistema de Features**
+```python
+# core/features.py - AÑADIR
+def calculate_enhanced_live_pace_metrics(q_scores, live_stats=None):
+    # Sistema actual (fallback)
+    basic_metrics = calculate_live_pace_metrics(q_scores, quarter_stage)
+    
+    # Sistema mejorado (si hay stats)
+    if live_stats:
+        basic_metrics.update({
+            'live_pace_real': calculate_real_pace(live_stats),
+            'shooting_momentum_home': detect_shooting_momentum(live_stats['home']),
+            'shooting_momentum_away': detect_shooting_momentum(live_stats['away']),
+            'extra_possessions_home': calculate_extra_possessions(live_stats['home']),
+            'extra_possessions_away': calculate_extra_possessions(live_stats['away'])
+        })
+    
+    return basic_metrics
+```
+
+#### **2.2 Actualizar Config**
+```python
+# config.py - AÑADIR
+ENHANCED_LIVE_FEATURES = [
+    'live_pace_real',
+    'shooting_momentum_home',
+    'shooting_momentum_away', 
+    'extra_possessions_home',
+    'extra_possessions_away'
+]
+
+FEATURES_TO_USE.extend(ENHANCED_LIVE_FEATURES)
+```
+
+#### **2.3 Backward Compatibility**
+```python
+# live_mode.py - MODIFICAR
+def get_predictions_with_enhanced_stats(home_team, away_team, q_scores, 
+                                      live_stats=None, trained_data=None):
+    # Modo enhanced si hay live_stats
+    if live_stats:
+        enhanced_metrics = calculate_enhanced_live_pace_metrics(q_scores, live_stats)
+    else:
+        # Fallback al sistema actual
+        enhanced_metrics = calculate_live_pace_metrics(q_scores, quarter_stage)
+```
+
+### **Criterio de éxito**
+✅ Sistema funciona con y sin live_stats  
+✅ Compatibilidad total con código existente  
+✅ No hay regresiones en funcionalidad
+
+---
+
+## 🧪 **FASE 3: TESTING Y COMPARACIÓN**
+**Duración**: 3-4 días | **Prioridad**: Crítica | **Riesgo**: Bajo
+
+### **Objetivo**
+Determinar si las mejoras valen la pena mediante testing riguroso.
+
+### **Metodología de Testing**
+
+#### **3.1 Backtesting con Datos Históricos**
+```python
+# tests/backtest_enhanced_features.py
+def compare_model_performance():
+    # Modelo actual vs Enhanced model
+    # Usar últimos 100 partidos con stats completos
+    # Calcular MAE, precisión, recall para diferentes líneas
+```
+
+#### **3.2 A/B Testing en Live Mode**
+- **Grupo A**: Sistema actual (baseline)
+- **Grupo B**: Sistema enhanced
+- **Métrica**: Precisión en predicciones reales
+
+#### **3.3 Feature Importance Analysis**
+```python
+# ¿Las nuevas features tienen importancia > 1%?
+# ¿Mejoran la concentración de features o la dispersan?
+# ¿Cuál es el trade-off complejidad vs mejora?
+```
+
+### **Criterios de decisión**
+
+#### **✅ CONTINUAR SI:**
+- MAE mejora ≥ 0.2 puntos (7.57 → 7.37)
+- Nuevas features tienen importancia ≥ 1%
+- No aumenta overfitting (std dev similar)
+- Sistema mantiene estabilidad
+
+#### **❌ CANCELAR SI:**
+- MAE mejora < 0.1 puntos
+- Nuevas features importancia < 0.5%
+- Aumenta complejidad sin beneficio claro
+- Introduce inestabilidad
+
+### **Entregables**
+- [ ] Reporte de backtesting comparativo
+- [ ] Análisis de feature importance
+- [ ] Recomendación go/no-go
+- [ ] Documentación de hallazgos
+
+---
+
+## 🚀 **FASE 4: IMPLEMENTACIÓN DE FUENTES DE DATOS**
+**Duración**: 5-7 días | **Prioridad**: Media | **Riesgo**: Alto
+**⚠️ SOLO SI FASE 3 ES EXITOSA**
+
+### **Objetivo**
+Implementar obtención automática de stats en vivo via API o scraping.
+
+### **Opción A: API Integration (Recomendada)**
+
+#### **4.1 Research de APIs**
+- [ ] ESPN API (gratuita, limitada)
+- [ ] RapidAPI Sports ($30-100/mes)
+- [ ] SportsData.io ($50-200/mes)
+- [ ] The Sports DB (gratuita, básica)
+
+#### **4.2 Implementación**
+```python
+# data_sources/sports_api.py
+class SportsAPIClient:
+    def __init__(self, api_key=None):
+        self.api_key = api_key
+    
+    async def get_live_match_stats(self, match_id):
+        # Implementar llamada API
+        # Normalizar respuesta al formato esperado
+        # Manejar rate limits y errores
+```
+
+### **Opción B: Web Scraping (Alternativa)**
+
+#### **4.3 Crawl4AI Implementation**
+```python
+# data_sources/web_scraper.py  
+class LiveStatsScraper:
+    async def scrape_match_data(self, match_url):
+        # Usar Crawl4AI para extraer stats
+        # Parsear HTML/markdown a formato estructurado
+        # Validar datos extraídos
+```
+
+### **4.4 Hybrid Data Manager**
+```python
+# core/live_data_manager.py
+class LiveDataManager:
+    def __init__(self):
+        self.sources = ['api', 'scraper', 'manual']
+    
+    async def get_match_data(self, match_id):
+        # Intentar API primero
+        # Fallback a scraping
+        # Fallback final a input manual
+```
+
+### **Criterio de éxito**
+✅ Al menos 1 fuente de datos funcionando  
+✅ Fallback a sistema manual siempre disponible  
+✅ Datos se obtienen en < 10 segundos  
+✅ Rate de éxito > 85%
+
+---
+
+## 🎯 **FASE 5: OPTIMIZACIÓN Y PRODUCCIÓN**
+**Duración**: 3-4 días | **Prioridad**: Media | **Riesgo**: Bajo
+
+### **Objetivo**
+Refinar sistema para uso en producción y máximo rendimiento.
+
+### **Optimizaciones**
+
+#### **5.1 Performance**
+- [ ] Caché de datos frecuentes
+- [ ] Optimización de queries/requests
+- [ ] Lazy loading de features opcionales
+
+#### **5.2 Reliability**
+- [ ] Manejo robusto de errores
+- [ ] Logging comprehensivo  
+- [ ] Health checks automáticos
+- [ ] Fallbacks en cada punto de fallo
+
+#### **5.3 User Experience**
+- [ ] Indicadores de fuente de datos
+- [ ] Alertas de calidad de datos
+- [ ] Modo debug para troubleshooting
+
+### **5.4 Documentation**
+- [ ] Guía de usuario actualizada
+- [ ] API documentation
+- [ ] Troubleshooting guide
+- [ ] Performance benchmarks
+
+---
+
+## 📊 **MÉTRICAS DE ÉXITO FINALES**
+
+### **🎯 Objetivos Principales**
+| Métrica | Baseline | Target | Stretch Goal |
+|---------|----------|---------|--------------|
+| MAE | 7.57 | 7.37 | 7.20 |
+| Std Dev | 10.14 | <10.50 | <10.00 |
+| Feature Coverage | 116 | 121 | 125 |
+| Prediction Time | ~2s | <3s | <2s |
+
+### **🔧 Objetivos Técnicos**
+- [ ] Zero breaking changes
+- [ ] Backward compatibility 100%
+- [ ] Test coverage > 90%
+- [ ] Documentation completa
+- [ ] Error rate < 5%
+
+---
+
+## ⚠️ **RIESGOS Y MITIGACIONES**
+
+### **🚨 Riesgo Alto**
+| Riesgo | Probabilidad | Impacto | Mitigación |
+|--------|--------------|---------|------------|
+| APIs de pago costosas | Alta | Alto | Empezar con APIs gratuitas |
+| Web scraping bloqueado | Media | Alto | Múltiples fuentes + fallbacks |
+| Mejora < 0.1 MAE | Media | Alto | Kill switch en Fase 3 |
+
+### **⚠️ Riesgo Medio**  
+| Riesgo | Probabilidad | Impacto | Mitigación |
+|--------|--------------|---------|------------|
+| Complejidad adicional | Alta | Medio | Mantener sistema simple en Fase 1 |
+| Datos inconsistentes | Media | Medio | Validación robusta + fallbacks |
+| Performance impact | Baja | Medio | Benchmarking continuo |
+
+---
+
+## 🎮 **PUNTOS DE DECISIÓN**
+
+### **🔴 STOP Points (Cancelar proyecto)**
+- Fase 3: MAE no mejora ≥ 0.1 puntos
+- Fase 4: No se encuentra fuente de datos confiable
+- Cualquier fase: Introduce bugs críticos
+
+### **🟡 PAUSE Points (Reevaluar)**
+- Presupuesto APIs > $50/mes
+- Complejidad de mantenimiento > 2x actual
+- Performance degradation > 50%
+
+### **🟢 GO Points (Continuar)**
+- Cada fase cumple criterios de éxito
+- Beneficio claro > costo de implementación
+- Team comfortable con nueva complejidad
+
+---
+
+## 📅 **TIMELINE ESTIMADO**
+
+```
+Semana 1:    [████████████████████] Fase 1: Proof of Concept
+Semana 2:    [████████████████████] Fase 2-3: Integration & Testing  
+Semana 3:    [████████████████████] Fase 4-5: Data Sources & Production
+
+DECISION POINT: Fin Semana 2 - ¿Continuar o mantener status quo?
+```
+
+---
+
+## 🏆 **CRITERIO DE ÉXITO GLOBAL**
+
+**ÉXITO TOTAL**: MAE < 7.4 + Sistema robusto + Mantenible  
+**ÉXITO PARCIAL**: MAE 7.4-7.5 + Aprendizajes valiosos  
+**FALLO ACEPTABLE**: Mantenemos sistema actual (ya excelente)
+
+> **Bottom Line**: Este proyecto es una optimización, no una necesidad. El sistema actual ya tiene performance excelente (MAE 7.57). Solo proceder si hay evidencia clara de mejora significativa.
+
+---
+
+*Última actualización: Diciembre 2024*  
+*Estado: Pendiente de aprobación para Fase 1*
