@@ -1,6 +1,6 @@
 # ===========================================
-# Archivo: config.py
-# Configuraciones y constantes centralizadas
+# Archivo: config.py (v1.1)
+# Configuraciones y constantes centralizadas con alertas de balance
 # ===========================================
 
 # 📁 CONFIGURACIONES DE CARPETAS
@@ -82,6 +82,12 @@ LIVE_GAME_FEATURES = [
     'live_momentum_shift', 'quarter_consistency', 'comeback_indicator'
 ]
 
+# ⚖️ CARACTERÍSTICAS DE BALANCE (sistema de detección de palizas)
+BALANCE_FEATURES = [
+    'game_balance_score', 'is_game_unbalanced', 'intensity_drop_factor',
+    'blowout_momentum', 'expected_q4_drop', 'lead_stability'
+]
+
 # 🎯 TODAS LAS CARACTERÍSTICAS COMBINADAS (INCLUYENDO BALANCE)
 PRE_GAME_FEATURES = (PRE_GAME_FEATURES_BASIC + PRE_GAME_FEATURES_MOMENTUM + 
                     PRE_GAME_FEATURES_ADVANCED + PRE_GAME_FEATURES_CONTEXT)
@@ -109,7 +115,11 @@ ALERT_TYPES = {
     'DEFENSIVE_COLLAPSE': "🛡️ {team} permitiendo {diff:.1f} pts más de lo usual - posible colapso defensivo",
     'PACE_SHIFT': "⚡ Ritmo de juego {direction} ({current_pace:.1f} vs promedio {avg_pace:.1f} posesiones/48min)",
     'SECOND_HALF_SURGE': "💪 {team} promedia {surge:.1f} pts más en segunda mitad - considerar ajustes",
-    'CLOSING_STRENGTH': "🎯 {team} muy fuerte en cuartos finales (promedio Q4: {q4_avg:.1f} pts)"
+    'CLOSING_STRENGTH': "🎯 {team} muy fuerte en cuartos finales (promedio Q4: {q4_avg:.1f} pts)",
+    # 🆕 NUEVOS TIPOS DE ALERTA DE BALANCE
+    'GAME_UNBALANCED': "⚖️ Juego muy desigual ({lead:.0f} pts) - posible impacto en Q4",
+    'INTENSITY_DROP': "📉 Caída de intensidad detectada - ritmo bajando {drop:.1%}",
+    'BLOWOUT_MOMENTUM': "🏃 Momentum de paliza - considerar garbage time en Q4"
 }
 
 # ⚖️ UMBRALES PARA DETECTAR ANOMALÍAS
