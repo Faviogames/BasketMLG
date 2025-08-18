@@ -1,17 +1,21 @@
 # ===========================================
-# Archivo: alerts.py (v1.2) - VERSIÓN ROBUSTA CONTRA DATOS CORRUPTOS
-# Sistema de alertas inteligentes con detección de balance de juego
+# Archivo: analysis/alerts.py (v2.0 - FASE 2A ALERTAS AVANZADAS)
+# SISTEMA COMPLETO: Umbrales dinámicos + Alertas contextuales Over/Under
+# ✅ NUEVO: Umbrales que se ajustan por volatilidad del partido
+# ✅ NUEVO: Alertas específicas para apostadores profesionales
+# ✅ NUEVO: Contexto inteligente (garbage time, fouling, etc.)
 # ===========================================
 import numpy as np
 import pandas as pd
 from typing import Dict, List, Tuple, Any
 from datetime import datetime
 
-# 🆕 Importar los nuevos tipos de alerta desde config
+# Importar los nuevos tipos de alerta desde config
 from config import ALERT_TYPES, ALERT_THRESHOLDS
+from core.features import safe_mean  # Import para usar la función original
 
 class BasketballAlerts:
-    """Motor de alertas inteligentes para baloncesto"""
+    """Motor de alertas inteligentes para baloncesto con umbrales dinámicos y contexto Over/Under"""
     
     def __init__(self, historical_df: pd.DataFrame):
         self.historical_df = historical_df
@@ -24,6 +28,193 @@ class BasketballAlerts:
         
         for team in self._get_all_teams():
             self.team_patterns[team] = self._analyze_team_patterns(team)
+    
+    # ===================================================================
+    # 🆕 SISTEMA DE UMBRALES DINÁMICOS (NUEVA FUNCIONALIDAD)
+    # ===================================================================
+    
+    def calculate_dynamic_alert_thresholds(self, quarter_variance: float) -> Dict[str, float]:
+        """
+        🎯 UMBRALES DINÁMICOS: Ajusta thresholds basado en volatilidad del partido
+        
+        En partidos volátiles, se requieren cambios más grandes para generar alertas.
+        En partidos estables, cambios pequeños son significativos.
+        """
+        # Clasificar volatilidad del partido
+        if quarter_variance > 8:          # Partido muy volátil (diferencias >8 pts entre cuartos)
+            volatility_multiplier = 1.4
+            volatility_level = "HIGH"
+        elif quarter_variance > 5:        # Partido moderadamente volátil
+            volatility_multiplier = 1.2  
+            volatility_level = "MEDIUM"
+        else:                             # Partido estable
+            volatility_multiplier = 1.0
+            volatility_level = "LOW"
+        
+        # Calcular thresholds ajustados
+        base_diff = ALERT_THRESHOLDS['SIGNIFICANT_DIFF']
+        base_anomaly = ALERT_THRESHOLDS['ANOMALY_THRESHOLD']
+        
+        dynamic_thresholds = {
+            'SIGNIFICANT_DIFF': base_diff * volatility_multiplier,
+            'ANOMALY_THRESHOLD': base_anomaly * volatility_multiplier,
+            'STREAK_MIN': max(2, min(4, int(3 + quarter_variance / 10))),
+            'PACE_SENSITIVITY': base_diff * (2 - volatility_multiplier),  # Inverso: partidos estables más sensibles
+            'VOLATILITY_LEVEL': volatility_level,
+            'VOLATILITY_MULTIPLIER': volatility_multiplier
+        }
+        
+        return dynamic_thresholds
+    
+    # ===================================================================
+    # 🆕 ALERTAS CONTEXTUALES PARA OVER/UNDER (NUEVA FUNCIONALIDAD)
+    # ===================================================================
+    
+    def _generate_over_under_context_alerts(self, balance_features: Dict[str, Any], 
+                                           live_features: Dict[str, Any], 
+                                           quarter_stage: str) -> List[str]:
+        """
+        🎯 ALERTAS CONTEXTUALES ESPECÍFICAS PARA OVER/UNDER
+        
+        Genera alertas sobre contexto del partido que afecta totales.
+        Estas alertas NO modifican predicciones, solo informan al usuario sobre factores contextuales.
+        
+        Args:
+            balance_features: Features de balance del partido ya calculadas
+            live_features: Features en vivo del partido
+            quarter_stage: 'halftime' o 'q3_end'
+            
+        Returns:
+            Lista de alertas contextuales formateadas para apostadores
+        """
+        context_alerts = []
+        
+        try:
+            # 🗑️ GARBAGE TIME - Tramo final sin presión
+            blowout_momentum = balance_features.get('blowout_momentum', 0.0)
+            if blowout_momentum > 0.7:
+                context_alerts.append("🗑️ Tramo final sin presión — ritmo suele caer")
+            
+            # 🔥 PARTIDO CERRADO + PACE ALTO
+            game_balance = balance_features.get('game_balance_score', 0.5)
+            current_pace = live_features.get('live_pace_estimate', 100)
+            
+            # Detectar partido cerrado (balance alto) + ritmo rápido
+            is_close_game = game_balance > 0.7  # Partido equilibrado
+            is_high_pace = current_pace > 105   # Pace por encima del promedio NBA
+            
+            if is_close_game and is_high_pace:
+                context_alerts.append("🔥 Partido cerrado + pace alto — totales tienden al alza")
+            
+            # ⏰ ESTRATEGIA DE FALTAS - Late game fouling
+            if quarter_stage == 'q3_end':
+                point_differential = live_features.get('current_lead', 0)
+                
+                # Fouling probable si: partido cerrado (diferencia <12) en tramo final
+                if is_close_game and point_differential <= 12:
+                    context_alerts.append("⏰ Estrategia de faltas prevista — puntos pueden subir")
+            
+            # 🎯 PARTIDO DE ALTA PRESIÓN - Stakes altos
+            momentum_shift = live_features.get('live_momentum_shift', 0)
+            quarter_consistency = live_features.get('quarter_consistency', 0.5)
+            
+            # Alta presión = muchos cambios de momentum + baja consistencia entre cuartos
+            high_pressure = momentum_shift > 15 and quarter_consistency < 0.4
+            
+            if high_pressure:
+                context_alerts.append("🎯 Partido de alta presión — pace puede variar")
+            
+            # 📉 INTENSIDAD EN DECLIVE
+            intensity_drop = balance_features.get('intensity_drop_factor', 1.0)
+            if intensity_drop < 0.8 and quarter_stage == 'q3_end':
+                context_alerts.append("📉 Intensidad bajando — menos puntos esperados en Q4")
+            
+            # 🏃‍♂️ PACE ACELERADO SOSTENIDO
+            if current_pace > 110 and quarter_consistency > 0.7:
+                context_alerts.append("🏃‍♂️ Pace alto sostenido — mantener ojo en totales")
+            
+            # 🎢 PARTIDO ERRÁTICO - Swings grandes
+            if momentum_shift > 20:
+                context_alerts.append("🎢 Partido errático — totales impredecibles")
+            
+            # 💤 FINAL PREVISIBLE - Partido sin emoción
+            if quarter_stage == 'q3_end' and momentum_shift < 5 and quarter_consistency > 0.8:
+                context_alerts.append("💤 Partido previsible — sin sorpresas esperadas")
+                
+        except Exception as e:
+            print(f"⚠️ Error generando alertas contextuales: {e}")
+            context_alerts.append("⚠️ Error en análisis contextual")
+        
+        return context_alerts
+    
+    # ===================================================================
+    # 🛡️ FUNCIONES AUXILIARES PARA CONTEXTO (ROBUSTAS)
+    # ===================================================================
+    
+    def _calculate_momentum_shift(self, q_scores):
+        """🔧 VERSIÓN CORREGIDA con manejo robusto de keys"""
+        try:
+            quarters_with_data = []
+            
+            # Detectar qué cuartos tienen datos
+            for i in range(1, 4):  # Q1, Q2, Q3
+                home_key = f'q{i}_home'
+                away_key = f'q{i}_away'
+                
+                if home_key in q_scores and away_key in q_scores:
+                    home_points = q_scores.get(home_key, 0)
+                    away_points = q_scores.get(away_key, 0)
+                    
+                    if home_points > 0 or away_points > 0:  # Al menos uno tiene puntos
+                        diff = home_points - away_points
+                        quarters_with_data.append(diff)
+
+            if len(quarters_with_data) < 2:
+                return 0
+            
+            # Calcular cambio de momentum entre cuartos disponibles
+            momentum_changes = []
+            for i in range(1, len(quarters_with_data)):
+                change = abs(quarters_with_data[i] - quarters_with_data[i-1])
+                momentum_changes.append(change)
+            
+            return np.mean(momentum_changes) if momentum_changes else 0
+        
+        except Exception as e:
+            print(f"⚠️ Error calculando momentum shift: {e}")
+            return 0
+
+    def _calculate_quarter_consistency(self, q_scores: Dict[str, int]) -> float:
+        """Calcula consistencia entre cuartos completados"""
+        try:
+            quarter_totals = []
+            if q_scores.get('q1_home', 0) + q_scores.get('q1_away', 0) > 0:
+                quarter_totals.append(q_scores['q1_home'] + q_scores['q1_away'])
+            if q_scores.get('q2_home', 0) + q_scores.get('q2_away', 0) > 0:
+                quarter_totals.append(q_scores['q2_home'] + q_scores['q2_away'])
+            if q_scores.get('q3_home', 0) + q_scores.get('q3_away', 0) > 0:
+                quarter_totals.append(q_scores['q3_home'] + q_scores['q3_away'])
+            
+            if len(quarter_totals) > 1:
+                std_dev = np.std(quarter_totals)
+                mean_total = np.mean(quarter_totals)
+                return 1 / (1 + std_dev / max(mean_total, 1))  # Normalized consistency
+            return 0.5
+        except:
+            return 0.5
+
+    def _calculate_current_lead(self, q_scores: Dict[str, int]) -> float:
+        """Calcula diferencia actual de puntos"""
+        try:
+            home_total = sum(q_scores.get(f'q{i}_home', 0) for i in range(1, 4))
+            away_total = sum(q_scores.get(f'q{i}_away', 0) for i in range(1, 4))
+            return abs(home_total - away_total)
+        except:
+            return 0
+    
+    # ===================================================================
+    # 🔧 FUNCIONES AUXILIARES EXISTENTES MEJORADAS
+    # ===================================================================
     
     def _get_all_teams(self) -> List[str]:
         """Obtiene lista de todos los equipos únicos"""
@@ -43,13 +234,13 @@ class BasketballAlerts:
         
         patterns = {}
         
-        # 📊 PROMEDIOS POR CUARTO (AHORA ROBUSTO)
+        # 📊 PROMEDIOS POR CUARTO (ROBUSTO)
         patterns['quarter_averages'] = self._calculate_quarter_averages(team_matches)
         patterns['quarter_std'] = self._calculate_quarter_std(team_matches)
         
         # 🎯 PATRONES DE MITADES
-        patterns['first_half_avg'] = self._safe_mean(team_matches, 'first_half_points', 50)
-        patterns['second_half_avg'] = self._safe_mean(team_matches, 'second_half_points', 50)
+        patterns['first_half_avg'] = safe_mean(team_matches['first_half_points']) if 'first_half_points' in team_matches.columns else 50
+        patterns['second_half_avg'] = safe_mean(team_matches['second_half_points']) if 'second_half_points' in team_matches.columns else 50
         patterns['second_half_surge'] = patterns['second_half_avg'] - patterns['first_half_avg']
         
         # 🚀 TENDENCIAS DE RECUPERACIÓN
@@ -57,36 +248,21 @@ class BasketballAlerts:
         patterns['comeback_strength'] = self._calculate_comeback_strength(team_matches)
         
         # ⚡ PATRONES DE PACE
-        patterns['avg_pace'] = self._safe_mean(team_matches, 'live_pace_estimate', 100)
+        patterns['avg_pace'] = safe_mean(team_matches['live_pace_estimate']) if 'live_pace_estimate' in team_matches.columns else 100
         patterns['pace_std'] = self._safe_std(team_matches, 'live_pace_estimate', 10)
         
         # 🎪 CONSISTENCIA POR CUARTOS
         patterns['consistency_score'] = self._calculate_consistency(team_matches)
-        patterns['closing_strength'] = patterns['quarter_averages'].get('q4', 25)  # Fuerza en Q4
+        patterns['closing_strength'] = patterns['quarter_averages'].get('q4', 25)
         
         return patterns
     
-    def _safe_mean(self, df: pd.DataFrame, column: str, default_value: float) -> float:
-        """🛡️ CALCULA MEAN DE FORMA SEGURA, manejando datos corruptos"""
-        if column not in df.columns or df.empty:
-            return default_value
-        
-        try:
-            # Convertir a numérico, forzando errores a NaN
-            numeric_values = pd.to_numeric(df[column], errors='coerce')
-            if numeric_values.isna().all():
-                return default_value
-            return numeric_values.mean()
-        except (ValueError, TypeError, AttributeError):
-            return default_value
-    
     def _safe_std(self, df: pd.DataFrame, column: str, default_value: float) -> float:
-        """🛡️ CALCULA STD DE FORMA SEGURA, manejando datos corruptos"""
+        """🛡️ CALCULA STD DE FORMA SEGURA"""
         if column not in df.columns or df.empty:
             return default_value
         
         try:
-            # Convertir a numérico, forzando errores a NaN
             numeric_values = pd.to_numeric(df[column], errors='coerce')
             if numeric_values.isna().all() or len(numeric_values.dropna()) < 2:
                 return default_value
@@ -111,7 +287,6 @@ class BasketballAlerts:
         for idx, match in team_matches.iterrows():
             is_home = match['home_team'] == team_name
             
-            # 🛡️ MANEJO ROBUSTO DE RAW_MATCH
             try:
                 if 'raw_match' in match and match['raw_match'] and isinstance(match['raw_match'], dict):
                     quarter_scores = match['raw_match'].get('quarter_scores', {})
@@ -121,7 +296,6 @@ class BasketballAlerts:
                             team_key = 'home_score' if is_home else 'away_score'
                             quarter_points = quarter_scores[quarter].get(team_key, 0)
                             
-                            # 🛡️ CONVERSIÓN SEGURA A NÚMERO
                             try:
                                 team_matches.at[idx, f'{quarter.lower()}_points'] = pd.to_numeric(quarter_points, errors='coerce')
                             except:
@@ -145,7 +319,6 @@ class BasketballAlerts:
                     team_matches.at[idx, 'second_half_points'] = 0
             
             except Exception as e:
-                # En caso de cualquier error, usar valores por defecto
                 print(f"⚠️ Error procesando datos de cuartos para {team_name}: {e}")
                 for quarter in ['q1', 'q2', 'q3', 'q4']:
                     team_matches.at[idx, f'{quarter}_points'] = 0
@@ -159,11 +332,14 @@ class BasketballAlerts:
         averages = {}
         for quarter in ['q1', 'q2', 'q3', 'q4']:
             col_name = f'{quarter}_points'
-            averages[quarter] = self._safe_mean(team_matches, col_name, 25.0)
+            if col_name in team_matches.columns:
+                averages[quarter] = safe_mean(team_matches[col_name])
+            else:
+                averages[quarter] = 25.0
         return averages
     
     def _calculate_quarter_std(self, team_matches: pd.DataFrame) -> Dict[str, float]:
-        """🛡️ CALCULA DESVIACIONES ESTÁNDAR POR CUARTO DE FORMA ROBUSTA"""
+        """🛡️ CALCULA DESVIACIONES ESTÁNDAR POR CUARTO"""
         std_devs = {}
         for quarter in ['q1', 'q2', 'q3', 'q4']:
             col_name = f'{quarter}_points'
@@ -172,18 +348,19 @@ class BasketballAlerts:
     
     def _calculate_recovery_rate(self, team_matches: pd.DataFrame) -> float:
         """Calcula tasa de recuperación tras inicios lentos"""
-        q1_avg = self._safe_mean(team_matches, 'q1_points', 25.0)
-        second_half_avg = self._safe_mean(team_matches, 'second_half_points', 50.0)
+        if 'q1_points' not in team_matches.columns or 'second_half_points' not in team_matches.columns:
+            return 0.5
+            
+        q1_avg = safe_mean(team_matches['q1_points'])
+        second_half_avg = safe_mean(team_matches['second_half_points'])
         
-        if q1_avg == 25.0 or second_half_avg == 50.0:  # Valores por defecto
+        if q1_avg == 0 or second_half_avg == 0:
             return 0.5
         
         try:
-            # Convertir columnas a numéricas de forma segura
             q1_numeric = pd.to_numeric(team_matches['q1_points'], errors='coerce')
             second_half_numeric = pd.to_numeric(team_matches['second_half_points'], errors='coerce')
             
-            # Filtrar valores válidos
             valid_mask = ~(q1_numeric.isna() | second_half_numeric.isna())
             if valid_mask.sum() == 0:
                 return 0.5
@@ -200,8 +377,11 @@ class BasketballAlerts:
     
     def _calculate_comeback_strength(self, team_matches: pd.DataFrame) -> float:
         """Calcula fuerza de remontada"""
-        first_half_avg = self._safe_mean(team_matches, 'first_half_points', 50.0)
-        second_half_avg = self._safe_mean(team_matches, 'second_half_points', 50.0)
+        if 'first_half_points' not in team_matches.columns or 'second_half_points' not in team_matches.columns:
+            return 1.0
+            
+        first_half_avg = safe_mean(team_matches['first_half_points'])
+        second_half_avg = safe_mean(team_matches['second_half_points'])
         
         if first_half_avg <= 0:
             return 1.0
@@ -212,7 +392,6 @@ class BasketballAlerts:
         """Calcula índice de consistencia entre cuartos"""
         quarter_cols = [f'q{i}_points' for i in range(1, 5)]
         
-        # Verificar que las columnas existen
         existing_cols = [col for col in quarter_cols if col in team_matches.columns]
         if len(existing_cols) < 2:
             return 0.5
@@ -236,7 +415,7 @@ class BasketballAlerts:
                 return 0.5
             
             avg_variance = np.mean(variances)
-            return 1 / (1 + avg_variance)  # Invertir para que mayor consistencia = mayor score
+            return 1 / (1 + avg_variance)
             
         except Exception:
             return 0.5
@@ -256,6 +435,10 @@ class BasketballAlerts:
             'consistency_score': 0.5,
             'closing_strength': 25
         }
+    
+    # ===================================================================
+    # 🎯 FUNCIONES PRINCIPALES DE ALERTAS MEJORADAS
+    # ===================================================================
     
     def generate_pre_game_alerts(self, home_team: str, away_team: str) -> List[str]:
         """Genera alertas predictivas antes del partido"""
@@ -301,30 +484,59 @@ class BasketballAlerts:
     
     def analyze_live_performance(self, home_team: str, away_team: str, q_scores: Dict[str, int], 
                                quarter_stage: str, balance_features: Dict[str, float] = None) -> List[str]:
-        """Analiza rendimiento en vivo y genera alertas, incluyendo las de balance"""
+        """
+        🎯 VERSIÓN MEJORADA: Analiza rendimiento en vivo con UMBRALES DINÁMICOS + CONTEXTO OVER/UNDER
+        """
         alerts = []
         
         home_patterns = self.team_patterns.get(home_team, self._get_default_patterns())
         away_patterns = self.team_patterns.get(away_team, self._get_default_patterns())
         
+        # 🚀 CALCULAR UMBRALES DINÁMICOS basado en volatilidad del partido
+        quarter_totals = []
+        if q_scores.get('q1_home', 0) + q_scores.get('q1_away', 0) > 0:
+            quarter_totals.append(q_scores['q1_home'] + q_scores['q1_away'])
+        if q_scores.get('q2_home', 0) + q_scores.get('q2_away', 0) > 0:
+            quarter_totals.append(q_scores['q2_home'] + q_scores['q2_away'])
+        if q_scores.get('q3_home', 0) + q_scores.get('q3_away', 0) > 0:
+            quarter_totals.append(q_scores['q3_home'] + q_scores['q3_away'])
+        
+        quarter_variance = np.std(quarter_totals) if len(quarter_totals) > 1 else 0
+        dynamic_thresholds = self.calculate_dynamic_alert_thresholds(quarter_variance)
+        
+        # Mostrar info de umbrales dinámicos
+        volatility_level = dynamic_thresholds['VOLATILITY_LEVEL']
+        
+        print(f"\n🎯 Sistema de Alertas Inteligente Activado:")
+        
+        if volatility_level == "HIGH":
+            print(f"   🎢 Partido volátil: filtrando alertas menores")
+        elif volatility_level == "MEDIUM":
+            print(f"   📊 Partido irregular: alertas moderadas")
+        else:
+            print(f"   🔍 Partido estable: alertas sensibles")
+        
+        threshold_rounded = round(dynamic_thresholds['SIGNIFICANT_DIFF'])
+        print(f"   🚨 Nueva alerta solo si cambio supera {threshold_rounded} pts del promedio")
+        
         # Determinar cuartos completados
         quarters_completed = ['q1', 'q2'] if quarter_stage == 'halftime' else ['q1', 'q2', 'q3']
         
-        # 🔍 ANÁLISIS POR CUARTO COMPLETADO
+        # 🔍 ANÁLISIS POR CUARTO COMPLETADO (con umbrales dinámicos)
         for quarter in quarters_completed:
             home_key = f'{quarter}_home'
             away_key = f'{quarter}_away'
             
             if home_key in q_scores and away_key in q_scores:
                 # Analizar equipo local
-                home_alerts = self._analyze_quarter_performance(
-                    home_team, quarter, q_scores[home_key], home_patterns
+                home_alerts = self._analyze_quarter_performance_dynamic(
+                    home_team, quarter, q_scores[home_key], home_patterns, dynamic_thresholds
                 )
                 alerts.extend(home_alerts)
                 
                 # Analizar equipo visitante
-                away_alerts = self._analyze_quarter_performance(
-                    away_team, quarter, q_scores[away_key], away_patterns
+                away_alerts = self._analyze_quarter_performance_dynamic(
+                    away_team, quarter, q_scores[away_key], away_patterns, dynamic_thresholds
                 )
                 alerts.extend(away_alerts)
         
@@ -332,15 +544,20 @@ class BasketballAlerts:
         current_pace = self._calculate_current_pace(q_scores, quarter_stage)
         avg_pace = (home_patterns['avg_pace'] + away_patterns['avg_pace']) / 2
         
-        if abs(current_pace - avg_pace) > ALERT_THRESHOLDS['PACE_DIFF_THRESHOLD']:
+        pace_threshold = dynamic_thresholds['PACE_SENSITIVITY']
+        if abs(current_pace - avg_pace) > pace_threshold:
             direction = "acelerado" if current_pace > avg_pace else "desacelerado"
             alerts.append(ALERT_TYPES['PACE_SHIFT'].format(
                 direction=direction, current_pace=current_pace, avg_pace=avg_pace
             ))
         
         # 🔥 ANÁLISIS DE RACHAS
-        home_streak_alerts = self._detect_performance_streaks(home_team, q_scores, home_patterns, quarters_completed, 'home')
-        away_streak_alerts = self._detect_performance_streaks(away_team, q_scores, away_patterns, quarters_completed, 'away')
+        home_streak_alerts = self._detect_performance_streaks_dynamic(
+            home_team, q_scores, home_patterns, quarters_completed, 'home', dynamic_thresholds
+        )
+        away_streak_alerts = self._detect_performance_streaks_dynamic(
+            away_team, q_scores, away_patterns, quarters_completed, 'away', dynamic_thresholds
+        )
         
         alerts.extend(home_streak_alerts)
         alerts.extend(away_streak_alerts)
@@ -360,10 +577,27 @@ class BasketballAlerts:
             if balance_features.get('blowout_momentum', 0.0) > 0.5:
                  alerts.append(ALERT_TYPES['BLOWOUT_MOMENTUM'])
         
+        # 🆕 NUEVAS ALERTAS CONTEXTUALES OVER/UNDER
+        if balance_features:
+            # Preparar live_features para contexto
+            live_features = {
+                'live_pace_estimate': current_pace,
+                'live_momentum_shift': self._calculate_momentum_shift(q_scores),
+                'quarter_consistency': self._calculate_quarter_consistency(q_scores),
+                'current_lead': self._calculate_current_lead(q_scores)
+            }
+            
+            # Generar alertas contextuales
+            context_alerts = self._generate_over_under_context_alerts(
+                balance_features, live_features, quarter_stage
+            )
+            alerts.extend(context_alerts)
+        
         return alerts
     
-    def _analyze_quarter_performance(self, team: str, quarter: str, current_points: int, patterns: Dict[str, Any]) -> List[str]:
-        """Analiza el rendimiento de un equipo en un cuarto específico"""
+    def _analyze_quarter_performance_dynamic(self, team: str, quarter: str, current_points: int, 
+                                           patterns: Dict[str, Any], dynamic_thresholds: Dict[str, float]) -> List[str]:
+        """🎯 NUEVA: Analiza rendimiento con umbrales dinámicos"""
         alerts = []
         
         expected_avg = patterns['quarter_averages'][quarter]
@@ -372,8 +606,8 @@ class BasketballAlerts:
         diff = current_points - expected_avg
         z_score = diff / max(expected_std, 1)  # Evitar división por cero
         
-        # 🚨 DETECCIÓN DE ANOMALÍAS
-        if abs(z_score) > ALERT_THRESHOLDS['ANOMALY_THRESHOLD']:
+        # 🚨 DETECCIÓN DE ANOMALÍAS CON THRESHOLD DINÁMICO
+        if abs(z_score) > dynamic_thresholds['ANOMALY_THRESHOLD']:
             if diff > 0:
                 alerts.append(ALERT_TYPES['OVER_PERFORMANCE'].format(
                     team=team, diff=diff, quarter=quarter.upper(),
@@ -393,12 +627,14 @@ class BasketballAlerts:
         
         return alerts
     
-    def _detect_performance_streaks(self, team: str, q_scores: Dict[str, int], patterns: Dict[str, Any], 
-                                  quarters_completed: List[str], team_suffix: str) -> List[str]:
-        """Detecta rachas de rendimiento (hot/cold streaks)"""
+    def _detect_performance_streaks_dynamic(self, team: str, q_scores: Dict[str, int], patterns: Dict[str, Any], 
+                                          quarters_completed: List[str], team_suffix: str, 
+                                          dynamic_thresholds: Dict[str, float]) -> List[str]:
+        """🎯 NUEVA: Detecta rachas con threshold dinámico para streaks"""
         alerts = []
         
-        if len(quarters_completed) < ALERT_THRESHOLDS['STREAK_MIN']:
+        streak_min = dynamic_thresholds['STREAK_MIN']
+        if len(quarters_completed) < streak_min:
             return alerts
         
         over_performances = 0
@@ -414,19 +650,20 @@ class BasketballAlerts:
                 diff = current_points - expected_avg
                 z_score = diff / max(expected_std, 1)
                 
-                if z_score > ALERT_THRESHOLDS['ANOMALY_THRESHOLD']:
+                # Usar threshold dinámico
+                if z_score > dynamic_thresholds['ANOMALY_THRESHOLD']:
                     over_performances += 1
-                elif z_score < -ALERT_THRESHOLDS['ANOMALY_THRESHOLD']:
+                elif z_score < -dynamic_thresholds['ANOMALY_THRESHOLD']:
                     under_performances += 1
         
         # 🔥 HOT STREAK
-        if over_performances >= ALERT_THRESHOLDS['STREAK_MIN']:
+        if over_performances >= streak_min:
             alerts.append(ALERT_TYPES['HOT_STREAK'].format(
                 team=team, consecutive=over_performances
             ))
         
         # 🧊 COLD STREAK
-        if under_performances >= ALERT_THRESHOLDS['STREAK_MIN']:
+        if under_performances >= streak_min:
             alerts.append(ALERT_TYPES['COLD_STREAK'].format(
                 team=team, consecutive=under_performances
             ))
