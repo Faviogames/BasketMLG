@@ -16,15 +16,42 @@ from core.features import safe_mean  # Import para usar la función original
 
 class BasketballAlerts:
     """Motor de alertas inteligentes para baloncesto con umbrales dinámicos y contexto Over/Under"""
-    
-    def __init__(self, historical_df: pd.DataFrame):
+
+    def __init__(self, historical_df: pd.DataFrame, league_name: str = "NBA"):
         self.historical_df = historical_df
+        self.league_name = league_name
         self.team_patterns = {}
         self._calculate_team_patterns()
-    
+
+        # Set league-specific thresholds
+        self._set_league_thresholds()
+
+    def _set_league_thresholds(self):
+        """Set league-specific alert thresholds"""
+        league_lower = self.league_name.lower() if self.league_name else ""
+
+        if 'wnba' in league_lower:
+            try:
+                from config import ALERT_THRESHOLDS_WNBA
+                self.alert_thresholds = ALERT_THRESHOLDS_WNBA.copy()
+                print(f"🏀 Using WNBA-specific alert thresholds")
+            except ImportError:
+                print(f"⚠️ WNBA thresholds not found, using default")
+                self.alert_thresholds = ALERT_THRESHOLDS.copy()
+        elif 'nbl' in league_lower:
+            try:
+                from config import ALERT_THRESHOLDS_NBL
+                self.alert_thresholds = ALERT_THRESHOLDS_NBL.copy()
+                print(f"🏀 Using NBL-specific alert thresholds")
+            except ImportError:
+                print(f"⚠️ NBL thresholds not found, using default")
+                self.alert_thresholds = ALERT_THRESHOLDS.copy()
+        else:
+            self.alert_thresholds = ALERT_THRESHOLDS.copy()
+
     def _calculate_team_patterns(self):
         """Calcula patrones históricos por equipo"""
-        print("🔍 Calculando patrones históricos por equipo...")
+        # print("Calculating historical team patterns...")
         
         for team in self._get_all_teams():
             self.team_patterns[team] = self._analyze_team_patterns(team)
@@ -52,8 +79,8 @@ class BasketballAlerts:
             volatility_level = "LOW"
         
         # Calcular thresholds ajustados
-        base_diff = ALERT_THRESHOLDS['SIGNIFICANT_DIFF']
-        base_anomaly = ALERT_THRESHOLDS['ANOMALY_THRESHOLD']
+        base_diff = self.alert_thresholds['SIGNIFICANT_DIFF']
+        base_anomaly = self.alert_thresholds['ANOMALY_THRESHOLD']
         
         dynamic_thresholds = {
             'SIGNIFICANT_DIFF': base_diff * volatility_multiplier,
@@ -70,22 +97,14 @@ class BasketballAlerts:
     # 🆕 ALERTAS CONTEXTUALES PARA OVER/UNDER (NUEVA FUNCIONALIDAD)
     # ===================================================================
     
-    def _generate_over_under_context_alerts(self, balance_features: Dict[str, Any], 
-                                           live_features: Dict[str, Any], 
+    def _generate_over_under_context_alerts(self, balance_features: Dict[str, Any],
+                                           live_features: Dict[str, Any],
                                            quarter_stage: str) -> List[str]:
         """
         🎯 ALERTAS CONTEXTUALES ESPECÍFICAS PARA OVER/UNDER
         
         Genera alertas sobre contexto del partido que afecta totales.
         Estas alertas NO modifican predicciones, solo informan al usuario sobre factores contextuales.
-        
-        Args:
-            balance_features: Features de balance del partido ya calculadas
-            live_features: Features en vivo del partido
-            quarter_stage: 'halftime' o 'q3_end'
-            
-        Returns:
-            Lista de alertas contextuales formateadas para apostadores
         """
         context_alerts = []
         
@@ -95,23 +114,37 @@ class BasketballAlerts:
             if blowout_momentum > 0.7:
                 context_alerts.append("🗑️ Tramo final sin presión — ritmo suele caer")
             
-            # 🔥 PARTIDO CERRADO + PACE ALTO
-            game_balance = balance_features.get('game_balance_score', 0.5)
-            current_pace = live_features.get('live_pace_estimate', 100)
+            # 🔥 PARTIDO CERRADO + PACE ALTO (UNIFICADO Y SIN CONTRADICCIONES)
+            # Preferimos un criterio doble: alto vs baseline de liga y no muy por debajo del promedio combinado de los equipos
+            # Además, usar enhanced pace si está disponible para coherencia con el motor en vivo
+            current_pace = live_features.get('enhanced_pace_estimate', live_features.get('live_pace_estimate', 100))
+            team_avg_pace = live_features.get('team_avg_pace', 105)
             
-            # Detectar partido cerrado (balance alto) + ritmo rápido
-            is_close_game = game_balance > 0.7  # Partido equilibrado
-            is_high_pace = current_pace > 105   # Pace por encima del promedio NBA
+            league_lower = (self.league_name or '').lower()
+            if 'wnba' in league_lower:
+                league_baseline = 100.0
+            elif 'nbl' in league_lower:
+                league_baseline = 106.0
+            elif 'nba' in league_lower:
+                league_baseline = 110.0
+            else:
+                league_baseline = 105.0
+            
+            # Detectar partido cerrado (por diferencia de puntos)
+            current_lead = live_features.get('current_lead', 999)
+            is_close_game = current_lead <= 10
+            
+            # Gating de "pace alto" coherente: por liga y relativo a lo esperado por equipos
+            high_pace_league = current_pace > league_baseline
+            high_pace_relative = current_pace >= (team_avg_pace - 5)  # tolerancia 5
+            is_high_pace = high_pace_league and high_pace_relative
             
             if is_close_game and is_high_pace:
                 context_alerts.append("🔥 Partido cerrado + pace alto — totales tienden al alza")
             
             # ⏰ ESTRATEGIA DE FALTAS - Late game fouling
             if quarter_stage == 'q3_end':
-                point_differential = live_features.get('current_lead', 0)
-                
-                # Fouling probable si: partido cerrado (diferencia <12) en tramo final
-                if is_close_game and point_differential <= 12:
+                if is_close_game and current_lead <= 12:
                     context_alerts.append("⏰ Estrategia de faltas prevista — puntos pueden subir")
             
             # 🎯 PARTIDO DE ALTA PRESIÓN - Stakes altos
@@ -119,9 +152,7 @@ class BasketballAlerts:
             quarter_consistency = live_features.get('quarter_consistency', 0.5)
             
             # Alta presión = muchos cambios de momentum + baja consistencia entre cuartos
-            high_pressure = momentum_shift > 15 and quarter_consistency < 0.4
-            
-            if high_pressure:
+            if momentum_shift > 15 and quarter_consistency < 0.4:
                 context_alerts.append("🎯 Partido de alta presión — pace puede variar")
             
             # 📉 INTENSIDAD EN DECLIVE
@@ -129,8 +160,8 @@ class BasketballAlerts:
             if intensity_drop < 0.8 and quarter_stage == 'q3_end':
                 context_alerts.append("📉 Intensidad bajando — menos puntos esperados en Q4")
             
-            # 🏃‍♂️ PACE ACELERADO SOSTENIDO
-            if current_pace > 110 and quarter_consistency > 0.7:
+            # 🏃‍♂️ PACE ALTO SOSTENIDO - Solo si también es alto vs promedio de equipos
+            if (current_pace > league_baseline + 2) and high_pace_relative and quarter_consistency > 0.7:
                 context_alerts.append("🏃‍♂️ Pace alto sostenido — mantener ojo en totales")
             
             # 🎢 PARTIDO ERRÁTICO - Swings grandes
@@ -504,23 +535,24 @@ class BasketballAlerts:
         quarter_variance = np.std(quarter_totals) if len(quarter_totals) > 1 else 0
         dynamic_thresholds = self.calculate_dynamic_alert_thresholds(quarter_variance)
         
-        # Mostrar info de umbrales dinámicos
+        # Mostrar info de umbrales dinámicos (solo en modo debug)
         volatility_level = dynamic_thresholds['VOLATILITY_LEVEL']
+
+        # Removido: prints duplicados - ahora solo se muestran en el output final
         
-        print(f"\n🎯 Sistema de Alertas Inteligente Activado:")
-        
-        if volatility_level == "HIGH":
-            print(f"   🎢 Partido volátil: filtrando alertas menores")
-        elif volatility_level == "MEDIUM":
-            print(f"   📊 Partido irregular: alertas moderadas")
+        # Determinar cuartos completados (excluir el cuarto en progreso)
+        # Nueva semántica:
+        #  - halftime: Q1 y Q2 completados
+        #  - q3_progress: Q1 y Q2 completados (Q3 en curso)
+        #  - q3_end: Q1, Q2, Q3 completados (Q4 en curso o por iniciar)
+        if quarter_stage == 'halftime':
+            quarters_completed = ['q1', 'q2']
+        elif quarter_stage == 'q3_progress':
+            quarters_completed = ['q1', 'q2']
+        elif quarter_stage == 'q3_end':
+            quarters_completed = ['q1', 'q2', 'q3']
         else:
-            print(f"   🔍 Partido estable: alertas sensibles")
-        
-        threshold_rounded = round(dynamic_thresholds['SIGNIFICANT_DIFF'])
-        print(f"   🚨 Nueva alerta solo si cambio supera {threshold_rounded} pts del promedio")
-        
-        # Determinar cuartos completados
-        quarters_completed = ['q1', 'q2'] if quarter_stage == 'halftime' else ['q1', 'q2', 'q3']
+            quarters_completed = ['q1', 'q2', 'q3']
         
         # 🔍 ANÁLISIS POR CUARTO COMPLETADO (con umbrales dinámicos)
         for quarter in quarters_completed:
@@ -540,16 +572,16 @@ class BasketballAlerts:
                 )
                 alerts.extend(away_alerts)
         
-        # 📊 ANÁLISIS DE PACE ACTUAL
+        # 📊 ANÁLISIS DE PACE ACTUAL - Calculamos pace para contextual alerts pero sin generar alertas
         current_pace = self._calculate_current_pace(q_scores, quarter_stage)
-        avg_pace = (home_patterns['avg_pace'] + away_patterns['avg_pace']) / 2
-        
-        pace_threshold = dynamic_thresholds['PACE_SENSITIVITY']
-        if abs(current_pace - avg_pace) > pace_threshold:
-            direction = "acelerado" if current_pace > avg_pace else "desacelerado"
-            alerts.append(ALERT_TYPES['PACE_SHIFT'].format(
-                direction=direction, current_pace=current_pace, avg_pace=avg_pace
-            ))
+        # avg_pace = (home_patterns['avg_pace'] + away_patterns['avg_pace']) / 2
+
+        # pace_threshold = dynamic_thresholds['PACE_SENSITIVITY']
+        # if abs(current_pace - avg_pace) > pace_threshold:
+        #     direction = "acelerado" if current_pace > avg_pace else "desacelerado"
+        #     alerts.append(ALERT_TYPES['PACE_SHIFT'].format(
+        #         direction=direction, current_pace=current_pace, avg_pace=avg_pace
+        #     ))
         
         # 🔥 ANÁLISIS DE RACHAS
         home_streak_alerts = self._detect_performance_streaks_dynamic(
@@ -580,11 +612,15 @@ class BasketballAlerts:
         # 🆕 NUEVAS ALERTAS CONTEXTUALES OVER/UNDER
         if balance_features:
             # Preparar live_features para contexto
+            # Promedio de pace histórico de los equipos para coherencia en alertas relative vs baseline
+            team_avg_pace = safe_mean(pd.Series([home_patterns.get('avg_pace', 105),
+                                                 away_patterns.get('avg_pace', 105)]))
             live_features = {
                 'live_pace_estimate': current_pace,
                 'live_momentum_shift': self._calculate_momentum_shift(q_scores),
                 'quarter_consistency': self._calculate_quarter_consistency(q_scores),
-                'current_lead': self._calculate_current_lead(q_scores)
+                'current_lead': self._calculate_current_lead(q_scores),
+                'team_avg_pace': float(team_avg_pace)
             }
             
             # Generar alertas contextuales
@@ -671,14 +707,18 @@ class BasketballAlerts:
         return alerts
     
     def _calculate_current_pace(self, q_scores: Dict[str, int], quarter_stage: str) -> float:
-        """Calcula el pace actual basado en los puntos anotados"""
+        """Calcula el pace actual basado en los puntos anotados (calibrado por stage)"""
         total_points = sum(q_scores.values())
-        quarters_played = 2 if quarter_stage == 'halftime' else 3
-        minutes_played = quarters_played * 12
+        if quarter_stage == 'halftime':
+            minutes_played = 24
+        elif quarter_stage == 'q3_progress':
+            minutes_played = 30  # Q3 en progreso (~30 min)
+        else:
+            minutes_played = 36  # Fin de Q3 o más
         
         # Estimación de posesiones (aproximación)
-        estimated_possessions = total_points / 1.08
-        pace = (estimated_possessions / minutes_played) * 48
+        estimated_possessions = total_points / 1.08 if total_points > 0 else 0.0
+        pace = (estimated_possessions / max(minutes_played, 1)) * 48
         
         return pace
     
@@ -700,6 +740,6 @@ class BasketballAlerts:
         }
 
 # Función de conveniencia para crear el sistema de alertas
-def create_alerts_system(historical_df: pd.DataFrame) -> BasketballAlerts:
+def create_alerts_system(historical_df: pd.DataFrame, league_name: str = "NBA") -> BasketballAlerts:
     """Crea y configura el sistema de alertas"""
-    return BasketballAlerts(historical_df)
+    return BasketballAlerts(historical_df, league_name)
