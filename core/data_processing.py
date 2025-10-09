@@ -200,17 +200,42 @@ def process_match_stats_new_structure(match: Dict[str, Any]) -> Dict[str, Any]:
         processed_stats[team_name] = processed_team_stats
     return processed_stats
 
-def impute_missing_stats(team_stats: Dict[str, Any], team_name: str, 
-                        all_matches: List[Dict], league_averages: Dict[str, float]) -> Dict[str, Any]:
-    """Sistema de imputación en cascada: equipo → liga → valores por defecto."""
-    team_averages = calculate_team_league_averages(all_matches, team_name)
+def impute_missing_stats(team_stats: Dict[str, Any], team_name: str,
+                        all_matches: List[Dict], league_averages: Dict[str, float],
+                        match_date: datetime = None) -> Dict[str, Any]:
+    """
+    Sistema de imputación en cascada: equipo → liga → valores por defecto.
+    🛡️ CORREGIDO: Evita data leakage filtrando solo datos históricos hasta match_date
+    """
+    # 🛡️ FIX: Filter matches to only include historical data (before match_date)
+    if match_date is not None:
+        historical_matches = []
+        for m in all_matches:
+            match_date_str = m.get('date', '')
+            if match_date_str:
+                try:
+                    # Parse the match date string to datetime for comparison
+                    parsed_match_date = parse_match_date(match_date_str)
+                    if parsed_match_date < match_date:
+                        historical_matches.append(m)
+                except Exception:
+                    # If parsing fails, skip this match
+                    continue
+            else:
+                # If no date, skip this match
+                continue
+    else:
+        # Fallback to all matches if no date provided (for backward compatibility)
+        historical_matches = all_matches
+
+    team_averages = calculate_team_league_averages(historical_matches, team_name)
     essential_stats = list(DEFAULT_STATS.keys())
     imputed_stats = team_stats.copy()
-    
+
     for stat in essential_stats:
         if stat not in imputed_stats or imputed_stats[stat] == 0 or pd.isna(imputed_stats[stat]):
             imputed_stats[stat] = team_averages.get(stat, league_averages.get(stat, DEFAULT_STATS.get(stat, 0)))
-    
+
     return imputed_stats
 
 def calculate_team_league_averages(all_matches: List[Dict], team_name: str) -> Dict[str, float]:
@@ -389,8 +414,9 @@ def process_raw_matches(league_data_raw: List[Dict]) -> Tuple[List[Dict], Dict[s
             if 'match_stats' in match:
                 processed_stats = process_match_stats_new_structure(match)
                 for team_name, team_stats in processed_stats.items():
-                    # Mantenemos la imputación inteligente
-                    imputed_stats = impute_missing_stats(team_stats, team_name, league_data_raw, league_averages)
+                    # 🛡️ FIX: Pass match_date to prevent data leakage
+                    match_date = processed_match.get('date')
+                    imputed_stats = impute_missing_stats(team_stats, team_name, league_data_raw, league_averages, match_date)
                     prefix = 'home' if team_name == home_team else 'away'
                     for stat_key, stat_value in imputed_stats.items():
                         processed_match[f'{prefix}_{stat_key}'] = stat_value

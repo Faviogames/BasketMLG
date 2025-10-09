@@ -738,8 +738,10 @@ def calculate_advanced_stats_for_match(match_data, home_team_name, away_team_nam
         return None
 
     if all_matches and league_averages is not None:
-        home_totals = impute_missing_stats(home_totals, home_team_name, all_matches, league_averages)
-        away_totals = impute_missing_stats(away_totals, away_team_name, all_matches, league_averages)
+        # 🛡️ FIX: Pass match_date to prevent data leakage
+        match_date = match.get('date')
+        home_totals = impute_missing_stats(home_totals, home_team_name, all_matches, league_averages, match_date)
+        away_totals = impute_missing_stats(away_totals, away_team_name, all_matches, league_averages, match_date)
 
     home_poss = calculate_possessions(home_totals, away_totals)
     away_poss = calculate_possessions(away_totals, home_totals)

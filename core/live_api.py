@@ -426,6 +426,7 @@ class SofaScoreClient:
     async def get_live_game_data(self, game_id: str, game_info: Dict) -> Optional[Dict]:
         """
         📊 Obtiene datos live de un juego específico
+        🆕 AHORA INCLUYE: Información precisa de tiempo del SofaScore API
         """
         cache_key = f'game_data_{game_id}'
 
@@ -439,7 +440,20 @@ class SofaScoreClient:
             if not self.page:
                 await self.initialize()
 
-            # Obtener juegos actualizados
+            # 🆕 PASO 1: Obtener datos del evento con información de tiempo precisa
+            event_data = await self.get_game_event_data(game_id)
+
+            if event_data:
+                # Extraer información de tiempo precisa
+                time_info = self.extract_time_info(event_data)
+                print(f"🕐 Time info extracted: {time_info['current_quarter_display']}, "
+                      f"{time_info['minutes_played']:.1f}min played, "
+                      f"{time_info['total_remaining_minutes']:.1f}min remaining")
+            else:
+                print("⚠️ Could not get event data, falling back to basic estimation")
+                time_info = None
+
+            # PASO 2: Obtener juegos actualizados (para scores actuales)
             current_games = await self.get_live_basketball_games()
 
             if not current_games:
@@ -466,6 +480,19 @@ class SofaScoreClient:
                     'offensive_efficiency': self._estimate_efficiency(current_game)
                 }
             }
+
+            # 🆕 PASO 3: Agregar información de tiempo precisa si está disponible
+            if time_info:
+                live_data['time_info'] = time_info
+                # Actualizar contexto con datos precisos
+                live_data['context'].update({
+                    'current_quarter': time_info['current_quarter_display'],
+                    'minutes_played': time_info['minutes_played'],
+                    'remaining_minutes': time_info['total_remaining_minutes'],
+                    'current_pace': time_info['current_pace_per_minute'],
+                    'projected_final': time_info['projected_final_score'],
+                    'completion_percentage': time_info['completion_percentage']
+                })
 
             # Cache el resultado
             self.cache[cache_key] = {
@@ -534,6 +561,186 @@ class SofaScoreClient:
         
         return 110  # Default efficiency
     
+    async def get_game_event_data(self, game_id: str) -> Optional[Dict]:
+        """
+        🕐 Obtiene datos del evento específico incluyendo información de tiempo
+        ✅ Extrae time.played, time.periodLength y otros datos temporales
+        """
+        cache_key = f'event_data_{game_id}'
+
+        if self._is_cache_valid(cache_key):
+            print(f"Using cached event data for game {game_id}")
+            return self.cache[cache_key]['data']
+
+        await self._rate_limit()
+
+        try:
+            if not self.page:
+                await self.initialize()
+
+            print(f"Getting event data for game {game_id}...")
+
+            # 🏀 PASO 1: Navegar al partido para establecer sesión
+            print(f"   Navigating to game {game_id}...")
+            game_url = f"{self.base_url}/event/{game_id}"
+            game_response = await self.page.goto(game_url, wait_until="networkidle")
+
+            if game_response.status != 200:
+                print(f"   ERROR: Error navigating to game: Status {game_response.status}")
+                return None
+
+            # Esperar a que se cargue la página del partido
+            await asyncio.sleep(2)
+            print(f"   SUCCESS: Session established for game {game_id}")
+
+            # 🏀 PASO 2: Acceder a la API del evento
+            print(f"   Accessing event data...")
+            event_url = f"{self.api_base}/event/{game_id}"
+
+            response = await self.page.goto(event_url, wait_until="networkidle")
+
+            if response.status == 200:
+                json_content = await self.page.evaluate("""
+                    () => {
+                        try {
+                            const bodyText = document.body.textContent || document.body.innerText;
+                            const data = JSON.parse(bodyText);
+                            return { success: true, data: data };
+                        } catch (e) {
+                            return { success: false, error: e.message };
+                        }
+                    }
+                """)
+
+                if json_content['success']:
+                    event_data = json_content['data']
+
+                    # Handle API response structure - sometimes wrapped in 'event' key
+                    if isinstance(event_data, dict) and 'event' in event_data:
+                        # Response is {"event": {...}}
+                        actual_event_data = event_data['event']
+                    else:
+                        # Response is the event data directly
+                        actual_event_data = event_data
+
+                    # Cache the processed event data
+                    self.cache[cache_key] = {
+                        'data': actual_event_data,
+                        'timestamp': time.time()
+                    }
+
+                    print(f"SUCCESS: Event data obtained for game {game_id}")
+                    return actual_event_data
+                else:
+                    print(f"ERROR: Error parsing JSON: {json_content['error']}")
+                    return None
+            else:
+                print(f"ERROR: Error obtaining event data: Status {response.status}")
+                return None
+
+        except Exception as e:
+            print(f"ERROR: Error in get_game_event_data: {e}")
+            import traceback
+            traceback.print_exc()
+            return None
+
+    def extract_time_info(self, event_data: Dict) -> Dict[str, float]:
+        """
+        🕐 Extrae y calcula información de tiempo del evento
+        ✅ Calcula cuarto actual, tiempo restante, pace actual
+        """
+        try:
+            time_data = event_data.get('time', {})
+            status = event_data.get('status', {})
+
+            # Datos básicos de tiempo
+            played_seconds = time_data.get('played', 0)
+            period_length = time_data.get('periodLength', 720)  # 12 minutos por defecto
+            total_periods = time_data.get('totalPeriodCount', 4)
+            overtime_length = time_data.get('overtimeLength', 300)  # 5 minutos
+
+            # Determinar cuarto actual basado en tiempo jugado
+            current_quarter = (played_seconds // period_length) + 1
+            current_quarter = min(current_quarter, total_periods)  # No exceder periodos regulares
+
+            # Verificar si está en overtime
+            is_overtime = current_quarter > total_periods
+            if is_overtime:
+                overtime_period = current_quarter - total_periods
+                current_quarter_display = f"OT{overtime_period}"
+                period_length = overtime_length
+            else:
+                current_quarter_display = f"Q{current_quarter}"
+
+            # Calcular tiempo en el cuarto actual
+            time_into_current_quarter = played_seconds % period_length
+            remaining_in_quarter = period_length - time_into_current_quarter
+
+            # Calcular tiempo total restante
+            if is_overtime:
+                # En overtime, asumir máximo 1 OT adicional posible
+                total_remaining = remaining_in_quarter
+            else:
+                # Tiempo restante en cuartos regulares
+                remaining_quarters = total_periods - current_quarter
+                total_remaining = (remaining_quarters * period_length) + remaining_in_quarter
+
+            # Calcular pace actual (puntos por minuto)
+            current_total_score = (event_data.get('homeScore', {}).get('current', 0) +
+                                 event_data.get('awayScore', {}).get('current', 0))
+
+            if played_seconds > 0:
+                current_pace_per_minute = (current_total_score / played_seconds) * 60
+                # Proyectar pace final (normalizado a 48 minutos)
+                projected_final_score = (current_pace_per_minute * 48) / 60
+            else:
+                current_pace_per_minute = 0.0
+                projected_final_score = 0.0
+
+            # Estado del juego
+            game_status = status.get('type', 'unknown')
+            is_live = game_status == 'inprogress'
+            is_finished = game_status == 'finished'
+
+            return {
+                'played_seconds': played_seconds,
+                'period_length': period_length,
+                'current_quarter': current_quarter,
+                'current_quarter_display': current_quarter_display,
+                'time_into_quarter': time_into_current_quarter,
+                'remaining_in_quarter': remaining_in_quarter,
+                'total_remaining_seconds': total_remaining,
+                'total_remaining_minutes': total_remaining / 60,
+                'current_pace_per_minute': current_pace_per_minute,
+                'projected_final_score': projected_final_score,
+                'current_total_score': current_total_score,
+                'is_live': is_live,
+                'is_finished': is_finished,
+                'is_overtime': is_overtime,
+                'minutes_played': played_seconds / 60,
+                'completion_percentage': min(100.0, (played_seconds / (total_periods * period_length)) * 100)
+            }
+
+        except Exception as e:
+            print(f"⚠️ Error extracting time info: {e}")
+            return {
+                'played_seconds': 0,
+                'current_quarter': 1,
+                'current_quarter_display': 'Q1',
+                'time_into_quarter': 0,
+                'remaining_in_quarter': 720,
+                'total_remaining_seconds': 2880,  # 48 minutos
+                'total_remaining_minutes': 48.0,
+                'current_pace_per_minute': 0.0,
+                'projected_final_score': 0.0,
+                'current_total_score': 0,
+                'is_live': False,
+                'is_finished': False,
+                'is_overtime': False,
+                'minutes_played': 0.0,
+                'completion_percentage': 0.0
+            }
+
     async def get_game_statistics(self, game_id: str) -> Optional[Dict]:
         """
         📊 Obtiene estadísticas de juego específico
@@ -928,9 +1135,9 @@ class LiveProcessor:
     
     async def get_available_games(self) -> List[Dict]:
         """
-        🎯 Obtiene juegos live usando SofaScoreClient + validación completa de modelo
+        Obtiene juegos live usando SofaScoreClient + validación completa de modelo
         """
-        print("🔍 Obteniendo juegos live de SofaScore...")
+        print("Obteniendo juegos live de SofaScore...")
         
         # Usar SofaScoreClient con Playwright
         games = await self.client.get_live_basketball_games()
@@ -939,7 +1146,7 @@ class LiveProcessor:
             print("❌ No se encontraron juegos live")
             return []
         
-        print(f"📡 Recibidos {len(games)} juegos de la API")
+        print(f"Recibidos {len(games)} juegos de la API")
         
         # Validar que tenemos modelo para estas ligas
         validated_games = []
@@ -973,7 +1180,7 @@ class LiveProcessor:
         # Ordenar por compatibilidad
         validated_games.sort(key=lambda x: x['compatibility_score'], reverse=True)
         
-        print(f"✅ {len(validated_games)} juegos válidos para predicción")
+        print(f"{len(validated_games)} juegos validos para prediccion")
         
         return validated_games
     
@@ -1083,13 +1290,15 @@ class LiveProcessor:
                     live_context = live_data.get('context', {})
                     live_alerts = alerts_data.get('live_alerts', [])
 
-                    # Mostrar update
+                    # Mostrar update con información de tiempo
+                    time_context = live_data.get('time_info', {})
                     self._show_live_update(
                         prediction, live_data, game_info, change_info,
                         live_context, live_alerts, bookie_line, {
                             'update_count': update_num,
                             'total_updates': max_updates,
-                            'stability_reason': update_reason
+                            'stability_reason': update_reason,
+                            'time_info': time_context
                         }
                     )
 
@@ -1184,15 +1393,25 @@ class LiveProcessor:
                 direction = "📈" if change > 0 else "📉"
                 print(f"{direction} Cambio: {change:+.1f} pts")
 
-        # Contexto live mejorado
-        quarter = live_context.get('estimated_quarter', 'Live')
+        # 🆕 Contexto live con información de tiempo precisa
+        time_info = result.get('time_info', {})
+        if time_info:
+            current_quarter = time_info.get('current_quarter_display', 'Live')
+            minutes_played = time_info.get('minutes_played', 0)
+            remaining_minutes = time_info.get('total_remaining_minutes', 0)
+            completion_pct = time_info.get('completion_percentage', 0)
+            current_pace = time_info.get('current_pace_per_minute', 0)
 
-        # Añadir información de estabilidad del cuarto
-        quarter_status = self._detect_quarter_status(game_info)
-        stability_indicator = "🟢" if not quarter_status['in_progress'] else "🟡"
-        quarter_display = f"{quarter} {stability_indicator}"
-
-        print(f"⏰ Estado: {quarter_display}")
+            quarter_display = f"{current_quarter} ({minutes_played:.1f}min jugados, {remaining_minutes:.1f}min restantes)"
+            print(f"⏰ Estado preciso: {quarter_display}")
+            print(f"📊 Progreso: {completion_pct:.1f}% completado | Pace actual: {current_pace:.1f} pts/min")
+        else:
+            # Fallback al método anterior
+            quarter = live_context.get('estimated_quarter', 'Live')
+            quarter_status = self._detect_quarter_status(game_info)
+            stability_indicator = "🟢" if not quarter_status['in_progress'] else "🟡"
+            quarter_display = f"{quarter} {stability_indicator}"
+            print(f"⏰ Estado estimado: {quarter_display}")
  
         # 🚨 Alertas centralizadas: deltas por equipo + top 3 alertas live
         alerts_lines = []
@@ -1471,8 +1690,8 @@ class LiveProcessor:
             else:
                 parsed_stats = {}
 
-            # Calculate advanced live signals
-            live_signals = self.compute_live_signals(parsed_stats or {}, q_scores, game_info)
+            # Calculate advanced live signals with time awareness
+            live_signals = self.compute_live_signals(parsed_stats or {}, q_scores, game_info, time_info=live_data.get('time_info'))
 
             # 4. Generar predicción usando función existente (con caché y señales live)
             get_predictions = self._get_prediction_function()
@@ -1777,7 +1996,7 @@ class LiveProcessor:
         return context
 
     def compute_live_signals(self, current_stats: Dict, q_scores: Dict, game_info: Dict,
-                            historical_baseline: Dict = None) -> Dict[str, float]:
+                            historical_baseline: Dict = None, time_info: Dict = None) -> Dict[str, float]:
         """
         🎯 FASE 2: Señales live enfocadas en OVER/UNDER totals
         - Foul Trouble Index (FTI) - Más FTs = Más puntos
@@ -1834,15 +2053,18 @@ class LiveProcessor:
         return signals
 
     def _calculate_foul_trouble_index(self, current_stats: Dict, q_scores: Dict,
-                                    game_info: Dict, historical_baseline: Dict = None) -> Dict[str, float]:
+                                    game_info: Dict, historical_baseline: Dict = None, time_info: Dict = None) -> Dict[str, float]:
         """Calcula Foul Trouble Index (FTI) con nativo + proxy fallback"""
 
         # Intentar datos nativos de faltas
         home_pf = current_stats.get('home_personal_fouls', 0)
         away_pf = current_stats.get('away_personal_fouls', 0)
 
-        # Estimar minutos jugados para normalización
-        minutes_played = self._estimate_minutes_played(q_scores, game_info)
+        # 🆕 Usar tiempo preciso si está disponible, sino estimar
+        if time_info and time_info.get('minutes_played', 0) > 0:
+            minutes_played = time_info['minutes_played']
+        else:
+            minutes_played = self._estimate_minutes_played(q_scores, game_info)
 
         if minutes_played > 0:
             # Si tenemos datos nativos de faltas
@@ -2203,119 +2425,3 @@ class LiveProcessor:
             'lead_stability': lead_stability
         }
 
-
-# ===========================================
-# FUNCIONES DE TESTING Y UTILIDADES
-# ===========================================
-
-async def test_live_system(trained_data: Dict = None):
-    """🧪 Test completo del sistema live"""
-    
-    print("🧪 TESTING SISTEMA LIVE COMPLETO")
-    print("=" * 50)
-    
-    # Crear datos de prueba si no se proporcionan
-    if not trained_data:
-        trained_data = {
-            'league_name': 'Test League',
-            'team_names': ['Team A', 'Team B', 'Washington Mystics W', 'Los Angeles Sparks W'],
-            'historical_df': [],
-            'model': None,
-            'features_used': [],
-            'std_dev': 10.0
-        }
-    
-    # 1. Inicializar procesador
-    processor = LiveProcessor(trained_data)
-    
-    try:
-        # 2. Test inicialización
-        print("\n1️⃣ Test inicialización...")
-        init_success = await processor.initialize()
-        
-        if not init_success:
-            print("❌ Inicialización fallida")
-            return False
-        
-        # 3. Test health check
-        print("\n2️⃣ Test health check...")
-        is_healthy = await processor.client.health_check()
-        
-        if not is_healthy:
-            print("❌ Health check fallido")
-            return False
-        
-        # 4. Test obtener juegos
-        print("\n3️⃣ Test obtener juegos live...")
-        games = await processor.get_available_games()
-        
-        if not games:
-            print("⚠️ No hay juegos disponibles para testing")
-            print("✅ Sistema funcional pero sin datos live")
-            return True
-        
-        print(f"✅ Encontrados {len(games)} juegos válidos")
-        
-        # Mostrar información de juegos
-        for i, game in enumerate(games[:3], 1):
-            print(f"   {i}. {game['home_team']} vs {game['away_team']} ({game['detected_league']})")
-        
-        # 5. Test obtener datos de un juego
-        if games:
-            test_game = games[0]
-            print(f"\n4️⃣ Test datos live del juego: {test_game['home_team']} vs {test_game['away_team']}")
-            
-            live_data = await processor.client.get_live_game_data(
-                test_game['id'], test_game
-            )
-            
-            if live_data:
-                print("✅ Datos live obtenidos correctamente")
-            else:
-                print("⚠️ No se pudieron obtener datos live")
-        
-        print("\n✅ SISTEMA LIVE COMPLETAMENTE FUNCIONAL")
-        return True
-        
-    except Exception as e:
-        print(f"❌ Error en testing: {e}")
-        return False
-        
-    finally:
-        await processor.cleanup()
-
-def create_test_trained_data():
-    """Crea datos de prueba para testing"""
-    return {
-        'league_name': 'WNBA Test',
-        'team_names': [
-            'Washington Mystics W', 'Los Angeles Sparks W', 'Las Vegas Aces W', 
-            'Dallas Wings W', 'Team A', 'Team B'
-        ],
-        'historical_df': [],
-        'model': None,
-        'features_used': [],
-        'std_dev': 8.5
-    }
-
-# Función de conveniencia para compatibilidad
-def create_live_processor(trained_data: Dict) -> LiveProcessor:
-    """Crea y configura el procesador live"""
-    return LiveProcessor(trained_data)
-
-
-# ===========================================
-# PUNTO DE ENTRADA PARA TESTING
-# ===========================================
-
-if __name__ == "__main__":
-    print("🏀 SofaScore Live API + Processor v4.1 RESTAURADO")
-    print("🎯 Basado en implementación funcional v3.0")
-    print("✅ Método principal: Sesión establecida")
-    print("✅ Método fallback: Básico")
-    print("❌ Evitado: API Request Directo (403)")
-    print("🚫 ELIMINADO: Betting Protection y Kelly Criterion")
-    
-    # Test rápido si se ejecuta directamente
-    test_data = create_test_trained_data()
-    asyncio.run(test_live_system(test_data))
