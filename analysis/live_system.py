@@ -10,6 +10,7 @@
 import asyncio
 import os
 import joblib
+import random
 from typing import Dict, List, Optional
 from prompt_toolkit import prompt
 from prompt_toolkit.completion import WordCompleter
@@ -34,10 +35,10 @@ except ImportError:
 class BasketballLiveSystem:
     """
     🎯 Sistema Live Completo de Basketball
-    
+
     CARACTERÍSTICAS:
     ✅ Modo Manual: predicción única (existente)
-    ✅ Modo Live Real: monitoreo automático cada 30-45s
+    ✅ Modo Live Real: monitoreo automático cada 45-60s (automático)
     ✅ Playwright: navegador real para evitar bloqueos
     ✅ Mapeo inteligente: SofaScore → modelo
     ✅ Alertas avanzadas: cambios significativos + contexto
@@ -83,7 +84,7 @@ class BasketballLiveSystem:
                     continue
 
                 # 🔒 Fuente única de verdad para la liga: forzar en el payload del modelo
-                # Esto asegura que safeguards y parámetros por liga (NBA/WNBA/NBL) usen el set correcto.
+                # Esto asegura que parámetros por liga (NBA/WNBA/NBL) usen el set correcto.
                 try:
                     model_data['league_name'] = league_name
                 except Exception:
@@ -173,7 +174,7 @@ class BasketballLiveSystem:
         print(f"\n📡 MODO LIVE REAL - Monitoreo Automático")
         print("="*50)
         print("🎭 Usando Playwright para evitar bloqueos")
-        print("🔄 Updates automáticos cada 30-45 segundos")
+        print("🔄 Updates automáticos cada 45-60 segundos")
         print("🚨 Alertas en tiempo real")
         
         # Seleccionar liga
@@ -265,7 +266,7 @@ class BasketballLiveSystem:
         
         # Importar función de test
         try:
-            from core.live_api import test_live_system
+            from tests.test_live_api import test_live_system
             
             print("🔬 Ejecutando test completo del sistema...")
             
@@ -357,31 +358,11 @@ class BasketballLiveSystem:
             return None
     
     def _configure_monitoring(self) -> int:
-        """Configura intervalo de monitoreo"""
-        
-        print(f"\n⚙️ Configuración de Monitoreo:")
-        print("1. 🐇 Rápido (30 segundos) - Más actualizaciones")
-        print("2. ⚖️ Moderado (45 segundos) - Balance")
-        print("3. 🐢 Conservador (60 segundos) - Menos carga")
-        
-        try:
-            choice = input("Selecciona velocidad (1-3) [default: 2]: ").strip()
-            
-            if choice == "1":
-                interval = 30
-                print("✅ Monitoreo rápido: updates cada 30s")
-            elif choice == "3":
-                interval = 60
-                print("✅ Monitoreo conservador: updates cada 60s")
-            else:  # default o "2"
-                interval = 45
-                print("✅ Monitoreo moderado: updates cada 45s")
-            
-            return interval
-            
-        except (EOFError, KeyboardInterrupt):
-            print("⚠️ Usando configuración por defecto: 45s")
-            return 45
+        """Configura intervalo de monitoreo automáticamente"""
+        # Intervalo automático entre 45-60 segundos para optimizar rendimiento
+        interval = random.randint(45, 60)
+        print(f"✅ Monitoreo automático configurado: updates cada {interval}s")
+        return interval
     
     def _show_available_models(self):
         """Muestra información detallada de modelos"""

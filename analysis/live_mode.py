@@ -80,12 +80,10 @@ except ImportError:
 # ===================================================================
 
 def _get_league_scoring_params(league_name: str = None) -> Dict[str, float]:
-    """Get league-specific scoring parameters for safeguards"""
+    """Get league-specific scoring parameters"""
     if not league_name:
         # Default conservative parameters
         return {
-            'max_ppg_threshold': 35.0,  # PPG threshold for unrealistic scoring
-            'max_ppg_cap': 30.0,        # Max realistic PPG
             'q4_conservative_reduction': 0.96,  # -4% for Q4 close games
             'pace_multiplier': 1.0      # Base pace multiplier
         }
@@ -95,32 +93,24 @@ def _get_league_scoring_params(league_name: str = None) -> Dict[str, float]:
     if 'nba' in league_lower:
         # NBA: Higher scoring potential, faster pace
         return {
-            'max_ppg_threshold': 45.0,  # NBA can score 45+ PPG realistically
-            'max_ppg_cap': 40.0,        # Cap at 40 PPG max
             'q4_conservative_reduction': 0.96,  # Same -4% reduction
             'pace_multiplier': 1.2      # NBA has faster pace
         }
     elif 'wnba' in league_lower:
         # WNBA: Lower scoring, slower pace
         return {
-            'max_ppg_threshold': 35.0,  # WNBA threshold
-            'max_ppg_cap': 30.0,        # WNBA cap
             'q4_conservative_reduction': 0.96,  # Same reduction
             'pace_multiplier': 0.8      # WNBA slower pace
         }
     elif 'nbl' in league_lower:
         # NBL: Australian league - moderate scoring, consistent pace
         return {
-            'max_ppg_threshold': 41.0,  # NBL realistic threshold (based on 241 max)
-            'max_ppg_cap': 37.0,        # NBL conservative cap
             'q4_conservative_reduction': 0.94,  # More conservative than NBA/WNBA
             'pace_multiplier': 0.98     # Slightly slower than NBA baseline
         }
     else:
         # Other leagues: Conservative defaults
         return {
-            'max_ppg_threshold': 35.0,
-            'max_ppg_cap': 30.0,
             'q4_conservative_reduction': 0.96,
             'pace_multiplier': 1.0
         }
@@ -263,6 +253,305 @@ def count_active_signals(live_signals: Dict[str, float]) -> int:
 
     return active_count
 
+# ===================================================================
+# INDIVIDUAL CONTEXT ADJUSTMENT FUNCTIONS
+# ===================================================================
+
+def _apply_garbage_time_adjustment(gt_enabled: bool, garbage_time_risk: float,
+                                  quarter_stage: str, home_fti: float, away_fti: float,
+                                  context_adjustment: Dict) -> Tuple[float, str]:
+    """
+    Apply garbage time adjustment based on risk level.
+
+    Args:
+        gt_enabled: Whether garbage time adjustment is enabled
+        garbage_time_risk: Risk level (0-1)
+        quarter_stage: Current quarter stage
+        home_fti: Home team foul trouble index
+        away_fti: Away team foul trouble index
+        context_adjustment: Context adjustment configuration
+
+    Returns:
+        Tuple of (adjustment_factor, description)
+    """
+    if not (gt_enabled and garbage_time_risk is not None and
+            quarter_stage in ['q3_just_ended', 'q4_progress'] and garbage_time_risk >= 0.6):
+        return 1.0, ""
+
+    # Reducción suave acotada y atenuada por foul-trouble
+    max_red_pct = context_adjustment.get('garbage_time_max_reduction_pct', 0.12)
+    foul_trouble_boost = 1 + (max(home_fti, away_fti) * 0.1)  # +10% máx
+    raw_reduction = min(max_red_pct, garbage_time_risk * max_red_pct)
+    adjusted_reduction = (1 - raw_reduction) * foul_trouble_boost
+
+    description = f"Garbage time dinámico: -{((1-adjusted_reduction)*100):.0f}% (risk: {garbage_time_risk:.2f}, FT boost: {foul_trouble_boost:.2f})"
+    return adjusted_reduction, description
+
+
+def _apply_close_game_high_pace_adjustment(is_close_game: bool, is_high_pace: bool,
+                                          is_late_game: bool, quarter_stage: str,
+                                          home_ts_live: float, away_ts_live: float,
+                                          enhanced_pace: float, league_name: str) -> Tuple[float, str]:
+    """
+    Apply adjustment for close games with high pace.
+
+    Args:
+        is_close_game: Whether the game is close
+        is_high_pace: Whether pace is high
+        is_late_game: Whether it's late in the game
+        quarter_stage: Current quarter stage
+        home_ts_live: Home team true shooting %
+        away_ts_live: Away team true shooting %
+        enhanced_pace: Enhanced pace estimate
+        league_name: League name for logging
+
+    Returns:
+        Tuple of (adjustment_factor, description)
+    """
+    if not (is_close_game and is_high_pace and is_late_game):
+        return 1.0, ""
+
+    # Lógica más conservadora para Q4: reducir en lugar de aumentar
+    if quarter_stage == 'q4':
+        # En Q4 de partidos cerrados, equipos suelen frenar el ritmo
+        reduction_pct = 4.0  # -4%
+        description = f"Q4 partido cerrado: -{reduction_pct:.0f}% (pace alto pero Q4 defensivo - {league_name or 'Unknown'})"
+        return 1.0 - (reduction_pct / 100), description
+    else:
+        # Para Q3, mantener lógica original pero más conservadora
+        shooting_boost = 1 + (max(home_ts_live, away_ts_live) - 0.5) * 0.1  # +10% max (reducido)
+        adjustment_factor = 1.02 * shooting_boost  # +2% base (reducido)
+        description = f"Partido cerrado + pace alto: +{((adjustment_factor-1)*100):.0f}% (pace: {enhanced_pace:.1f}, TS boost: {shooting_boost:.2f})"
+        return adjustment_factor, description
+
+
+def _apply_intensity_drop_adjustment(intensity_drop: float, run_strength: float) -> Tuple[float, str]:
+    """
+    Apply adjustment for games with declining intensity.
+
+    Args:
+        intensity_drop: Intensity drop factor
+        run_strength: Run detector strength
+
+    Returns:
+        Tuple of (adjustment_factor, description)
+    """
+    if intensity_drop >= 0.85:
+        return 1.0, ""
+
+    # Escalar por run detector (run activa = más puntos)
+    run_boost = 1 + (run_strength * 0.15)  # +15% max por run strength
+    adjusted_reduction = 0.96 * run_boost
+    description = f"Caída de intensidad: -{((1-adjusted_reduction)*100):.0f}% (factor: {intensity_drop:.3f}, run boost: {run_boost:.2f})"
+    return adjusted_reduction, description
+
+
+def _apply_fouling_strategy_adjustment(is_close_game: bool, quarter_stage: str,
+                                      enhanced_pace: float, home_fti: float, away_fti: float) -> Tuple[float, str]:
+    """
+    Apply adjustment for fouling strategy in close Q4 games.
+
+    Args:
+        is_close_game: Whether the game is close
+        quarter_stage: Current quarter stage
+        enhanced_pace: Enhanced pace estimate
+        home_fti: Home team foul trouble index
+        away_fti: Away team foul trouble index
+
+    Returns:
+        Tuple of (adjustment_factor, description)
+    """
+    if not (is_close_game and quarter_stage == 'q4_progress' and enhanced_pace > 110):
+        return 1.0, ""
+
+    # Escalar por foul trouble directo (más FT = más puntos)
+    ft_boost = 1 + (max(home_fti, away_fti) * 0.25)  # +25% max por foul trouble
+    adjustment_factor = 1.08 * ft_boost
+    description = f"Estrategia fouling Q4: +{((adjustment_factor-1)*100):.0f}% (pace: {enhanced_pace:.1f}, FT boost: {ft_boost:.2f})"
+    return adjustment_factor, description
+
+
+def _apply_run_detector_adjustment(run_active: bool, run_strength: float, run_side: str) -> Tuple[float, str]:
+    """
+    Apply adjustment when run detector is active.
+
+    Args:
+        run_active: Whether run detector is active
+        run_strength: Run detector strength
+        run_side: Which side has the run
+
+    Returns:
+        Tuple of (adjustment_factor, description)
+    """
+    if not (run_active and run_strength > 0.3):
+        return 1.0, ""
+
+    run_boost = 1 + (run_strength * 0.2)  # +20% max por run strength
+    description = f"Run detectado ({run_side}): +{((run_boost-1)*100):.0f}% (strength: {run_strength:.2f})"
+    return run_boost, description
+
+
+def _apply_foul_trouble_adjustment(home_fti: float, away_fti: float) -> Tuple[float, str]:
+    """
+    Apply adjustment for significant foul trouble.
+
+    Args:
+        home_fti: Home team foul trouble index
+        away_fti: Away team foul trouble index
+
+    Returns:
+        Tuple of (adjustment_factor, description)
+    """
+    max_fti = max(home_fti, away_fti)
+    if max_fti <= 0.7:
+        return 1.0, ""
+
+    ft_boost = 1 + ((max_fti - 0.7) * 0.3)  # +30% max por foul trouble extremo
+    description = f"Foul trouble alto: +{((ft_boost-1)*100):.0f}% (FTI: {max_fti:.2f})"
+    return ft_boost, description
+
+
+def _apply_shooting_efficiency_adjustment(diff_ts_live: float) -> Tuple[float, str]:
+    """
+    Apply adjustment for extreme shooting efficiency differential.
+
+    Args:
+        diff_ts_live: True shooting % differential
+
+    Returns:
+        Tuple of (adjustment_factor, description)
+    """
+    if abs(diff_ts_live) <= 0.15:
+        return 1.0, ""
+
+    shooting_boost = 1 + (abs(diff_ts_live) * 0.15)  # +15% max por diferencia TS%
+    description = f"Shooting efficiency diferencial: +{((shooting_boost-1)*100):.0f}% (TS diff: {diff_ts_live:.2f})"
+    return shooting_boost, description
+
+
+def _apply_assist_turnover_adjustment(diff_ato_ratio: float) -> Tuple[float, str]:
+    """
+    Apply adjustment for extreme assist-to-turnover ratio differential.
+
+    Args:
+        diff_ato_ratio: Assist-to-turnover ratio differential
+
+    Returns:
+        Tuple of (adjustment_factor, description)
+    """
+    if abs(diff_ato_ratio) <= 0.25:
+        return 1.0, ""
+
+    ato_boost = 1 + (abs(diff_ato_ratio) * 0.15)  # +15% max por diferencia A/TO
+    direction = "superior" if diff_ato_ratio > 0 else "inferior"
+    description = f"Control de balón {direction}: +{((ato_boost-1)*100):.0f}% (A/TO diff: {diff_ato_ratio:.2f})"
+    return ato_boost, description
+
+
+def _apply_rebound_efficiency_adjustment(home_treb_diff: float) -> Tuple[float, str]:
+    """
+    Apply adjustment for extreme rebound efficiency differential.
+
+    Args:
+        home_treb_diff: Home team rebound differential
+
+    Returns:
+        Tuple of (adjustment_factor, description)
+    """
+    if abs(home_treb_diff) <= 0.4:
+        return 1.0, ""
+
+    reb_boost = 1 + (abs(home_treb_diff) * 0.12)  # +12% max por ventaja en rebotes
+    direction = "ventaja" if home_treb_diff > 0 else "desventaja"
+    description = f"Rebotes {direction}: +{((reb_boost-1)*100):.0f}% (TREB diff: {home_treb_diff:.2f})"
+    return reb_boost, description
+
+
+def _apply_time_remaining_adjustment(remaining_minutes: float) -> Tuple[float, str]:
+    """
+    Apply adjustment based on remaining time.
+
+    Args:
+        remaining_minutes: Minutes remaining in the game
+
+    Returns:
+        Tuple of (adjustment_factor, description)
+    """
+    if remaining_minutes <= 0:
+        return 1.0, ""
+
+    # Ajuste por tiempo restante: más tiempo = más puntos posibles
+    time_factor = min(1.0, remaining_minutes / 48.0)  # Normalizar vs juego completo
+    time_adjustment = 1 + (time_factor * 0.05)  # +5% max por tiempo restante
+    description = f"Tiempo restante ({remaining_minutes:.1f}min): +{((time_adjustment-1)*100):.1f}% (más tiempo = más puntos)"
+    return time_adjustment, description
+
+
+def _apply_pace_expectation_adjustment(current_pace: float, remaining_minutes: float,
+                                      completion_percentage: float) -> Tuple[float, str]:
+    """
+    Apply adjustment based on current pace vs time remaining.
+
+    Args:
+        current_pace: Current pace (points per minute)
+        remaining_minutes: Minutes remaining
+        completion_percentage: Game completion percentage
+
+    Returns:
+        Tuple of (adjustment_factor, description)
+    """
+    if current_pace <= 0 or completion_percentage <= 10:
+        return 1.0, ""
+
+    # Si el pace actual es alto pero queda poco tiempo, reducir expectativa
+    pace_expectation = current_pace * (remaining_minutes / 60)  # Puntos esperados restantes
+    if pace_expectation < 10 and remaining_minutes < 20:
+        pace_reduction = 0.95  # -5% si pace bajo con poco tiempo
+        description = f"Pace actual bajo ({current_pace:.1f}pts/min) con poco tiempo: -5%"
+        return pace_reduction, description
+
+    return 1.0, ""
+
+
+def _apply_overtime_adjustment(is_overtime: bool) -> Tuple[float, str]:
+    """
+    Apply adjustment for overtime games.
+
+    Args:
+        is_overtime: Whether the game is in overtime
+
+    Returns:
+        Tuple of (adjustment_factor, description)
+    """
+    if not is_overtime:
+        return 1.0, ""
+
+    # En overtime, los equipos suelen frenar el ritmo
+    ot_adjustment = 0.92  # -8% en overtime
+    description = "Overtime: -8% (ritmo más lento en prórroga)"
+    return ot_adjustment, description
+
+
+def _apply_end_game_adjustment(remaining_minutes: float, is_overtime: bool) -> Tuple[float, str]:
+    """
+    Apply adjustment for end game situations.
+
+    Args:
+        remaining_minutes: Minutes remaining
+        is_overtime: Whether the game is in overtime
+
+    Returns:
+        Tuple of (adjustment_factor, description)
+    """
+    if remaining_minutes > 6 or is_overtime:
+        return 1.0, ""
+
+    # En los últimos minutos, menos puntos esperados
+    final_adjustment = 0.96  # -4% en garbage time
+    description = "Final del partido: -4% (menos puntos en garbage time)"
+    return final_adjustment, description
+
+
 def calculate_signal_adjustment_magnitude(context_info: Dict) -> float:
     """
     Calculate the total magnitude of signal-based adjustments applied.
@@ -309,6 +598,13 @@ def apply_context_adjustment(prediction: float, balance_features: Dict[str, floa
         current_lead = balance_features.get('current_lead', None)
         is_unbalanced_flag = balance_features.get('is_game_unbalanced', 0) == 1
 
+        # 🆕 Extraer información de tiempo precisa para ajustes más inteligentes
+        time_info = live_signals.get('time_info', {}) if live_signals else {}
+        remaining_minutes = time_info.get('total_remaining_minutes', 48.0)
+        current_pace = time_info.get('current_pace_per_minute', 0.0)
+        completion_percentage = time_info.get('completion_percentage', 0.0)
+        is_overtime = time_info.get('is_overtime', False)
+
         # Extraer pace context con valores por defecto seguros
         pace_estimate = live_pace_metrics.get('live_pace_estimate', 100)
         enhanced_pace = live_pace_metrics.get('enhanced_pace_estimate', pace_estimate) * league_params['pace_multiplier']
@@ -318,7 +614,7 @@ def apply_context_adjustment(prediction: float, balance_features: Dict[str, floa
         # Umbral de "pace alto" ajustado a la escala actual de live pace
         pace_high_threshold = _get_live_pace_high_threshold(league_name)
         is_high_pace = enhanced_pace > pace_high_threshold
-        is_late_game = quarter_stage in ['q3_end', 'q4']
+        is_late_game = quarter_stage in ['q3_just_ended', 'q4_progress']
 
         # 🆕 FASE 2: Extraer señales live enfocadas en O/U con valores por defecto seguros
         live_signals = live_signals or {}
@@ -345,82 +641,82 @@ def apply_context_adjustment(prediction: float, balance_features: Dict[str, floa
         home_treb_diff = live_signals.get('home_treb_diff', 0.0)
         away_treb_diff = live_signals.get('away_treb_diff', 0.0)
 
-        # CONTEXTO 1: Garbage Time dinámico por riesgo (MEJORADO)
-        gt_enabled = context_adjustment.get('enable_dynamic_garbage_time', True)
-        garbage_time_risk = balance_features.get('garbage_time_risk', None)
-        if gt_enabled and garbage_time_risk is not None and quarter_stage in ['q3_end', 'q4'] and garbage_time_risk >= 0.6:
-            # Reducción suave acotada y atenuada por foul-trouble (más FT => menos reducción efectiva)
-            max_red_pct = context_adjustment.get('garbage_time_max_reduction_pct', 0.12)
-            foul_trouble_boost = 1 + (max(home_fti, away_fti) * 0.1)  # +10% máx
-            raw_reduction = min(max_red_pct, garbage_time_risk * max_red_pct)
-            adjusted_reduction = (1 - raw_reduction) * foul_trouble_boost
-            adjustment_factor *= adjusted_reduction
-            applied_adjustments.append(f"Garbage time dinámico: -{((1-adjusted_reduction)*100):.0f}% (risk: {garbage_time_risk:.2f}, FT boost: {foul_trouble_boost:.2f})")
+        # Apply individual context adjustments in priority order
+        adjustments_to_apply = [
+            # Garbage time (highest priority - mutually exclusive with others)
+            lambda: _apply_garbage_time_adjustment(
+                context_adjustment.get('enable_dynamic_garbage_time', True),
+                balance_features.get('garbage_time_risk', None),
+                quarter_stage, home_fti, away_fti, context_adjustment
+            ),
 
-        # CONTEXTO 2: Partidos cerrados + pace alto (REFINADO - MÁS CONSERVADOR EN Q4)
-        elif is_close_game and is_high_pace and is_late_game:
-            # Lógica más conservadora para Q4: reducir en lugar de aumentar
-            if quarter_stage == 'q4':
-                # En Q4 de partidos cerrados, equipos suelen frenar el ritmo
-                adjustment_factor *= league_params['q4_conservative_reduction']
-                reduction_pct = ((1-league_params['q4_conservative_reduction'])*100)
-                applied_adjustments.append(f"Q4 partido cerrado: -{reduction_pct:.0f}% (pace alto pero Q4 defensivo - {league_name or 'Unknown'})")
-            else:
-                # Para Q3, mantener lógica original pero más conservadora
-                shooting_boost = 1 + (max(home_ts_live, away_ts_live) - 0.5) * 0.1  # +10% max (reducido)
-                adjustment_factor *= 1.02 * shooting_boost  # +2% base (reducido)
-                applied_adjustments.append(f"Partido cerrado + pace alto: +{((1.02*shooting_boost-1)*100):.0f}% (pace: {enhanced_pace:.1f}, TS boost: {shooting_boost:.2f})")
+            # Close game + high pace
+            lambda: _apply_close_game_high_pace_adjustment(
+                is_close_game, is_high_pace, is_late_game, quarter_stage,
+                home_ts_live, away_ts_live, enhanced_pace, league_name
+            ),
 
-        # CONTEXTO 3: Intensidad en declive (REFINADO)
-        elif intensity_drop < 0.85:
-            # Escalar por run detector (run activa = más puntos)
-            run_boost = 1 + (run_strength * 0.15)  # +15% max por run strength
-            adjusted_reduction = 0.96 * run_boost
-            adjustment_factor *= adjusted_reduction
-            applied_adjustments.append(f"Caída de intensidad: -{((1-adjusted_reduction)*100):.0f}% (factor: {intensity_drop:.3f}, run boost: {run_boost:.2f})")
+            # Intensity drop
+            lambda: _apply_intensity_drop_adjustment(intensity_drop, run_strength),
 
-        # CONTEXTO 4: Fouling strategy (REFINADO)
-        elif is_close_game and quarter_stage == 'q4' and enhanced_pace > 110:
-            # Escalar por foul trouble directo (más FT = más puntos)
-            ft_boost = 1 + (max(home_fti, away_fti) * 0.25)  # +25% max por foul trouble
-            adjustment_factor *= 1.08 * ft_boost
-            applied_adjustments.append(f"Estrategia fouling Q4: +{((1.08*ft_boost-1)*100):.0f}% (pace: {enhanced_pace:.1f}, FT boost: {ft_boost:.2f})")
+            # Fouling strategy
+            lambda: _apply_fouling_strategy_adjustment(
+                is_close_game, quarter_stage, enhanced_pace, home_fti, away_fti
+            ),
 
-        # CONTEXTO 5: Run detector activo (NUEVO)
-        elif run_active and run_strength > 0.3:
-            run_boost = 1 + (run_strength * 0.2)  # +20% max por run strength
-            adjustment_factor *= run_boost
-            applied_adjustments.append(f"Run detectado ({run_side}): +{((run_boost-1)*100):.0f}% (strength: {run_strength:.2f})")
+            # Run detector
+            lambda: _apply_run_detector_adjustment(run_active, run_strength, run_side),
 
-        # CONTEXTO 6: Foul trouble significativo (NUEVO)
-        elif max(home_fti, away_fti) > 0.7:
-            ft_boost = 1 + ((max(home_fti, away_fti) - 0.7) * 0.3)  # +30% max por foul trouble extremo
-            adjustment_factor *= ft_boost
-            applied_adjustments.append(f"Foul trouble alto: +{((ft_boost-1)*100):.0f}% (FTI: {max(home_fti, away_fti):.2f})")
+            # Foul trouble
+            lambda: _apply_foul_trouble_adjustment(home_fti, away_fti),
 
-        # CONTEXTO 7: Shooting efficiency extrema (NUEVO)
-        elif abs(diff_ts_live) > 0.15:
-            shooting_boost = 1 + (abs(diff_ts_live) * 0.15)  # +15% max por diferencia TS%
-            adjustment_factor *= shooting_boost
-            applied_adjustments.append(f"Shooting efficiency diferencial: +{((shooting_boost-1)*100):.0f}% (TS diff: {diff_ts_live:.2f})")
+            # Shooting efficiency
+            lambda: _apply_shooting_efficiency_adjustment(diff_ts_live),
 
-        # 🆕 FASE 2: CONTEXTO 8: Assist-to-Turnover Ratio extrema (O/U IMPACT)
-        elif abs(diff_ato_ratio) > 0.25:
-            ato_boost = 1 + (abs(diff_ato_ratio) * 0.15)  # +15% max por diferencia A/TO
-            adjustment_factor *= ato_boost
-            direction = "superior" if diff_ato_ratio > 0 else "inferior"
-            applied_adjustments.append(f"Control de balón {direction}: +{((ato_boost-1)*100):.0f}% (A/TO diff: {diff_ato_ratio:.2f})")
+            # Assist-to-turnover ratio
+            lambda: _apply_assist_turnover_adjustment(diff_ato_ratio),
 
-        # 🆕 FASE 2: CONTEXTO 9: Rebound efficiency diferencial (O/U IMPACT)
-        elif abs(home_treb_diff) > 0.4:
-            reb_boost = 1 + (abs(home_treb_diff) * 0.12)  # +12% max por ventaja en rebotes
-            adjustment_factor *= reb_boost
-            direction = "ventaja" if home_treb_diff > 0 else "desventaja"
-            applied_adjustments.append(f"Rebotes {direction}: +{((reb_boost-1)*100):.0f}% (TREB diff: {home_treb_diff:.2f})")
+            # Rebound efficiency
+            lambda: _apply_rebound_efficiency_adjustment(home_treb_diff),
+        ]
 
-        # CONTEXTO 10: Partido equilibrado (ORIGINAL)
-        elif is_close_game and 95 <= enhanced_pace <= 105:
-            applied_adjustments.append("Partido equilibrado: Sin ajustes")
+        # Apply first matching adjustment (mutually exclusive)
+        for adjustment_func in adjustments_to_apply:
+            adj_factor, description = adjustment_func()
+            if description:  # Only apply if there's a description (meaning condition was met)
+                adjustment_factor *= adj_factor
+                applied_adjustments.append(description)
+                break  # Only apply one adjustment from the mutually exclusive set
+
+        # Apply time-based adjustments (can be combined)
+        time_adj_factor, time_description = _apply_time_remaining_adjustment(remaining_minutes)
+        if time_description:
+            adjustment_factor *= time_adj_factor
+            applied_adjustments.append(time_description)
+
+        pace_adj_factor, pace_description = _apply_pace_expectation_adjustment(
+            current_pace, remaining_minutes, completion_percentage
+        )
+        if pace_description:
+            adjustment_factor *= pace_adj_factor
+            applied_adjustments.append(pace_description)
+
+        # Apply overtime adjustment
+        ot_adj_factor, ot_description = _apply_overtime_adjustment(is_overtime)
+        if ot_description:
+            adjustment_factor *= ot_adj_factor
+            applied_adjustments.append(ot_description)
+
+        # Apply end game adjustment
+        end_adj_factor, end_description = _apply_end_game_adjustment(remaining_minutes, is_overtime)
+        if end_description:
+            adjustment_factor *= end_adj_factor
+            applied_adjustments.append(end_description)
+
+        # Default case: balanced game
+        if not applied_adjustments or all("Sin ajustes" not in adj for adj in applied_adjustments):
+            if is_close_game and 95 <= enhanced_pace <= 105:
+                applied_adjustments.append("Partido equilibrado: Sin ajustes")
 
     except Exception as e:
         print(f"⚠️ Error en ajuste por contexto: {e}")
@@ -429,72 +725,13 @@ def apply_context_adjustment(prediction: float, balance_features: Dict[str, floa
         applied_adjustments.append("Error en análisis - usando predicción base")
         adjustment_factor = 1.0
     
-    # Calcular adjusted_prediction con factor de contexto (clamp se aplicará DESPUÉS del safeguard)
+    # Calcular adjusted_prediction con factor de contexto
     adjusted_prediction = prediction * adjustment_factor
-    # Flags/telemetría para clamp y safeguard
-    safeguard_triggered = False
-    pre_safeguard_prediction = adjusted_prediction
-    try:
-        # 🆕 SAFEGUARD: Verificar ritmo de puntuación realista
-        # Calcular puntos restantes y tiempo restante
-        # Necesitamos calcular el total actual desde balance_features o usar valores por defecto
-        try:
-            # Intentar obtener el total actual de balance_features si está disponible
-            current_total = balance_features.get('current_total', 0)
-            if current_total == 0:
-                # Fallback: estimar basado en quarter_stage
-                if quarter_stage in ['q3_end', 'q4']:
-                    current_total = 100  # Valor conservador por defecto
-                elif quarter_stage == 'q3_progress':
-                    current_total = 80   # Valor conservador para Q3 en progreso
-                else:
-                    current_total = 60   # Valor conservador para halftime
-        except:
-            current_total = 0
-
-        if current_total > 0 and prediction > current_total:
-            points_needed = prediction - current_total
-            # Estimar tiempo restante en minutos (AJUSTADO POR LIGA: NBA=12, WNBA/NBL/EURO=10 min/cuarto)
-            qlen = 12
-            try:
-                if league_name:
-                    low = league_name.lower()
-                    if ('wnba' in low) or ('nbl' in low) or ('euro' in low):
-                        qlen = 10
-            except Exception:
-                pass
-
-            if quarter_stage == 'q4':
-                time_remaining = qlen
-            elif quarter_stage == 'q3_end':
-                time_remaining = qlen
-            elif quarter_stage == 'q3_progress':
-                time_remaining = int(qlen * 1.5)
-            elif quarter_stage == 'halftime':
-                time_remaining = qlen * 2
-            else:
-                time_remaining = qlen * 2
-
-            if time_remaining > 0:
-                # Normalizar a "puntos por cuarto" usando la duración real del cuarto
-                required_ppg = points_needed / (time_remaining / qlen)
-
-            # Usar league-specific scoring thresholds
-                if required_ppg > league_params['max_ppg_threshold']:
-                    max_realistic = current_total + (time_remaining / 12 * league_params['max_ppg_cap'])
-                    if adjusted_prediction > max_realistic:
-                        adjusted_prediction = max_realistic
-                        safeguard_triggered = True
-                        applied_adjustments.append(f"Safeguard ritmo aplicado: reducido a {max_realistic:.0f} pts (ritmo requerido: {required_ppg:.1f} PPG, liga: {league_name or 'Unknown'})")
-
-    except Exception:
-        # Si algo falla, mantener valor calculado
-        pass
     
-    # Aplicar límite conservador final (±2 en Q4 close, ±4 otros) DESPUÉS de safeguards
+    # Aplicar límite conservador final (±2 en Q4 close, ±4 otros)
     try:
         pre_clamp_prediction = adjusted_prediction
-        if quarter_stage == 'q4' and current_lead is not None and current_lead <= 10:
+        if quarter_stage == 'q4_progress' and current_lead is not None and current_lead <= 10:
             max_delta = 2.0
         else:
             max_delta = 4.0
@@ -506,12 +743,8 @@ def apply_context_adjustment(prediction: float, balance_features: Dict[str, floa
             adjusted_prediction = upper
             applied_adjustments.append(f"Clamp final aplicado: superior (de {pre_clamp_prediction:.0f} a {adjusted_prediction:.0f}, bound=+{max_delta:.0f})")
         elif adjusted_prediction < lower:
-            if 'safeguard_triggered' in locals() and safeguard_triggered:
-                # No elevar por encima del valor limitado por safeguard
-                applied_adjustments.append(f"Clamp omitido por safeguard: límite inferior {lower:.0f} ignorado (valor={adjusted_prediction:.0f})")
-            else:
-                adjusted_prediction = lower
-                applied_adjustments.append(f"Clamp final aplicado: inferior (de {pre_clamp_prediction:.0f} a {adjusted_prediction:.0f}, bound=-{max_delta:.0f})")
+            adjusted_prediction = lower
+            applied_adjustments.append(f"Clamp final aplicado: inferior (de {pre_clamp_prediction:.0f} a {adjusted_prediction:.0f}, bound=-{max_delta:.0f})")
     except Exception:
         # Si algo falla en el clamp final, continuar con el valor actual
         pass
@@ -554,7 +787,9 @@ def apply_context_adjustment(prediction: float, balance_features: Dict[str, floa
             'away_dreb_pct': away_dreb_pct,
             'diff_dreb_pct': diff_dreb_pct,
             'home_treb_diff': home_treb_diff,
-            'away_treb_diff': away_treb_diff
+            'away_treb_diff': away_treb_diff,
+            # 🆕 TIME-AWARE: Información temporal precisa
+            'time_info': time_info
         }
     }
     
@@ -890,9 +1125,14 @@ def get_predictions_with_alerts(home_team_name: str, away_team_name: str,
     # Detectar progreso real de Q3 para no asumir fin de cuarto prematuramente
     q4_total_now = q_scores.get('q4_home', 0) + q_scores.get('q4_away', 0)
     if features['q3_total'] > 0 and q4_total_now == 0:
-        quarter_stage = 'q3_progress'
+        # Q3 has points but Q4 hasn't started - this means Q3 just ended
+        quarter_stage = 'q3_just_ended'
     elif features['q3_total'] > 0 and q4_total_now > 0:
-        quarter_stage = 'q3_end'
+        # Q3 has points and Q4 has started - Q4 in progress
+        quarter_stage = 'q4_progress'
+    elif features['q3_total'] > 0:
+        # Q3 has points - assume Q3 in progress if no other indicators
+        quarter_stage = 'q3_progress'
     else:
         quarter_stage = 'halftime'
 
@@ -935,8 +1175,10 @@ def get_predictions_with_alerts(home_team_name: str, away_team_name: str,
             balance_features['current_total'] = features.get('halftime_total', 0)
         elif quarter_stage == 'q3_progress':
             balance_features['current_total'] = features.get('halftime_total', 0) + features.get('q3_total', 0)
-        elif quarter_stage == 'q3_end':
+        elif quarter_stage == 'q3_just_ended':
             balance_features['current_total'] = features.get('q3_end_total', 0)
+        elif quarter_stage == 'q4_progress':
+            balance_features['current_total'] = features.get('q3_end_total', 0) + q4_total_now
         else:
             # Fallback conservador si surge otro estado
             balance_features['current_total'] = features.get('q3_end_total', features.get('halftime_total', 0))
@@ -963,11 +1205,13 @@ def get_predictions_with_alerts(home_team_name: str, away_team_name: str,
             ln_canon = 'NBA'
         qlen = 10 if any(k in ln_canon.upper() for k in ['WNBA','NBL','EURO']) else 12
         if quarter_stage == 'halftime':
-            minutes_assumed = qlen * 2
+            minutes_assumed = qlen * 2  # 24 min played, 24 min left
         elif quarter_stage == 'q3_progress':
-            minutes_assumed = int(qlen * 2.5)
-        elif quarter_stage == 'q3_end':
-            minutes_assumed = qlen * 3
+            minutes_assumed = int(qlen * 2.5)  # ~30 min played, ~6-12 min left
+        elif quarter_stage == 'q3_just_ended':
+            minutes_assumed = qlen * 3  # 36 min played, 12 min left (1 quarter)
+        elif quarter_stage == 'q4_progress':
+            minutes_assumed = int(qlen * 3.5)  # 36+ min played, <12 min left
         else:
             minutes_assumed = qlen * 2
         quarters_completed_for_alerts = ['q1','q2'] if (quarter_stage in ['halftime', 'q3_progress']) else ['q1','q2','q3']
@@ -1054,12 +1298,25 @@ def get_predictions_with_alerts(home_team_name: str, away_team_name: str,
     
     impute_values = trained_data.get('impute_values', {})
     
+    # 🆕 IMPROVEMENT 2: Monitor missing features and reduce confidence
+    CRITICAL_FEATURES = [
+        'live_pace_estimate', 'enhanced_pace_estimate',
+        'game_balance_score', 'is_potential_blowout',
+        'garbage_time_risk', 'intensity_drop_factor'
+    ]
+
     print(f"\n[Verificando {len(X_pred.columns)} caracteristicas...]")
     missing_count = 0
+    missing_features = []
+    critical_missing = 0
 
     for col in X_pred.columns:
         if X_pred[col].isnull().any():
             missing_count += 1
+            missing_features.append(col)
+            if col in CRITICAL_FEATURES:
+                critical_missing += 1
+
             if col in impute_values and not np.isnan(impute_values[col]):
                 X_pred[col] = X_pred[col].fillna(impute_values[col])
             else:
@@ -1071,8 +1328,18 @@ def get_predictions_with_alerts(home_team_name: str, away_team_name: str,
                 else:
                     X_pred[col] = X_pred[col].fillna(0.0)
 
+    # Calculate confidence reduction based on missing critical features
+    confidence_multiplier = 1.0
+    if critical_missing > 0:
+        # Reduce confidence by 10% per critical missing feature, max 50%
+        confidence_reduction = min(0.5, critical_missing * 0.1)
+        confidence_multiplier = 1.0 - confidence_reduction
+        print(f"[Confianza reducida: {confidence_multiplier:.1f} - {critical_missing} features críticas faltantes]")
+
     if missing_count > 0:
         print(f"[Total de caracteristicas imputadas: {missing_count}/{len(X_pred.columns)}]")
+        if critical_missing > 0:
+            print(f"[⚠️ Features críticas faltantes: {critical_missing} - reducir confianza en predicción]")
     else:
         print("[Todas las caracteristicas disponibles - sin imputacion necesaria]")
 
@@ -1206,6 +1473,17 @@ def get_predictions_with_alerts(home_team_name: str, away_team_name: str,
                         meta_offset_val = meta_offset
                         final_prediction = context_adjusted_prediction + meta_offset
                         print(f"Meta-model adjustment: {meta_offset:+.1f} pts (clip ±{clip_val:.1f})")
+
+                        # 🆕 IMPROVEMENT 3: Log when meta and context adjustments differ significantly
+                        context_adjustment = context_adjusted_prediction - blowout_adjusted_prediction
+                        adjustment_difference = abs(meta_offset - context_adjustment)
+
+                        if adjustment_difference > 20.0:
+                            print(f"⚠️ ALERTA: Meta-model ({meta_offset:+.1f} pts) vs Context ({context_adjustment:+.1f} pts) differ by {adjustment_difference:.1f} pts")
+                            # Add to context_info applied_adjustments for logging
+                            if 'applied_adjustments' in context_info:
+                                context_info['applied_adjustments'].append(f"⚠️ Meta-model vs Context difference: {adjustment_difference:.1f} pts (recomienda cautela)")
+
                     else:
                         print(f"⚠️ Meta-modelo no es Ridge: {model_type} - ignorando")
                 except Exception as e:
@@ -1240,11 +1518,7 @@ def get_predictions_with_alerts(home_team_name: str, away_team_name: str,
                 print(f"       -> Intensidad bajando - menos puntos esperados")
             elif "fouling" in adjustment.lower():
                 print(f"       -> Estrategia de fouls en Q4")
-            elif "safeguard ritmo aplicado" in adjustment.lower():
-                print(f"       -> Salvaguarda de ritmo: {adjustment}")
             elif "clamp final aplicado" in adjustment.lower():
-                print(f"       -> {adjustment}")
-            elif "clamp omitido por safeguard" in adjustment.lower():
                 print(f"       -> {adjustment}")
 
     print(f"   [PREDICCION FINAL]: {final_prediction:.0f} pts")
@@ -1256,13 +1530,34 @@ def get_predictions_with_alerts(home_team_name: str, away_team_name: str,
         z_score = (line - center_line) / std_dev
         under_prob = stats.norm.cdf(z_score) * 100
         over_prob = 100 - under_prob
-        
+
         predictions.append({
-            'line': line, 
-            'over_prob': over_prob, 
+            'line': line,
+            'over_prob': over_prob,
             'under_prob': under_prob
         })
-        
+
+    # 🆕 IMPROVEMENT 4: Analyze and log high edge games for performance tracking
+    high_edge_alert = None
+    if predictions:
+        # Calculate edge for center line (most reliable)
+        center_pred = predictions[2]  # Index 2 is center (i=0)
+        max_edge = max(abs(center_pred['over_prob'] - 50), abs(center_pred['under_prob'] - 50)) * 2  # Convert to percentage
+
+        if max_edge > 30.0:
+            edge_level = "EXTREME" if max_edge > 40.0 else "HIGH"
+            stronger_side = "OVER" if center_pred['over_prob'] > center_pred['under_prob'] else "UNDER"
+
+            print(f"🎯 {edge_level} EDGE DETECTED: {max_edge:.1f}% edge on {stronger_side}")
+            print("   📊 Track this game's actual outcome for performance analysis")
+
+            high_edge_alert = {
+                'edge_percentage': max_edge,
+                'edge_level': edge_level,
+                'recommended_side': stronger_side,
+                'tracking_required': True
+            }
+
     return final_prediction, predictions, {
         'pre_game_alerts': pre_game_alerts,
         'live_alerts': live_alerts,
@@ -1274,6 +1569,10 @@ def get_predictions_with_alerts(home_team_name: str, away_team_name: str,
         'meta_offset': meta_offset_val,
         'context_info': context_info,
         'score_diff': score_diff,
+        'confidence_score': confidence_multiplier if 'confidence_multiplier' in locals() else 1.0,
+        'missing_features': missing_features if 'missing_features' in locals() else [],
+        'critical_missing_count': critical_missing if 'critical_missing' in locals() else 0,
+        'high_edge_alert': high_edge_alert,
         'debug_info': debug_logs if 'debug_logs' in locals() else {}
     }
 
