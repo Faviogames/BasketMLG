@@ -1169,6 +1169,58 @@ def get_predictions_with_alerts(home_team_name: str, away_team_name: str,
     features.update(live_pace_metrics)
     features.update(balance_features)
 
+    # 🆕 FASE 1: CALCULAR INTERACTION FEATURES LIVE
+    try:
+        from core.live_features import calculate_live_interaction_features
+        interaction_features = calculate_live_interaction_features(
+            live_pace_metrics, balance_features, home_history_df
+        )
+        features.update(interaction_features)
+        print(f"✅ Interaction features calculadas: {len(interaction_features)} features añadidas")
+    except Exception as e:
+        print(f"⚠️ Error calculando interaction features: {e}")
+        # Fallback: añadir valores neutros por defecto
+        default_interactions = {
+            'pace_shooting_interaction': 90.0,
+            'pace_efg_interaction': 45.0,
+            'pace_ts_interaction': 45.0,
+            'pace_ft_interaction': 67.5,
+            'momentum_stability_index': 0.0,
+            'momentum_intensity_interaction': 0.0,
+            'momentum_garbage_interaction': 0.0,
+            'clutch_garbage_interaction': 0.25,
+            'clutch_lead_interaction': 0.0,
+            'clutch_time_interaction': 0.25,
+            'turnover_pace_efficiency': 0.0,
+            'to_pct_possessions_interaction': 0.0,
+            'to_defensive_stops_interaction': 0.0
+        }
+        features.update(default_interactions)
+
+    # 🆕 FASE 1 ENHANCED: CALCULAR ENHANCED LIVE FEATURES
+    try:
+        from core.live_features import calculate_enhanced_live_features
+        time_info = live_signals.get('time_info', {}) if live_signals else {}
+        enhanced_live_features = calculate_enhanced_live_features(
+            live_pace_metrics, balance_features, home_history_df, time_info
+        )
+        features.update(enhanced_live_features)
+        print(f"✅ Enhanced live features calculadas: {len(enhanced_live_features)} features añadidas")
+    except Exception as e:
+        print(f"⚠️ Error calculando enhanced live features: {e}")
+        # Fallback: añadir valores neutros por defecto
+        default_enhanced = {
+            'live_pace_efficiency_interaction': 0.5,
+            'live_momentum_variance_index': 0.0,
+            'mobile_clutch_factor': 0.5,
+            'lead_swing_intensity': 0.0,
+            'ft_run_active': False,
+            'ft_run_strength': 0.0,
+            'ft_clustering_score': 0.0,
+            'live_volatility_acceleration': 0.5
+        }
+        features.update(default_enhanced)
+
     # Establecer current_total real para salvaguarda de ritmo
     try:
         if quarter_stage == 'halftime':
