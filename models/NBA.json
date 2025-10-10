@@ -1,0 +1,206 @@
+{
+  "artifact_type": "bundle",
+  "league_name": "NBA",
+  "created_at": "2025-10-09 06:30:41.728176",
+  "base": {
+    "model_type": "xgboost",
+    "mae": 6.678223133087158,
+    "std_dev": 9.245700463796098,
+    "teams_count": 30,
+    "matches_count": 2626,
+    "features_count": 153,
+    "features_used": null
+  },
+  "league_stats": {
+    "average_total_points": 227.06,
+    "median_total_points": 227.0,
+    "scoring_distribution": {
+      "min": 172.0,
+      "max": 299.0,
+      "q1": 213.0,
+      "q3": 240.0
+    },
+    "overs_unders_tendency": {
+      "over_200": 0.908,
+      "over_210": 0.792,
+      "over_220": 0.634,
+      "over_230": 0.435,
+      "over_240": 0.235
+    },
+    "league_bias": "overs_favored"
+  },
+  "feature_analysis": {
+    "top_10_features": [
+      {
+        "name": "halftime_total",
+        "importance": 0.2906,
+        "category": "scoring"
+      },
+      {
+        "name": "q2_total",
+        "importance": 0.0574,
+        "category": "scoring"
+      },
+      {
+        "name": "diff_ema_clutch_time_performance_long_term_11",
+        "importance": 0.0256,
+        "category": "defensive"
+      },
+      {
+        "name": "q3_end_total",
+        "importance": 0.0201,
+        "category": "scoring"
+      },
+      {
+        "name": "q1_total",
+        "importance": 0.0196,
+        "category": "scoring"
+      },
+      {
+        "name": "home_ema_clutch_performance_long_term_11",
+        "importance": 0.0133,
+        "category": "defensive"
+      },
+      {
+        "name": "quarter_variance",
+        "importance": 0.0125,
+        "category": "defensive"
+      },
+      {
+        "name": "away_avg_pace_last_5",
+        "importance": 0.0118,
+        "category": "pace"
+      },
+      {
+        "name": "home_avg_pace_last_5",
+        "importance": 0.0112,
+        "category": "pace"
+      },
+      {
+        "name": "home_tav",
+        "importance": 0.0111,
+        "category": "defensive"
+      }
+    ],
+    "useless_features": [
+      "diff_ema_win_long_term_11",
+      "comeback_indicator",
+      "is_potential_blowout",
+      "live_pace_estimate",
+      "home_ema_plus_minus_long_term_11",
+      "home_ema_clutch_time_performance_long_term_11",
+      "diff_ema_scoring_efficiency_long_term_11",
+      "h2h_comeback_freq",
+      "diff_ema_clutch_efficiency_long_term_11",
+      "home_ema_clutch_efficiency_long_term_11",
+      "q3_diff",
+      "diff_ema_plus_minus_long_term_11",
+      "diff_ema_clutch_performance_long_term_11",
+      "away_ema_plus_minus_long_term_11",
+      "away_ema_clutch_efficiency_long_term_11",
+      "h2h_avg_total_score",
+      "home_ema_scoring_efficiency_long_term_11"
+    ],
+    "feature_categories": {
+      "scoring": 0.4,
+      "defensive": 0.4,
+      "pace": 0.2
+    }
+  },
+  "training_insights": {
+    "performance_metrics": {
+      "r2_score": 0.768,
+      "explained_variance": 0.769,
+      "median_absolute_error": 5.03
+    },
+    "prediction_distribution": {
+      "under_predictions": 0.454,
+      "accurate_predictions": 0.496,
+      "over_predictions": 0.546
+    },
+    "model_stability": {
+      "feature_stability_score": 0.473
+    }
+  },
+  "meta": {
+    "artifact_type": "meta_model",
+    "model_type": "ridge",
+    "league_name": "NBA",
+    "feature_names": [
+      "base_pred",
+      "live_pace_estimate",
+      "live_efficiency_home",
+      "live_efficiency_away",
+      "game_balance_score",
+      "is_potential_blowout",
+      "intensity_drop_factor",
+      "lead_stability",
+      "q1_total",
+      "q2_total",
+      "q3_total",
+      "q1_diff",
+      "q2_diff",
+      "q3_diff",
+      "q2_trend",
+      "q3_trend",
+      "quarter_variance",
+      "context_adjusted_pred",
+      "signal_strength",
+      "active_signals",
+      "adjustment_magnitude"
+    ],
+    "impute_values": {
+      "base_pred": 226.72324373662153,
+      "live_pace_estimate": 120.30076100533131,
+      "live_efficiency_home": 0.5046141939407734,
+      "live_efficiency_away": 0.4953858060592265,
+      "game_balance_score": 0.7320098866425727,
+      "is_potential_blowout": 0.1488956587966489,
+      "intensity_drop_factor": 0.917321236273655,
+      "lead_stability": 0.7161081492764662,
+      "q1_total": 56.7936024371668,
+      "q2_total": 56.52856054836253,
+      "q3_total": 28.826732673267326,
+      "q1_diff": 0.5757806549885758,
+      "q2_diff": 0.4067022086824067,
+      "q3_diff": 0.3255902513328256,
+      "q2_trend": -0.26504188880426505,
+      "q3_trend": 0.5624523990860625,
+      "quarter_variance": 16.538250009764887,
+      "context_adjusted_pred": 237.98838010500882,
+      "signal_strength": 0.19704486690532577,
+      "active_signals": 1.4980959634424982,
+      "adjustment_magnitude": 0.049666405959382494
+    },
+    "clip": 8.0,
+    "oof_mae_base": 8.787941722768187,
+    "oof_mae_stacked": 13.535203562609725,
+    "uplift": -4.7472618398415385,
+    "n_rows": 2626,
+    "created_at": "2025-10-09 06:30:39.262195",
+    "coef": [
+      3.8590650793573946,
+      -0.25565190699432805,
+      1.648471120479549,
+      -1.6484711204795268,
+      1.9336972787589755,
+      0.27084915187521047,
+      14.749237535058421,
+      0.37304913877357565,
+      0.5663461822484046,
+      0.6118337790840773,
+      0.6265357952905106,
+      -0.0032243306001905124,
+      0.02510390912364269,
+      -0.025179337999904,
+      0.04548759709125131,
+      0.21316290338631033,
+      0.1827441211997732,
+      -4.121291162833943,
+      -3.0401701283905926,
+      -2.356828548705834,
+      -0.35115358381300166
+    ],
+    "intercept": 26.645969774554686
+  }
+}
