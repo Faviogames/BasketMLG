@@ -1,10 +1,5 @@
 # ===========================================
-# Archivo: core/features.py (v2.5 - FASE 1A CORE MEJORADO)
-# Sistema EMA avanzado + Features optimizadas integradas
-# ✅ FIXED: Función duplicada, detección inteligente de columnas, limitadores de seguridad
-# ✅ NUEVO: 6 estadísticas basketball, features Over/Under optimizadas sin imports externos
-# ✅ CORREGIDO: calculate_momentum_metrics función unificada completa
-# ✅ SOLUCIÓN PACE/POSSESSIONS IMPLEMENTADA
+# Archivo: core/features.py (v2.6 - REFACTORIZADO)
 # ===========================================
 import pandas as pd
 import numpy as np
@@ -469,100 +464,6 @@ def get_ema_stats(team_history, N, cols_to_average):
             stats[f'ema_{col}_last_{N}'] = np.nan
     return stats
 
-def calculate_live_pace_metrics(q_scores, quarter_stage, team_trends=None):
-    """
-    Calcula métricas de pace y momentum en tiempo real con análisis mejorado.
-    MODIFICADO: Ahora acepta tendencias de equipo para proyecciones mejoradas.
-    """
-    # Mapear minutos jugados según el estado real del cuarto
-    if quarter_stage == 'halftime':
-        minutes_played = 24
-    elif quarter_stage == 'q3_progress':
-        minutes_played = 30  # Q3 en progreso (~30 min jugados)
-    else:
-        minutes_played = 36  # Fin de Q3 u otros casos
-    
-    # Inferir cuartos jugados para lógica posterior (momentum/comebacks)
-    quarters_played = 3 if (q_scores.get('q3_home', 0) > 0 or q_scores.get('q3_away', 0) > 0) else 2
-
-    total_points = sum(q_scores.values())
-
-    # Estimación de pace más precisa usando possessions reales
-    # Calcular possessions usando stats disponibles si es posible
-    team_stats = {
-        'field_goals_attempted': max(80, total_points * 0.8),  # Estimación conservadora
-        'offensive_rebounds': max(8, total_points * 0.05),
-        'turnovers': max(12, total_points * 0.08),
-        'free_throws_attempted': max(16, total_points * 0.12)
-    }
-
-    # Usar función existente para calcular possessions
-    estimated_possessions = calculate_possessions(team_stats, {})
-
-    # Validar rango razonable
-    if estimated_possessions < 60:
-        estimated_possessions = 60  # Mínimo razonable
-    elif estimated_possessions > 140:
-        estimated_possessions = 140  # Máximo razonable
-
-    # Pace = possessions por 48 minutos (ya está normalizado)
-    live_pace_estimate = estimated_possessions
-    
-    # Eficiencias relativas
-    home_points = q_scores.get('q1_home', 0) + q_scores.get('q2_home', 0) + q_scores.get('q3_home', 0)
-    away_points = q_scores.get('q1_away', 0) + q_scores.get('q2_away', 0) + q_scores.get('q3_away', 0)
-    
-    total_current = home_points + away_points
-    
-    live_efficiency_home = (home_points / total_current) if total_current > 0 else 0.5
-    live_efficiency_away = (away_points / total_current) if total_current > 0 else 0.5
-    
-    # Momentum Shift (cambio de momentum entre cuartos)
-    live_momentum_shift = 0
-    if quarters_played >= 2:
-        q1_diff = q_scores.get('q1_home', 0) - q_scores.get('q1_away', 0)
-        q2_diff = q_scores.get('q2_home', 0) - q_scores.get('q2_away', 0)
-        live_momentum_shift = abs(q2_diff - q1_diff)
-        
-        if quarters_played >= 3:
-            q3_diff = q_scores.get('q3_home', 0) - q_scores.get('q3_away', 0)
-            recent_shift = abs(q3_diff - q2_diff)
-            live_momentum_shift = (live_momentum_shift + recent_shift) / 2
-    
-    # Quarter Consistency (qué tan consistentes son los cuartos)
-    quarter_totals = []
-    if q_scores.get('q1_home', 0) + q_scores.get('q1_away', 0) > 0:
-        quarter_totals.append(q_scores['q1_home'] + q_scores['q1_away'])
-    if q_scores.get('q2_home', 0) + q_scores.get('q2_away', 0) > 0:
-        quarter_totals.append(q_scores['q2_home'] + q_scores['q2_away'])
-    if q_scores.get('q3_home', 0) + q_scores.get('q3_away', 0) > 0:
-        quarter_totals.append(q_scores['q3_home'] + q_scores['q3_away'])
-    
-    quarter_consistency = 1 / (1 + np.std(quarter_totals)) if len(quarter_totals) > 1 else 0.5
-    
-    # Comeback Indicator (indicador de remontada)
-    comeback_indicator = 0
-    if quarters_played >= 2:
-        q1_leader_home = q_scores.get('q1_home', 0) > q_scores.get('q1_away', 0)
-        current_leader_home = home_points > away_points
-        comeback_indicator = 1 if q1_leader_home != current_leader_home else 0
-
-    # 🆕 APLICAR MEJORAS CORE
-    enhanced_pace = apply_enhanced_pace_projection(
-        live_pace_estimate, 
-        minutes_played, 
-        team_trends
-    )
-
-    return {
-        'live_pace_estimate': live_pace_estimate,           # Original
-        'enhanced_pace_estimate': enhanced_pace,            # 🆕 MEJORADO
-        'live_efficiency_home': live_efficiency_home,
-        'live_efficiency_away': live_efficiency_away,
-        'live_momentum_shift': live_momentum_shift,
-        'quarter_consistency': quarter_consistency,
-        'comeback_indicator': comeback_indicator
-    }
 
 # ===================================================================
 # 🚀🚀🚀 NUEVAS FUNCIONES DE MEJORA DE PACE SYSTEM 🚀🚀🚀
@@ -817,144 +718,7 @@ def calculate_advanced_stats_for_match(match_data, home_team_name, away_team_nam
     
     return flat_stats
 
-def calculate_real_balance_features(q_scores, quarter_stage, team_names=None):
-    """
-    🎯 CALCULA BALANCE FEATURES REALES (versión con is_potential_blowout)
-    """
-    home_points = sum(q_scores.get(f'q{i}_home', 0) for i in range(1, 4))
-    away_points = sum(q_scores.get(f'q{i}_away', 0) for i in range(1, 4))
-    current_lead = abs(home_points - away_points)
-    
-    quarters_played = 2 if quarter_stage == 'halftime' else 3
-    
-    balance_score = 1 / (1 + (current_lead / (10 * quarters_played)))
-    
-    # Mantenemos 'is_unbalanced' para 'expected_q4_drop' pero ya no se usará como feature principal
-    lead_threshold = 12 if quarter_stage == 'halftime' else 18
-    is_unbalanced_flag = 1 if current_lead > lead_threshold else 0
-    
-    quarter_totals = [
-        q_scores.get('q1_home', 0) + q_scores.get('q1_away', 0),
-        q_scores.get('q2_home', 0) + q_scores.get('q2_away', 0)
-    ]
-    if quarter_stage == 'q3_end':
-        quarter_totals.append(q_scores.get('q3_home', 0) + q_scores.get('q3_away', 0))
-    
-    quarter_totals = [q for q in quarter_totals if q > 0]
-    
-    mean_q_total = np.mean(quarter_totals) if quarter_totals else 0
-    std_q_total = np.std(quarter_totals) if quarter_totals else 0
-    
-    if mean_q_total > 0:
-        consistency = 1 / (1 + std_q_total / mean_q_total)
-    else:
-        consistency = 1.0 
-    
-    intensity_drop_factor = consistency
-    
-    expected_q4_drop = (current_lead / 100) * is_unbalanced_flag
 
-    q1_leader_home = q_scores.get('q1_home', 0) > q_scores.get('q1_away', 0)
-    current_leader_home = home_points > away_points
-    
-    lead_stability = 1.0
-    if q1_leader_home != current_leader_home:
-        lead_stability = 0.0
-    elif quarter_stage == 'q3_end':
-        q2_total_home = q_scores.get('q1_home', 0) + q_scores.get('q2_home', 0)
-        q2_total_away = q_scores.get('q1_away', 0) + q_scores.get('q2_away', 0)
-        q2_leader_home = q2_total_home > q2_total_away
-        if q2_leader_home != current_leader_home:
-            lead_stability = 0.5
-
-    # ✅ NUEVA LÓGICA: Feature binaria clara y directa
-    is_potential_blowout = 0
-    if quarter_stage == 'q3_end':
-        q3_end_diff = abs(home_points - away_points)
-        if q3_end_diff > 15:  # Si la diferencia al final del Q3 es > 15
-            is_potential_blowout = 1
-
-    return {
-        'game_balance_score': balance_score,
-        'current_lead': current_lead,
-        'is_game_unbalanced': is_unbalanced_flag,
-        'is_potential_blowout': is_potential_blowout,
-        'intensity_drop_factor': intensity_drop_factor,
-        'expected_q4_drop': expected_q4_drop,
-        'lead_stability': lead_stability
-    }
-
-def calculate_garbage_time_risk(q_scores, quarter_stage, lead_stability, quarter_variance=None, is_potential_blowout=0):
-    """
-    Señal continua [0,1] de riesgo de garbage time según ventaja, estabilidad, variabilidad por cuartos y blowout.
-    quarter_stage: 'halftime' | 'q3_progress' | 'q3_end'
-    """
-    import math
-    try:
-        # 1) Puntos acumulados y tiempo restante aproximado
-        if quarter_stage == 'halftime':
-            home = q_scores.get('q1_home', 0) + q_scores.get('q2_home', 0)
-            away = q_scores.get('q1_away', 0) + q_scores.get('q2_away', 0)
-            t = 0.5
-            L0, Ls = 12.0, 4.0  # thresholds más conservadores en HT
-        elif quarter_stage == 'q3_progress':
-            home = q_scores.get('q1_home', 0) + q_scores.get('q2_home', 0) + q_scores.get('q3_home', 0)
-            away = q_scores.get('q1_away', 0) + q_scores.get('q2_away', 0) + q_scores.get('q3_away', 0)
-            t = 1.0/3.0  # ~30 min jugados (entre HT y fin Q3)
-            L0, Ls = 14.0, 4.5  # umbrales intermedios
-        else:
-            home = q_scores.get('q1_home', 0) + q_scores.get('q2_home', 0) + q_scores.get('q3_home', 0)
-            away = q_scores.get('q1_away', 0) + q_scores.get('q2_away', 0) + q_scores.get('q3_away', 0)
-            t = 0.25
-            L0, Ls = 15.0, 5.0  # tramo final (fin Q3 en adelante)
-
-        # 2) Componente del lead con logística y ponderación temporal
-        L = abs(float(home) - float(away))
-        lead_risk = 1.0 / (1.0 + math.exp(-(L - L0) / max(Ls, 1e-6)))
-
-        t_clamped = max(0.0, min(1.0, t))
-        time_scale = max(0.0, min(1.0, 1.0 - math.sqrt(t_clamped)))
-        lead_component = lead_risk * time_scale
-
-        # 3) Estabilidad del liderazgo
-        S = 0.5
-        try:
-            if lead_stability is not None and not pd.isna(lead_stability):
-                S = float(lead_stability)
-        except Exception:
-            pass
-        S = max(0.0, min(1.0, S))
-
-        # 4) Variabilidad entre cuartos via CV normalizado (robusto a escala)
-        q_totals = []
-        for i in [1, 2, 3]:
-            h = q_scores.get(f'q{i}_home', 0)
-            a = q_scores.get(f'q{i}_away', 0)
-            total = (h or 0) + (a or 0)
-            if total > 0:
-                if quarter_stage == 'halftime' and i > 2:
-                    continue
-                q_totals.append(total)
-
-        if len(q_totals) >= 2:
-            mean_q = float(np.mean(q_totals))
-            std_q = float(np.std(q_totals))
-            cv_q = std_q / max(mean_q, 1.0)
-            cv0 = 0.15  # umbral típico; tunear por liga si es necesario
-            Vp = 1.0 - min(1.0, cv_q / max(cv0, 1e-6))
-        else:
-            Vp = 0.5
-
-        # 5) Bonus por blowout binario
-        B = 1.0 if int(is_potential_blowout or 0) == 1 else 0.0
-
-        # 6) Combinar con pesos y clamp
-        w1, w2, w3, w4 = 0.45, 0.25, 0.20, 0.10
-        risk = w1 * lead_component + w2 * S + w3 * Vp + w4 * B
-        risk = max(0.0, min(1.0, float(risk)))
-        return risk
-    except Exception:
-        return np.nan
 
 def calculate_h2h_features(home_team, away_team, full_df):
     """
@@ -3414,4 +3178,7 @@ def calculate_pace_consistency_tracking(team_history_df):
     except Exception as e:
         print(f"⚠️ Error calculando Pace Consistency: {e}")
         return np.nan
+
+
+
 
