@@ -1,0 +1,28 @@
+name: Actualizar Playlist M3U
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+# ESTA ES LA MAGIA: Le damos permiso al bot para modificar el repositorio
+permissions:
+  contents: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      # Actualizado a v4 para eliminar la advertencia amarilla
+      - uses: actions/checkout@v4
+
+      - name: Descargar la lista original
+        run: curl -L "http://m3u4u.com/m3u/jq2zy9vpjpc19e94nxr5" -o playlist.m3u
+
+      - name: Subir archivo actualizado a la nube
+        run: |
+          git config --global user.name 'Bot-Actualizador'
+          git config --global user.email 'bot@noreply.github.com'
+          git add playlist.m3u
+          git commit -am "Actualización diaria de lista" || exit 0
+          git push
