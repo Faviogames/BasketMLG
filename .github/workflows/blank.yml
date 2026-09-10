@@ -1,0 +1,26 @@
+name: Actualizar Playlist M3U
+
+on:
+  schedule:
+    # Se ejecuta todos los días a la medianoche
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Te permite ejecutarlo manualmente con un botón
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Descargar la lista original
+        # Reemplaza el enlace de abajo por tu enlace original
+        run: curl -L "https://m3u4u.com/m3u/jq2zy9vpjpc19e94nxr5" -o playlist.m3u
+
+      - name: Subir archivo actualizado a la nube
+        run: |
+          git config --global user.name 'Bot-Actualizador'
+          git config --global user.email 'bot@noreply.github.com'
+          git add playlist.m3u
+          # Si no hay cambios no hace nada, si los hay, los guarda
+          git commit -am "Actualización diaria de lista" || exit 0
+          git push
