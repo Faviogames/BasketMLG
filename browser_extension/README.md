@@ -8,8 +8,7 @@ Desde la versión 0.2.0, el modo predeterminado **Abrir el enlace y leer el JSON
 
 1. Abre Chrome y entra en `chrome://extensions` (Edge: `edge://extensions`).
 2. Activa **Modo de desarrollador**.
-3. Pulsa **Cargar descomprimida** y selecciona esta carpeta:
-   `C:\Users\machi\Documents\BasketMLG v2\browser_extension`
+3. Pulsa **Cargar descomprimida** y selecciona la carpeta `browser_extension/` dentro del proyecto clonado.
 4. Abre [SofaScore baloncesto](https://www.sofascore.com/basketball) en ese mismo navegador. Comprueba que carga normalmente. Si pide una verificación, complétala tú.
 5. Pulsa el icono de la extensión **BasketMLG · SofaScore local** para abrir su panel.
 
@@ -61,6 +60,8 @@ Desde el22/10/2026, mientras el seguimiento está activo puedes pulsar **V** en 
 La caché existente de 30 segundos se conserva. Los modelos y sus fórmulas no se han reentrenado ni revisado con este cambio. Antes de confiar en predicciones, hay que validar el flujo real completo con un partido en curso.
 
 ## Comprobaciones locales
+
+La carpeta `tests/` se conserva sólo en el entorno local del mantenedor y no se distribuye en GitHub. Los comandos siguientes requieren disponer de esa copia local.
 
 ```powershell
 python -m unittest discover -s tests -p "test_browser_bridge.py"

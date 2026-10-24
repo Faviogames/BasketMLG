@@ -1,84 +1,130 @@
 # BasketMLG v2
 
-Predicción del total final de baloncesto con históricos y datos en vivo. Entrada principal al descanso con Q1/Q2 completos; seguimiento Q3 pendiente de validación. NBA y WNBA conservan duraciones distintas. Proyecto en auditoría, sin precisión general certificada.
+### Predicción del total final de baloncesto con históricos y datos en vivo
 
-## Retomar con Hermes Agent
+BasketMLG es una aplicación de terminal para analizar partidos NBA y WNBA y estimar cuántos puntos sumarán ambos equipos al finalizar el encuentro. Combina modelos XGBoost guardados con una segunda capa Huber que incorpora una proyección del ritmo observado durante el partido.
 
-Desde PowerShell, con Hermes ya instalado:
+Su momento principal de uso es **el descanso, con Q1 y Q2 completos**, con seguimiento durante Q3. Los datos llegan desde SofaScore mediante una extensión local de Chrome o Edge conectada a Python.
+
+**Estado:** proyecto en desarrollo y auditoría. El flujo live está operativo; la calibración de probabilidades y la fiabilidad del seguimiento durante Q3 siguen pendientes de validación.
+
+## Qué permite hacer
+
+- Seleccionar NBA o WNBA y elegir un encuentro del listado disponible.
+- Consultar marcador, parciales, reloj y estadísticas durante el seguimiento.
+- Obtener una estimación del total final con modelos guardados, sin entrenar para cada partido.
+- Comparar la proyección con una línea de totales obtenida de OddsAPI o introducida por el usuario.
+- Registrar las predicciones para su revisión posterior.
+- Volver al listado y cambiar de partido conservando la conexión de la extensión.
+
+## Preparación
+
+### 1. Descargar el proyecto
 
 ```powershell
-Set-Location -LiteralPath 'C:\Users\machi\Documents\BasketMLG v2'
-hermes
+git clone https://github.com/Faviogames/BasketMLG.git
+cd BasketMLG
 ```
 
-Desde WSL, si se utiliza el montaje habitual de esta carpeta:
+### 2. Preparar Python
 
-```bash
-cd '/mnt/c/Users/machi/Documents/BasketMLG v2'
-hermes
+La inferencia con los artefactos guardados se comprobó en **Python 3.12.14**, con NumPy 2.3.5, pandas 2.3.3, SciPy 1.16.3, scikit-learn 1.7.2, XGBoost 3.1.2 y joblib 1.5.2. El flujo de terminal también necesita `prompt_toolkit`; la consulta de cuotas utiliza `requests`.
+
+Ejemplo de entorno independiente en Windows, con Python 3.12 instalado:
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install numpy==2.3.5 pandas==2.3.3 scipy==1.16.3 scikit-learn==1.7.2 xgboost==3.1.2 joblib==1.5.2 prompt_toolkit requests
 ```
 
-[AGENTS.md](AGENTS.md) es el contexto del proyecto. Hermes lo descubre desde la carpeta de trabajo, según su [documentación oficial](https://hermes-agent.nousresearch.com/docs/user-guide/features/context-files). No se duplica en `.hermes.md`; si existe un override local o contexto de mayor prioridad, comprobar qué archivo carga la instalación.
+Esta combinación es una referencia de compatibilidad para inferencia, no un entorno completo validado desde una instalación limpia en todas las plataformas. `requirements.txt` contiene dependencias históricas y no reproduce por sí solo el entorno comprobado. Los detalles y límites están en la [verificación de modelos guardados](Documentation/auditoria/PRUEBA_MODELOS_GUARDADOS.md).
 
-Esta preparación no instala/configura Hermes ni cambia su memoria o personalidad global. `hermes` no se encontró en el PATH de la sesión de preparación; eso no comprueba otras terminales, perfiles o WSL. Si hace falta instalarlo, consultar la [guía oficial](https://hermes-agent.nousresearch.com/docs/getting-started/installation).
+Los bundles de `models/` y el Huber de `metamodel/models/` se utilizan tal como están guardados. Los históricos completos de las ligas no se distribuyen en este repositorio; el entrenamiento requiere disponer de esos datos localmente.
 
-Prompt sugerido:
+### 3. Instalar la extensión
 
-> Lee AGENTS.md, README.md y Documentation/auditoria/00_ESTADO.md. Resume el estado y las restricciones. Continúa la auditoría de metamodel/prediction_tracker.py, documenta sus hallazgos y detente antes de implementar cambios. No entrenes ni modifiques módulos, modelos o registros.
+1. Abre `chrome://extensions` o `edge://extensions`.
+2. Activa **Modo de desarrollador** y pulsa **Cargar descomprimida**.
+3. Selecciona la carpeta `browser_extension/` del proyecto clonado.
+4. Abre una pestaña dedicada a [SofaScore baloncesto](https://www.sofascore.com/basketball) y comprueba que carga.
+5. Abre el panel de **BasketMLG · SofaScore local** desde su icono.
 
-## Documentación de entrada
-
-| Necesidad | Documento |
-| --- | --- |
-| Acuerdos para agentes | [AGENTS.md](AGENTS.md) |
-| Prioridades y auditoría por módulos | [Estado central](Documentation/auditoria/00_ESTADO.md) |
-| Índice de módulos, pruebas e históricos | [Documentación](Documentation/DOCUMENTATION_INDEX.md) |
-| Conectar el transporte live | [Extensión Chrome/Edge](browser_extension/README.md) |
-| Entorno e inferencia comprobados | [Modelos guardados](Documentation/auditoria/PRUEBA_MODELOS_GUARDADOS.md) |
+La extensión comunica esa pestaña con el puente local `127.0.0.1:8766`. Mantén abiertos el panel y la pestaña durante el seguimiento. Consulta la [guía de la extensión](browser_extension/README.md) para permisos y resolución de problemas.
 
 ## Uso
-
-Desde la raíz, con el Python del producto preparado:
 
 ```powershell
 python main.py --live
 ```
 
-Selecciona NBA/WNBA: aparece directamente el código de conexión de la extensión y se inicia la búsqueda, sin menú de modos. Conecta el código temporal en la extensión, seleccionando una pestaña de SofaScore del navegador habitual; mantén panel y pestaña abiertos. Elige el partido del listado. Puente local127.0.0.1:8766, sin exponerlo a la red. Cada nueva inicialización requiere código nuevo. Una sesión rechazada por SofaScore puede seguir fallando con extensión.
+1. Selecciona la liga en la terminal.
+2. Copia el código temporal que muestra Python en el panel de la extensión.
+3. En el panel, selecciona la pestaña de SofaScore y pulsa **Conectar**. El modo predeterminado es **Abrir el enlace y leer el JSON de la página**.
+4. Elige el partido en el listado de la terminal.
+5. Revisa la línea de totales obtenida automáticamente o introduce una si la aplicación la solicita.
+6. Sigue las actualizaciones del marcador, reloj y predicción.
 
-Durante el seguimiento, con el foco en la terminal, pulsa **V** para volver a consultar el listado y seleccionar otro partido de la misma liga, o **Q** para salir; no necesitas Enter. Volver conserva la conexión y el código de la extensión dentro de esa ejecución. Cada partido inicia su propio estado de seguimiento y consulta/pide su línea opcional. Los atajos requieren una terminal interactiva y se atienden durante las esperas; un cálculo síncrono en curso debe terminar primero. Tras actualizar esta versión, recarga la extensión en Chrome/Edge y vuelve a abrir su panel una vez para cargar el tratamiento de respuestas canceladas.
+La consulta automática de cuotas necesita una credencial válida de OddsAPI en la configuración local. SofaScore proporciona los datos del partido; OddsAPI proporciona la referencia de mercado.
 
-```powershell
-python main.py --models
+Durante el seguimiento, con el foco en una terminal interactiva:
+
+| Tecla | Acción |
+| --- | --- |
+| **V** | Volver al listado y elegir otro partido de la misma liga, con la misma conexión |
+| **Q** | Salir y cerrar la conexión |
+
+No hace falta pulsar Enter. Las teclas se atienden durante las esperas; un cálculo en curso debe terminar primero. Cada nueva ejecución de Python genera un código de conexión nuevo. Si la búsqueda falla o no devuelve partidos, vuelve a ejecutar el comando.
+
+### Otros comandos
+
+| Comando | Uso |
+| --- | --- |
+| `python main.py --models` | Mostrar los modelos disponibles sin conectar el navegador |
+| `python main.py --help` | Consultar la ayuda |
+| `python main.py --train` | Entrenar con los históricos locales; modifica artefactos |
+
+Sin argumentos se muestra la ayuda. Los modos son excluyentes. La predicción manual y la selección por ID ya no forman parte de la interfaz activa; introducir una línea de totales sigue siendo posible.
+
+## Cómo se obtiene la predicción
+
+```text
+SofaScore → Extensión Chrome/Edge → Puente local → Datos del partido
+                                                       ↓
+Históricos + estadísticas observadas → XGBoost → Huber (base + Pacer)
+                                                       ↓
+                                Salvaguarda de ritmo → Suavizado del monitor
+                                                       ↓
+                                         Predicción visible en terminal
 ```
 
-Muestra los modelos guardados y termina, sin iniciar el puente ni pedir conexión al navegador. La predicción manual y la selección de partidos por ID se retiraron el20/10/2026. Si no hay partidos o falla la búsqueda, se informa y se cierra el cliente; se puede volver a ejecutar `--live`. La entrada opcional de línea de apuestas se conserva.
+El Huber recibe dos entradas: la predicción base y la proyección del Pacer. Las demás señales impresas no son todas entradas directas de esa capa. La salvaguarda puede acercar una salida extrema a una referencia de ritmo y el monitor suaviza los cambios entre actualizaciones.
 
-Sin argumentos se muestra la ayuda. `--live`, `--models` y `--train` son excluyentes. `python main.py --train` conserva el entrenamiento, que modifica artefactos; no usarlo para preparar el agente o probar imports.
+Durante un cuarto detectado como activo, el monitor consulta aproximadamente cada 60 segundos y, después de la primera predicción, exige normalmente al menos cinco puntos de cambio acumulado entre ambos equipos para recalcular. El paso del tiempo por sí solo no activa una nueva predicción.
 
-## Python y compatibilidad
+## Interpretar los resultados
 
-Combinación de diagnóstico probada: Python3.12.14, NumPy2.3.5, pandas2.3.3, SciPy1.16.3, scikit-learn1.7.2, XGBoost3.1.2, joblib1.5.2 y prompt_toolkit. Requests se necesita para OddsAPI. Es una referencia de compatibilidad, no un lockfile completo ni garantía multiplataforma.
+- La predicción expresa el **total final esperado de ambos equipos**, no los puntos restantes ni el ganador.
+- Una diferencia positiva respecto a la línea indica que la proyección queda por encima de ella. No demuestra por sí sola una ventaja rentable.
+- Los porcentajes Over/Under se calculan con una distribución normal y una desviación guardada. **No están validados como probabilidades calibradas de acierto.**
+- En ejecuciones revisadas hubo alrededor de un 66–68 % de características imputadas. Eso describe entradas sustituidas, no una tasa de error, y limita la confianza que puede atribuirse a la salida.
+- Las etiquetas de base/metamodelo y los registros todavía requieren revisión: el registro automático precede al suavizado y puede diferir de la predicción visible.
 
-`requirements.txt` tiene mínimos amplios y omite dependencias ML activas. Instalarlo tal cual no reproduce las pruebas. En diagnóstico pandas3.0.1 provocó errores de columnas con XGBoost, y otra versión de SciPy bloqueó imports. No actualizar paquetes ni convertir modelos para silenciar advertencias sin revisar consecuencias.
+La frescura del reloj y las actualizaciones sucesivas en Q3 siguen pendientes de comprobación específica. NBA y WNBA tienen duraciones distintas; no se da por validada toda la cadena para ambas ligas. El uso previsto excluye prórrogas y recomendaciones en Q4 tardío; cualquier uso excepcional de Q4 se limita a su tramo inicial y su política operativa sigue pendiente.
 
-`.diagnostics/model-runtime*` y sus ejecutores dependen del entorno Windows de las pruebas. No reutilizar esos binarios como entorno Linux/WSL. Hermes puede usar otro Python: mantener las dependencias de BasketMLG fuera del entorno interno de Hermes.
-
-## Mapa funcional
+## Estructura y documentación
 
 | Ruta | Responsabilidad |
 | --- | --- |
-| `main.py`, `analysis/live_system.py` | CLI y selección |
-| `core/live_api.py`, `core/browser_bridge.py`, `browser_extension/` | Eventos/estadísticas mediante navegador del usuario |
-| `core/game_clock.py` | Periodo y tiempo por liga |
-| `analysis/live_mode.py`, `core/live_features.py` | Ensamblaje y predicción live |
-| `core/features.py`, `core/data_processing.py`, `core/training.py` | Históricos y entrenamiento |
-| `analysis/metamodel_integration.py` | Huber guardado, base y Pacer |
-| `metamodel/prediction_tracker.py`, `prediction_records/` | Persistencia; auditoría completa pendiente |
-| `models/`, `metamodel/models/` | Artefactos que se preservan |
+| `main.py`, `analysis/live_system.py` | Entrada de terminal y selección de partidos |
+| `browser_extension/`, `core/browser_bridge.py`, `core/live_api.py` | Transporte de datos y monitor |
+| `core/game_clock.py` | Normalización del reloj por liga |
+| `analysis/live_mode.py`, `core/live_features.py` | Características y predicción live |
+| `analysis/metamodel_integration.py` | Integración Huber con base y Pacer |
+| `core/features.py`, `core/data_processing.py`, `core/training.py` | Preparación histórica y entrenamiento |
+| `metamodel/prediction_tracker.py`, `prediction_records/` | Persistencia de predicciones |
+| `models/`, `metamodel/models/` | Modelos y artefactos guardados |
 
-## Prioridades y documentación histórica
+Consulta el [índice documental](Documentation/DOCUMENTATION_INDEX.md) y el [estado de auditoría](Documentation/auditoria/00_ESTADO.md) para distinguir funcionamiento comprobado, limitaciones y propuestas históricas. Algunos documentos describen versiones anteriores.
 
-Validar frescura del reloj durante juego, reacción a puntos de Q4, seguimiento Q3 y trazabilidad entre base/meta/salvaguarda/estabilidad. Analizar imputación66–68% por familias, sin inventar datos futuros. Q4 tardío y OT quedan fuera de recomendaciones. Los casos favorables al descanso no certifican probabilidades ni rentabilidad.
-
-Los documentos anteriores conservan razones de diseño; tienen avisos de vigencia y contrastes en el índice. Sus snippets, planes y porcentajes no son instrucciones actuales ni pruebas de implementación. El estado central distingue hechos, hipótesis y decisiones del usuario.
+Para continuar el desarrollo con un agente, las instrucciones están en [AGENTS.md](AGENTS.md). Las carpetas `tests/` y `unsure/` se conservan únicamente en el entorno local del mantenedor y están excluidas del repositorio publicado.

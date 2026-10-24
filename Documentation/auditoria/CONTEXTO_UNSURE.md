@@ -1,5 +1,7 @@
 # Contexto histórico: documentos de unsure
 
+Nota de publicación,25/10/2026: la carpeta `unsure/` se retiró del seguimiento de Git por petición del mantenedor, conservando sus archivos locales. Este informe preserva el contraste histórico; los enlaces a los originales requieren la copia local y no estarán disponibles en GitHub.
+
 Revisión: 16 de octubre de 2026. Se leyeron los 15 documentos Markdown encontrados en `unsure/`, incluidos sus bloques de propuesta y pruebas. Se hicieron consultas puntuales de nombres, rutas y conexiones con el código actual. No se ejecutó código de esos documentos ni se implementaron sus instrucciones. Los originales quedan intactos.
 
 Esta revisión complementa la auditoría por módulos; no sustituye la revisión pendiente de la integración, entrenadores del metamodelo, tracker y scripts.

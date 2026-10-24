@@ -56,6 +56,8 @@ Los avisos de vigencia enlazan estos contrastes desde cada fuente antigua. Los o
 
 ## Mantener el relevo
 
+Desde el25/10/2026, por petición del mantenedor, `unsure/` y `tests/` están excluidas de GitHub y se conservan sólo en local. Los enlaces históricos a archivos de esas carpetas requieren esa copia local; los informes de contraste y auditoría permanecen publicados.
+
 Actualizar el estado central con evidencia, límites y siguiente paso. Añadir el informe específico, con fecha, sin duplicar todo el contexto. Evitar copiar credenciales a Markdown.
 
 Preparación del18/10/2026: AGENTS.md y README nuevos, índice sustituido, avisos de vigencia y credenciales documentales redactadas si se encuentran. No se reorganizan módulos. Evidencia de preservación: `.diagnostics/md_handoff_verification.json`. No equivale a una instalación o prueba de Hermes.

@@ -17,6 +17,14 @@ Petición del usuario del 16 de octubre de 2026: comprender el proyecto por mód
 
 ## Estado
 
+### Presentación pública del repositorio — 25/10/2026
+
+Por petición del usuario se rehace el README para presentar BasketMLG, su uso real por terminal y extensión, arquitectura activa, entorno de referencia y límites de interpretación. Las instrucciones específicas de agentes quedan enlazadas mediante AGENTS.md. Se elimina la ruta personal de instalación de la guía de extensión.
+
+Se retiran `tests/` (dos archivos versionados) y `unsure/` (quince documentos versionados) del seguimiento de Git y se añaden a `.gitignore`, conservando todos sus archivos en local. Los informes históricos permanecen; índice y guía de extensión aclaran qué referencias necesitan la copia local. Esta retirada no purga versiones anteriores del historial Git.
+
+Alcance: presentación y publicación, sin modificar código productivo, dependencias declaradas, modelos, datasets, credenciales ni registros. Verificación: diferencia de Git sin errores de whitespace, enlaces relativos del README existentes, carpetas excluidas del índice y preservación SHA256 de los17 archivos retirados; evidencia local en `.diagnostics/github_presentation_preserved_files.json`. La descripción pública de GitHub también se actualiza. No se pudo ejecutar la ayuda de CLI porque `python` no está en PATH y el lanzador `py` no detecta instalaciones; no se ejecutaron entrenamientos ni consultas live/cuotas. El entorno propuesto se basa en la combinación de diagnóstico previamente documentada, no en una instalación limpia nueva. Siguen pendientes frescura del reloj, validación Q3, probabilidades/trazabilidad y auditoría del tracker.
+
 ### Limpieza autorizada y publicación en GitHub — 25/10/2026
 
 El usuario autorizó eliminar archivos que ningún módulo importa (comprobado con el grafo de graphify y un mapa AST de imports): `analysis/live_mode backup.py`, `analysis/legacy_heuristics.py`, `analysis/feature_importance.py`, `new_feature_importance.txt` (idéntico a `full_importance_list.txt`, que se conserva), `old_feature_importance.txt`, `model_features.txt` y `residual_distribution.png` (lo regenera `scripts/analyze_residuals.py`). También se borraron las cachés `__pycache__/` y `.pytest_cache/`. Los informes de auditoría anteriores todavía los mencionan como existentes. No se tocaron modelos, CSV, `prediction_records/` ni los JSON de ligas.

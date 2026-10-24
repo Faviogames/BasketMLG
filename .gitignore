@@ -15,3 +15,8 @@ __pycache__/
 /NBL.json
 /NBA PreSeason.json
 /leagues/
+
+# Entorno de Python y archivos conservados sólo en local
+/.venv/
+/tests/
+/unsure/
