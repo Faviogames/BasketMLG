@@ -1,0 +1,78 @@
+{
+  "prediction_id": "DCB60EB4",
+  "metadata": {
+    "timestamp": "2026-01-25T02:18:51.379764",
+    "date": "2026-01-25",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Orlando Magic",
+    "away_team": "Cleveland Cavaliers",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 224.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 213.11284956881795,
+    "context_adjusted_prediction": 213.11284956881795,
+    "final_prediction": 213.11284956881795,
+    "predictions_list": [
+      {
+        "line": 208.88567336151664,
+        "over_prob": 69.62740960429187,
+        "under_prob": 30.372590395708134
+      },
+      {
+        "line": 210.94283668075832,
+        "over_prob": 60.39999316797096,
+        "under_prob": 39.60000683202904
+      },
+      {
+        "line": 213.0,
+        "over_prob": 50.547101106471196,
+        "under_prob": 49.452898893528804
+      },
+      {
+        "line": 215.05716331924168,
+        "over_prob": 40.6605460597669,
+        "under_prob": 59.3394539402331
+      },
+      {
+        "line": 217.11432663848336,
+        "over_prob": 31.33822802657413,
+        "under_prob": 68.66177197342587
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 4.860335013920558,
+    "edge_magnitude": 10.88715043118205
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 23,
+      "q1_away": 25,
+      "q2_home": 25,
+      "q2_away": 30,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prediction_id": "47F0A8A5",
+  "metadata": {
+    "timestamp": "2025-12-06T02:58:57.174918",
+    "date": "2025-12-06",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Toronto Raptors",
+    "away_team": "Charlotte Hornets",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 219.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 202.37494005717372,
+    "context_adjusted_prediction": 202.37494005717372,
+    "final_prediction": 202.37494005717372,
+    "predictions_list": [
+      {
+        "line": 197.88567336151664,
+        "over_prob": 70.73175671439472,
+        "under_prob": 29.268243285605283
+      },
+      {
+        "line": 199.94283668075832,
+        "over_prob": 61.621891528917196,
+        "under_prob": 38.378108471082804
+      },
+      {
+        "line": 202.0,
+        "over_prob": 51.81715881558654,
+        "under_prob": 48.18284118441346
+      },
+      {
+        "line": 204.05716331924168,
+        "over_prob": 41.900686064166905,
+        "under_prob": 58.099313935833095
+      },
+      {
+        "line": 206.11432663848336,
+        "over_prob": 32.475794722520035,
+        "under_prob": 67.52420527747996
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 7.8018496322671,
+    "edge_magnitude": 17.125059942826283
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 24,
+      "q1_away": 18,
+      "q2_home": 18,
+      "q2_away": 35,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

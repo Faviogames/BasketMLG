@@ -1,0 +1,83 @@
+{
+  "prediction_id": "18F1082A",
+  "metadata": {
+    "timestamp": "2025-11-23T19:38:27.375416",
+    "date": "2025-11-23",
+    "version": "1.1"
+  },
+  "matchup": {
+    "home_team": "Philadelphia 76ers",
+    "away_team": "Miami Heat",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 236.0,
+    "bookmaker": "API Auto",
+    "api_endpoint": "the-odds-api.com",
+    "acquisition_method": "automatic"
+  },
+  "predictions": {
+    "base_model_prediction": 210.01324462890625,
+    "context_adjusted_prediction": 214.01324462890625,
+    "final_prediction": 203.3125762939453,
+    "adjustments": {
+      "blowout_adjustment": 4.0,
+      "context_adjustments": {},
+      "adjustment_factor": 1.0,
+      "applied_adjustments": []
+    }
+  },
+  "probabilities": [
+    {
+      "line": 209.40529318899473,
+      "over_prob": 69.19697072647152,
+      "under_prob": 30.803029273528477
+    },
+    {
+      "line": 211.70264659449737,
+      "over_prob": 59.92635267850823,
+      "under_prob": 40.07364732149177
+    },
+    {
+      "line": 214.0,
+      "over_prob": 50.057499214279574,
+      "under_prob": 49.942500785720426
+    },
+    {
+      "line": 216.29735340550263,
+      "over_prob": 40.18510762277572,
+      "under_prob": 59.81489237722428
+    },
+    {
+      "line": 218.59470681100527,
+      "over_prob": 30.904515039318127,
+      "under_prob": 69.09548496068187
+    }
+  ],
+  "analysis": {
+    "confidence_score": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 32.68742370605469
+  },
+  "game_context": {
+    "quarter_scores": {
+      "q1_home": 27,
+      "q1_away": 37,
+      "q2_home": 0,
+      "q2_away": 0,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "prediction_timing": "q1"
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

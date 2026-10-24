@@ -1,0 +1,88 @@
+{
+  "prediction_id": "64921E6E",
+  "metadata": {
+    "timestamp": "2025-11-30T02:33:03.988647",
+    "date": "2025-11-30",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Indiana Pacers",
+    "away_team": "Chicago Bulls",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 238.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 231.62377813726906,
+    "context_adjusted_prediction": 234.0610372237592,
+    "final_prediction": 234.0610372237592,
+    "predictions_list": [
+      {
+        "line": 227.88567336151664,
+        "over_prob": 67.51860027863697,
+        "under_prob": 32.48139972136303
+      },
+      {
+        "line": 229.94283668075832,
+        "over_prob": 58.09322789303558,
+        "under_prob": 41.90677210696442
+      },
+      {
+        "line": 232.0,
+        "over_prob": 48.176633193512544,
+        "under_prob": 51.823366806487456
+      },
+      {
+        "line": 234.05716331924168,
+        "over_prob": 38.3721597482242,
+        "under_prob": 61.6278402517758
+      },
+      {
+        "line": 236.11432663848336,
+        "over_prob": 29.262888365496693,
+        "under_prob": 70.73711163450331
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 1.6550263765717645,
+    "edge_magnitude": 3.9389627762407997
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 26,
+      "q1_away": 27,
+      "q2_home": 35,
+      "q2_away": 27,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 2.437259086490144,
+    "meta_metadata": {
+      "chronos_prediction": 234.0610372237592,
+      "adjustment": 2.437259086490144,
+      "model_version": "v5.0_huber",
+      "components": {
+        "base_prediction": 231.62377813726906,
+        "pacer_projection": 233.2
+      },
+      "pacer_prob_over": 0.3606800120959578,
+      "pacer_prob_under": 0.6393199879040422
+    }
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

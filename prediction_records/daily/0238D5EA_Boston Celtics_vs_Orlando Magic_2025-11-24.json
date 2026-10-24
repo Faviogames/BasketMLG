@@ -1,0 +1,103 @@
+{
+  "prediction_id": "0238D5EA",
+  "metadata": {
+    "timestamp": "2025-11-24T01:27:35.554681",
+    "date": "2025-11-24",
+    "version": "1.1"
+  },
+  "matchup": {
+    "home_team": "Boston Celtics",
+    "away_team": "Orlando Magic",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 245.5,
+    "bookmaker": "API Auto",
+    "api_endpoint": "the-odds-api.com",
+    "acquisition_method": "automatic"
+  },
+  "predictions": {
+    "base_model_prediction": 235.31198120117188,
+    "context_adjusted_prediction": 249.9587829302033,
+    "final_prediction": 249.9587829302033,
+    "adjustments": {
+      "blowout_adjustment": 14.646801729031438,
+      "context_adjustments": {},
+      "adjustment_factor": 1.0,
+      "applied_adjustments": []
+    }
+  },
+  "probabilities": [
+    {
+      "line": 243.4593726691472,
+      "over_prob": 67.96123551936063,
+      "under_prob": 32.03876448063938
+    },
+    {
+      "line": 245.7296863345736,
+      "over_prob": 58.574583714462634,
+      "under_prob": 41.425416285537366
+    },
+    {
+      "line": 248.0,
+      "over_prob": 48.66838210627032,
+      "under_prob": 51.33161789372968
+    },
+    {
+      "line": 250.2703136654264,
+      "over_prob": 38.84408968478725,
+      "under_prob": 61.15591031521275
+    },
+    {
+      "line": 252.5406273308528,
+      "over_prob": 29.688358014999622,
+      "under_prob": 70.31164198500038
+    }
+  ],
+  "analysis": {
+    "confidence_score": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 4.458782930203313
+  },
+  "game_context": {
+    "quarter_scores": {
+      "q1_home": 32,
+      "q1_away": 27,
+      "q2_home": 48,
+      "q2_away": 30,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 14.646801729031438,
+    "meta_metadata": {
+      "raw_prediction": 249.9587829302033,
+      "final_prediction": 249.9587829302033,
+      "features": {
+        "halftime_total": 137,
+        "pace_halftime": 95.0,
+        "efg_home": 0.5,
+        "efg_away": 0.5,
+        "to_rate_home": 0.13,
+        "to_rate_away": 0.13,
+        "ft_rate_home": 0.2,
+        "ft_rate_away": 0.2,
+        "home_lead": 23,
+        "is_close_game": 0,
+        "momentum_score": 19
+      },
+      "adjustments": []
+    },
+    "is_halftime": true,
+    "prediction_timing": "q2"
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

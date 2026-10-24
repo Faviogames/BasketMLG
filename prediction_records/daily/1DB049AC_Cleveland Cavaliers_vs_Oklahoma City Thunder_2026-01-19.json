@@ -1,0 +1,78 @@
+{
+  "prediction_id": "1DB049AC",
+  "metadata": {
+    "timestamp": "2026-01-19T21:54:12.187961",
+    "date": "2026-01-19",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Cleveland Cavaliers",
+    "away_team": "Oklahoma City Thunder",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 228.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 234.2774719656185,
+    "context_adjusted_prediction": 234.2774719656185,
+    "final_prediction": 234.2774719656185,
+    "predictions_list": [
+      {
+        "line": 229.88567336151664,
+        "over_prob": 70.32324398229534,
+        "under_prob": 29.676756017704655
+      },
+      {
+        "line": 231.94283668075832,
+        "over_prob": 61.16875995018139,
+        "under_prob": 38.83124004981861
+      },
+      {
+        "line": 234.0,
+        "over_prob": 51.34498709360227,
+        "under_prob": 48.65501290639773
+      },
+      {
+        "line": 236.05716331924168,
+        "over_prob": 41.43848330797907,
+        "under_prob": 58.56151669202093
+      },
+      {
+        "line": 238.11432663848336,
+        "over_prob": 32.0507623589551,
+        "under_prob": 67.9492376410449
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 2.5284341206207888,
+    "edge_magnitude": 5.777471965618503
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 27,
+      "q1_away": 32,
+      "q2_home": 24,
+      "q2_away": 34,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

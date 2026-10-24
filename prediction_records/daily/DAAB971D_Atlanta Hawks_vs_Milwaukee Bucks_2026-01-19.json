@@ -1,0 +1,78 @@
+{
+  "prediction_id": "DAAB971D",
+  "metadata": {
+    "timestamp": "2026-01-19T20:35:46.361488",
+    "date": "2026-01-19",
+    "version": "2.0",
+    "prediction_timing": "q3_progress"
+  },
+  "matchup": {
+    "home_team": "Atlanta Hawks",
+    "away_team": "Milwaukee Bucks",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 205.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 210.4161395048317,
+    "context_adjusted_prediction": 210.4161395048317,
+    "final_prediction": 210.4161395048317,
+    "predictions_list": [
+      {
+        "line": 205.88567336151664,
+        "over_prob": 70.90364483704059,
+        "under_prob": 29.09635516295941
+      },
+      {
+        "line": 207.94283668075832,
+        "over_prob": 61.812955966867065,
+        "under_prob": 38.187044033132935
+      },
+      {
+        "line": 210.0,
+        "over_prob": 52.016671497011174,
+        "under_prob": 47.983328502988826
+      },
+      {
+        "line": 212.05716331924168,
+        "over_prob": 42.096398220301786,
+        "under_prob": 57.903601779698214
+      },
+      {
+        "line": 214.11432663848336,
+        "over_prob": 32.6561470490783,
+        "under_prob": 67.3438529509217
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 2.642019270649612,
+    "edge_magnitude": 5.416139504831705
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 19,
+      "q1_away": 20,
+      "q2_home": 19,
+      "q2_away": 34,
+      "q3_home": 10,
+      "q3_away": 15,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

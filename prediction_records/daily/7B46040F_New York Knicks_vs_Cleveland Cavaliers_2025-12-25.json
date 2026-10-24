@@ -1,0 +1,78 @@
+{
+  "prediction_id": "7B46040F",
+  "metadata": {
+    "timestamp": "2025-12-25T19:15:31.293415",
+    "date": "2025-12-25",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "New York Knicks",
+    "away_team": "Cleveland Cavaliers",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 247.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 236.20200784001636,
+    "context_adjusted_prediction": 236.20200784001636,
+    "final_prediction": 236.20200784001636,
+    "predictions_list": [
+      {
+        "line": 231.88567336151664,
+        "over_prob": 70.00517370740215,
+        "under_prob": 29.994826292597843
+      },
+      {
+        "line": 233.94283668075832,
+        "over_prob": 60.8168746282907,
+        "under_prob": 39.1831253717093
+      },
+      {
+        "line": 236.0,
+        "over_prob": 50.97927779403884,
+        "under_prob": 49.02072220596116
+      },
+      {
+        "line": 238.05716331924168,
+        "over_prob": 41.08143445544427,
+        "under_prob": 58.91856554455573
+      },
+      {
+        "line": 240.11432663848336,
+        "over_prob": 31.723288932158184,
+        "under_prob": 68.27671106784182
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 4.564845317165105,
+    "edge_magnitude": 11.297992159983636
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 23,
+      "q1_away": 38,
+      "q2_home": 37,
+      "q2_away": 20,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

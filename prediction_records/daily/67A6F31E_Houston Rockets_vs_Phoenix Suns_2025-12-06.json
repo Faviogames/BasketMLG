@@ -1,0 +1,78 @@
+{
+  "prediction_id": "67A6F31E",
+  "metadata": {
+    "timestamp": "2025-12-06T03:16:19.917366",
+    "date": "2025-12-06",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Houston Rockets",
+    "away_team": "Phoenix Suns",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 224.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 249.72986316305074,
+    "context_adjusted_prediction": 249.72986316305074,
+    "final_prediction": 249.72986316305074,
+    "predictions_list": [
+      {
+        "line": 245.88567336151664,
+        "over_prob": 67.98113004538362,
+        "under_prob": 32.018869954616385
+      },
+      {
+        "line": 247.94283668075832,
+        "over_prob": 58.59625347799356,
+        "under_prob": 41.40374652200644
+      },
+      {
+        "line": 250.0,
+        "over_prob": 48.69055545784563,
+        "under_prob": 51.30944454215437
+      },
+      {
+        "line": 252.05716331924168,
+        "over_prob": 38.86540369206198,
+        "under_prob": 61.13459630793802
+      },
+      {
+        "line": 254.11432663848336,
+        "over_prob": 29.70760467931659,
+        "under_prob": 70.29239532068341
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 11.486546054933365,
+    "edge_magnitude": 25.729863163050737
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 24,
+      "q1_away": 31,
+      "q2_home": 44,
+      "q2_away": 27,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

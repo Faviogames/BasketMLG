@@ -1,0 +1,158 @@
+[
+  {
+    "prediction_id": "D7420B45",
+    "metadata": {
+      "timestamp": "2025-12-21T05:40:43.585651",
+      "date": "2025-12-21",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Los Angeles Clippers",
+      "away_team": "Los Angeles Lakers",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 200.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 197.47824985242667,
+      "context_adjusted_prediction": 197.47824985242667,
+      "final_prediction": 197.47824985242667,
+      "predictions_list": [
+        {
+          "line": 192.88567336151664,
+          "over_prob": 71.16187995573712,
+          "under_prob": 28.838120044262883
+        },
+        {
+          "line": 194.94283668075832,
+          "over_prob": 62.10045125811552,
+          "under_prob": 37.89954874188448
+        },
+        {
+          "line": 197.0,
+          "over_prob": 52.31735035484848,
+          "under_prob": 47.68264964515152
+        },
+        {
+          "line": 199.05716331924168,
+          "over_prob": 42.39181269531752,
+          "under_prob": 57.60818730468248
+        },
+        {
+          "line": 201.11432663848336,
+          "over_prob": 32.928804502958826,
+          "under_prob": 67.07119549704117
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 1.2608750737866643,
+      "edge_magnitude": 2.5217501475733286
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 28,
+        "q1_away": 15,
+        "q2_home": 26,
+        "q2_away": 24,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "4AA2E540",
+    "metadata": {
+      "timestamp": "2025-12-21T22:42:04.284072",
+      "date": "2025-12-21",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Atlanta Hawks",
+      "away_team": "Chicago Bulls",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 285.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 308.6220086483877,
+      "context_adjusted_prediction": 308.6220086483877,
+      "final_prediction": 308.6220086483877,
+      "predictions_list": [
+        {
+          "line": 304.88567336151664,
+          "over_prob": 67.51086211707788,
+          "under_prob": 32.48913788292212
+        },
+        {
+          "line": 306.9428366807583,
+          "over_prob": 58.0848260002139,
+          "under_prob": 41.9151739997861
+        },
+        {
+          "line": 309.0,
+          "over_prob": 48.16806334635142,
+          "under_prob": 51.83193665364858
+        },
+        {
+          "line": 311.0571633192417,
+          "over_prob": 38.36394818935066,
+          "under_prob": 61.63605181064934
+        },
+        {
+          "line": 313.11432663848336,
+          "over_prob": 29.25549682875024,
+          "under_prob": 70.74450317124976
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 8.288424087153576,
+      "edge_magnitude": 23.62200864838769
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 38,
+        "q1_away": 38,
+        "q2_home": 35,
+        "q2_away": 45,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  }
+]

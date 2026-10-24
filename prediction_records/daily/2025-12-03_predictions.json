@@ -1,0 +1,80 @@
+[
+  {
+    "prediction_id": "67C994B9",
+    "metadata": {
+      "timestamp": "2025-12-03T02:05:47.574555",
+      "date": "2025-12-03",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Philadelphia 76ers",
+      "away_team": "Washington Wizards",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 238.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 239.42273780953082,
+      "context_adjusted_prediction": 239.42273780953082,
+      "final_prediction": 239.42273780953082,
+      "predictions_list": [
+        {
+          "line": 234.88567336151664,
+          "over_prob": 70.93112972789308,
+          "under_prob": 29.068870272106924
+        },
+        {
+          "line": 236.94283668075832,
+          "over_prob": 61.84352934576495,
+          "under_prob": 38.15647065423505
+        },
+        {
+          "line": 239.0,
+          "over_prob": 52.04861992228885,
+          "under_prob": 47.95138007771115
+        },
+        {
+          "line": 241.05716331924168,
+          "over_prob": 42.12776082119667,
+          "under_prob": 57.87223917880333
+        },
+        {
+          "line": 243.11432663848336,
+          "over_prob": 32.68506924624357,
+          "under_prob": 67.31493075375643
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 0.3868921633252895,
+      "edge_magnitude": 0.9227378095308154
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 34,
+        "q1_away": 31,
+        "q2_home": 32,
+        "q2_away": 23,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  }
+]

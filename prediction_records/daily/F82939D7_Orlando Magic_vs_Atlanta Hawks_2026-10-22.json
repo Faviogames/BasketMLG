@@ -1,0 +1,78 @@
+{
+  "prediction_id": "F82939D7",
+  "metadata": {
+    "timestamp": "2026-10-22T00:20:38.204643",
+    "date": "2026-10-22",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Orlando Magic",
+    "away_team": "Atlanta Hawks",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 236.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 241.31735608240237,
+    "context_adjusted_prediction": 241.31735608240237,
+    "final_prediction": 241.31735608240237,
+    "predictions_list": [
+      {
+        "line": 236.88567336151664,
+        "over_prob": 70.49072361066429,
+        "under_prob": 29.509276389335714
+      },
+      {
+        "line": 238.94283668075832,
+        "over_prob": 61.354369903634904,
+        "under_prob": 38.645630096365096
+      },
+      {
+        "line": 241.0,
+        "over_prob": 51.53822716227089,
+        "under_prob": 48.46177283772911
+      },
+      {
+        "line": 243.05716331924168,
+        "over_prob": 41.62747806329165,
+        "under_prob": 58.37252193670835
+      },
+      {
+        "line": 245.11432663848336,
+        "over_prob": 32.22440603441453,
+        "under_prob": 67.77559396558547
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 2.2531169840688006,
+    "edge_magnitude": 5.31735608240237
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 33,
+      "q1_away": 28,
+      "q2_home": 9,
+      "q2_away": 16,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prediction_id": "9356B69A",
+  "metadata": {
+    "timestamp": "2026-01-05T03:25:31.470710",
+    "date": "2026-01-05",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Phoenix Suns",
+    "away_team": "Oklahoma City Thunder",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 208.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 195.70079544093147,
+    "context_adjusted_prediction": 195.70079544093147,
+    "final_prediction": 195.70079544093147,
+    "predictions_list": [
+      {
+        "line": 191.88567336151664,
+        "over_prob": 67.85466874307075,
+        "under_prob": 32.14533125692925
+      },
+      {
+        "line": 193.94283668075832,
+        "over_prob": 58.4585589730415,
+        "under_prob": 41.5414410269585
+      },
+      {
+        "line": 196.0,
+        "over_prob": 48.549713455381664,
+        "under_prob": 51.450286544618336
+      },
+      {
+        "line": 198.05716331924168,
+        "over_prob": 38.73007047789715,
+        "under_prob": 61.26992952210285
+      },
+      {
+        "line": 200.11432663848336,
+        "over_prob": 29.585443497700453,
+        "under_prob": 70.41455650229955
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 5.913079114936792,
+    "edge_magnitude": 12.299204559068528
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 20,
+      "q1_away": 26,
+      "q2_home": 22,
+      "q2_away": 23,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

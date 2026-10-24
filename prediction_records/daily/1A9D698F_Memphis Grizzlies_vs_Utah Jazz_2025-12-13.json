@@ -1,0 +1,78 @@
+{
+  "prediction_id": "1A9D698F",
+  "metadata": {
+    "timestamp": "2025-12-13T03:15:50.488548",
+    "date": "2025-12-13",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Memphis Grizzlies",
+    "away_team": "Utah Jazz",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 249.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 247.58613250739236,
+    "context_adjusted_prediction": 247.58613250739236,
+    "final_prediction": 247.58613250739236,
+    "predictions_list": [
+      {
+        "line": 243.88567336151664,
+        "over_prob": 67.35380939860711,
+        "under_prob": 32.64619060139289
+      },
+      {
+        "line": 245.94283668075832,
+        "over_prob": 57.91439978973763,
+        "under_prob": 42.08560021026237
+      },
+      {
+        "line": 248.0,
+        "over_prob": 47.9943296921619,
+        "under_prob": 52.0056703078381
+      },
+      {
+        "line": 250.05716331924168,
+        "over_prob": 38.197573154545374,
+        "under_prob": 61.802426845454626
+      },
+      {
+        "line": 252.11432663848336,
+        "over_prob": 29.1058219199612,
+        "under_prob": 70.8941780800388
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 0.5678182701235487,
+    "edge_magnitude": 1.4138674926076362
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 31,
+      "q1_away": 36,
+      "q2_home": 33,
+      "q2_away": 25,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

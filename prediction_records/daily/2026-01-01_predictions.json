@@ -1,0 +1,80 @@
+[
+  {
+    "prediction_id": "21B3337F",
+    "metadata": {
+      "timestamp": "2026-01-01T02:25:33.759582",
+      "date": "2026-01-01",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "San Antonio Spurs",
+      "away_team": "New York Knicks",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 255.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 263.4423280710432,
+      "context_adjusted_prediction": 263.4423280710432,
+      "final_prediction": 263.4423280710432,
+      "predictions_list": [
+        {
+          "line": 258.88567336151664,
+          "over_prob": 71.01266030119496,
+          "under_prob": 28.98733969880504
+        },
+        {
+          "line": 260.9428366807583,
+          "over_prob": 61.934257624617,
+          "under_prob": 38.065742375383
+        },
+        {
+          "line": 263.0,
+          "over_prob": 52.14346645432372,
+          "under_prob": 47.85653354567628
+        },
+        {
+          "line": 265.0571633192417,
+          "over_prob": 42.220905242204275,
+          "under_prob": 57.779094757795725
+        },
+        {
+          "line": 267.11432663848336,
+          "over_prob": 32.77100004457891,
+          "under_prob": 67.22899995542109
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 3.1085432763378553,
+      "edge_magnitude": 7.942328071043221
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 36,
+        "q1_away": 45,
+        "q2_home": 27,
+        "q2_away": 28,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  }
+]

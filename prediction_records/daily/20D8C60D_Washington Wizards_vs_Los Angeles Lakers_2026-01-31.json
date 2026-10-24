@@ -1,0 +1,78 @@
+{
+  "prediction_id": "20D8C60D",
+  "metadata": {
+    "timestamp": "2026-01-31T02:07:22.197438",
+    "date": "2026-01-31",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Washington Wizards",
+    "away_team": "Los Angeles Lakers",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 237.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 246.41828162961502,
+    "context_adjusted_prediction": 246.41828162961502,
+    "final_prediction": 246.41828162961502,
+    "predictions_list": [
+      {
+        "line": 241.88567336151664,
+        "over_prob": 70.91256907616503,
+        "under_prob": 29.08743092383498
+      },
+      {
+        "line": 243.94283668075832,
+        "over_prob": 61.82288235434888,
+        "under_prob": 38.17711764565112
+      },
+      {
+        "line": 246.0,
+        "over_prob": 52.02704362446027,
+        "under_prob": 47.97295637553973
+      },
+      {
+        "line": 248.05716331924168,
+        "over_prob": 42.106579469327784,
+        "under_prob": 57.893420530672216
+      },
+      {
+        "line": 250.11432663848336,
+        "over_prob": 32.66553543364084,
+        "under_prob": 67.33446456635916
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 3.973958493508449,
+    "edge_magnitude": 9.418281629615024
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 27,
+      "q1_away": 41,
+      "q2_home": 21,
+      "q2_away": 36,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

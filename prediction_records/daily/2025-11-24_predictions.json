@@ -1,0 +1,1621 @@
+[
+  {
+    "prediction_id": "CD9A9974",
+    "metadata": {
+      "timestamp": "2025-11-24T00:43:50.660725",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 220.5,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 220.0,
+      "context_adjusted_prediction": 220.0,
+      "final_prediction": 220.0,
+      "adjustments": {
+        "blowout_adjustment": 0.0,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      0.3,
+      0.4,
+      0.3
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 0.5
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 25,
+        "q1_away": 25,
+        "q2_home": 25,
+        "q2_away": 25,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {},
+      "is_halftime": true,
+      "prediction_timing": "q2"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "DBE5542E",
+    "metadata": {
+      "timestamp": "2025-11-24T00:45:23.641083",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 220.5,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 220.0,
+      "context_adjusted_prediction": 220.0,
+      "final_prediction": 220.0,
+      "adjustments": {
+        "blowout_adjustment": 0.0,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      0.3,
+      0.4,
+      0.3
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 0.5
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 25,
+        "q1_away": 25,
+        "q2_home": 25,
+        "q2_away": 25,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {},
+      "is_halftime": true,
+      "prediction_timing": "q2"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "0F9CE7FB",
+    "metadata": {
+      "timestamp": "2025-11-24T00:46:00.877252",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 220.5,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 220.0,
+      "context_adjusted_prediction": 226.3252554393307,
+      "final_prediction": 226.3252554393307,
+      "adjustments": {
+        "blowout_adjustment": 6.325255439330704,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      0.3,
+      0.4,
+      0.3
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 5.825255439330704
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 25,
+        "q1_away": 25,
+        "q2_home": 25,
+        "q2_away": 25,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 6.325255439330704,
+      "meta_metadata": {
+        "raw_prediction": 226.3252554393307,
+        "final_prediction": 226.3252554393307,
+        "features": {
+          "halftime_total": 100,
+          "pace_halftime": 95.0,
+          "efg_home": 0.5,
+          "efg_away": 0.5,
+          "to_rate_home": 0.13,
+          "to_rate_away": 0.13,
+          "ft_rate_home": 0.2,
+          "ft_rate_away": 0.2,
+          "home_lead": 0,
+          "is_close_game": 1,
+          "momentum_score": 0
+        },
+        "adjustments": []
+      },
+      "is_halftime": true,
+      "prediction_timing": "q2"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "D73D1649",
+    "metadata": {
+      "timestamp": "2025-11-24T00:46:17.157005",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 220.5,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 220.0,
+      "context_adjusted_prediction": 226.3252554393307,
+      "final_prediction": 226.3252554393307,
+      "adjustments": {
+        "blowout_adjustment": 6.325255439330704,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      0.3,
+      0.4,
+      0.3
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 5.825255439330704
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 25,
+        "q1_away": 25,
+        "q2_home": 25,
+        "q2_away": 25,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 6.325255439330704,
+      "meta_metadata": {
+        "raw_prediction": 226.3252554393307,
+        "final_prediction": 226.3252554393307,
+        "features": {
+          "halftime_total": 100,
+          "pace_halftime": 95.0,
+          "efg_home": 0.5,
+          "efg_away": 0.5,
+          "to_rate_home": 0.13,
+          "to_rate_away": 0.13,
+          "ft_rate_home": 0.2,
+          "ft_rate_away": 0.2,
+          "home_lead": 0,
+          "is_close_game": 1,
+          "momentum_score": 0
+        },
+        "adjustments": []
+      },
+      "is_halftime": true,
+      "prediction_timing": "q2"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "5D5E97B8",
+    "metadata": {
+      "timestamp": "2025-11-24T00:46:40.036343",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 220.5,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 220.0,
+      "context_adjusted_prediction": 226.3252554393307,
+      "final_prediction": 226.3252554393307,
+      "adjustments": {
+        "blowout_adjustment": 6.325255439330704,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      0.3,
+      0.4,
+      0.3
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 5.825255439330704
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 25,
+        "q1_away": 25,
+        "q2_home": 25,
+        "q2_away": 25,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 6.325255439330704,
+      "meta_metadata": {
+        "raw_prediction": 226.3252554393307,
+        "final_prediction": 226.3252554393307,
+        "features": {
+          "halftime_total": 100,
+          "pace_halftime": 95.0,
+          "efg_home": 0.5,
+          "efg_away": 0.5,
+          "to_rate_home": 0.13,
+          "to_rate_away": 0.13,
+          "ft_rate_home": 0.2,
+          "ft_rate_away": 0.2,
+          "home_lead": 0,
+          "is_close_game": 1,
+          "momentum_score": 0
+        },
+        "adjustments": []
+      },
+      "is_halftime": true,
+      "prediction_timing": "q2"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "C5D10F58",
+    "metadata": {
+      "timestamp": "2025-11-24T00:46:58.406943",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 220.5,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 220.0,
+      "context_adjusted_prediction": 226.3252554393307,
+      "final_prediction": 226.3252554393307,
+      "adjustments": {
+        "blowout_adjustment": 6.325255439330704,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      0.3,
+      0.4,
+      0.3
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 5.825255439330704
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 25,
+        "q1_away": 25,
+        "q2_home": 25,
+        "q2_away": 25,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 6.325255439330704,
+      "meta_metadata": {
+        "raw_prediction": 226.3252554393307,
+        "final_prediction": 226.3252554393307,
+        "features": {
+          "halftime_total": 100,
+          "pace_halftime": 95.0,
+          "efg_home": 0.5,
+          "efg_away": 0.5,
+          "to_rate_home": 0.13,
+          "to_rate_away": 0.13,
+          "ft_rate_home": 0.2,
+          "ft_rate_away": 0.2,
+          "home_lead": 0,
+          "is_close_game": 1,
+          "momentum_score": 0
+        },
+        "adjustments": []
+      },
+      "is_halftime": true,
+      "prediction_timing": "q2"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "BA41D873",
+    "metadata": {
+      "timestamp": "2025-11-24T00:47:54.562000",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 220.5,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 220.0,
+      "context_adjusted_prediction": 226.3252554393307,
+      "final_prediction": 226.3252554393307,
+      "adjustments": {
+        "blowout_adjustment": 6.325255439330704,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      0.3,
+      0.4,
+      0.3
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 5.825255439330704
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 25,
+        "q1_away": 25,
+        "q2_home": 25,
+        "q2_away": 25,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 6.325255439330704,
+      "meta_metadata": {
+        "raw_prediction": 226.3252554393307,
+        "final_prediction": 226.3252554393307,
+        "features": {
+          "halftime_total": 100,
+          "pace_halftime": 95.0,
+          "efg_home": 0.5,
+          "efg_away": 0.5,
+          "to_rate_home": 0.13,
+          "to_rate_away": 0.13,
+          "ft_rate_home": 0.2,
+          "ft_rate_away": 0.2,
+          "home_lead": 0,
+          "is_close_game": 1,
+          "momentum_score": 0
+        },
+        "adjustments": []
+      },
+      "is_halftime": true,
+      "prediction_timing": "q2"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "438B9766",
+    "metadata": {
+      "timestamp": "2025-11-24T00:48:11.021377",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 220.5,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 220.0,
+      "context_adjusted_prediction": 226.3252554393307,
+      "final_prediction": 226.3252554393307,
+      "adjustments": {
+        "blowout_adjustment": 6.325255439330704,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      0.3,
+      0.4,
+      0.3
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 5.825255439330704
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 25,
+        "q1_away": 25,
+        "q2_home": 25,
+        "q2_away": 25,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 6.325255439330704,
+      "meta_metadata": {
+        "raw_prediction": 226.3252554393307,
+        "final_prediction": 226.3252554393307,
+        "features": {
+          "halftime_total": 100,
+          "pace_halftime": 95.0,
+          "efg_home": 0.5,
+          "efg_away": 0.5,
+          "to_rate_home": 0.13,
+          "to_rate_away": 0.13,
+          "ft_rate_home": 0.2,
+          "ft_rate_away": 0.2,
+          "home_lead": 0,
+          "is_close_game": 1,
+          "momentum_score": 0
+        },
+        "adjustments": []
+      },
+      "is_halftime": true,
+      "prediction_timing": "q2"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "8F551212",
+    "metadata": {
+      "timestamp": "2025-11-24T00:48:31.407755",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 220.5,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 220.0,
+      "context_adjusted_prediction": 226.3252554393307,
+      "final_prediction": 226.3252554393307,
+      "adjustments": {
+        "blowout_adjustment": 6.325255439330704,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      0.3,
+      0.4,
+      0.3
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 5.825255439330704
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 25,
+        "q1_away": 25,
+        "q2_home": 25,
+        "q2_away": 25,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 6.325255439330704,
+      "meta_metadata": {
+        "raw_prediction": 226.3252554393307,
+        "final_prediction": 226.3252554393307,
+        "features": {
+          "halftime_total": 100,
+          "pace_halftime": 95.0,
+          "efg_home": 0.5,
+          "efg_away": 0.5,
+          "to_rate_home": 0.13,
+          "to_rate_away": 0.13,
+          "ft_rate_home": 0.2,
+          "ft_rate_away": 0.2,
+          "home_lead": 0,
+          "is_close_game": 1,
+          "momentum_score": 0
+        },
+        "adjustments": []
+      },
+      "is_halftime": true,
+      "prediction_timing": "q2"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "D2C19DC0",
+    "metadata": {
+      "timestamp": "2025-11-24T00:54:18.374728",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Atlanta Hawks",
+      "away_team": "Charlotte Hornets",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 230.5,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 209.63882446289062,
+      "context_adjusted_prediction": 221.28051266829496,
+      "final_prediction": 221.28051266829496,
+      "adjustments": {
+        "blowout_adjustment": 11.641688205404336,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      {
+        "line": 217.4593726691472,
+        "over_prob": 70.90802933262074,
+        "under_prob": 29.09197066737925
+      },
+      {
+        "line": 219.7296863345736,
+        "over_prob": 61.817832739104475,
+        "under_prob": 38.182167260895525
+      },
+      {
+        "line": 222.0,
+        "over_prob": 52.02176717416023,
+        "under_prob": 47.97823282583977
+      },
+      {
+        "line": 224.2703136654264,
+        "over_prob": 42.10140003882401,
+        "under_prob": 57.89859996117599
+      },
+      {
+        "line": 226.5406273308528,
+        "over_prob": 32.66075927477985,
+        "under_prob": 67.33924072522015
+      }
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 9.21948733170504
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 28,
+        "q1_away": 25,
+        "q2_home": 16,
+        "q2_away": 23,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 11.641688205404336,
+      "meta_metadata": {
+        "raw_prediction": 221.28051266829496,
+        "final_prediction": 221.28051266829496,
+        "features": {
+          "halftime_total": 92,
+          "pace_halftime": 95.0,
+          "efg_home": 0.5,
+          "efg_away": 0.5,
+          "to_rate_home": 0.13,
+          "to_rate_away": 0.13,
+          "ft_rate_home": 0.2,
+          "ft_rate_away": 0.2,
+          "home_lead": -4,
+          "is_close_game": 1,
+          "momentum_score": -14
+        },
+        "adjustments": []
+      },
+      "is_halftime": true,
+      "prediction_timing": "q2"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "FA0AAD32",
+    "metadata": {
+      "timestamp": "2025-11-24T01:07:48.312314",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Atlanta Hawks",
+      "away_team": "Charlotte Hornets",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 230.0,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 209.9759979248047,
+      "context_adjusted_prediction": 230.27393336539825,
+      "final_prediction": 230.27393336539825,
+      "adjustments": {
+        "blowout_adjustment": 20.297935440593562,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      {
+        "line": 222.4593726691472,
+        "over_prob": 69.12778709363667,
+        "under_prob": 30.872212906363327
+      },
+      {
+        "line": 224.7296863345736,
+        "over_prob": 59.85036061430821,
+        "under_prob": 40.14963938569179
+      },
+      {
+        "line": 227.0,
+        "over_prob": 49.97908591567529,
+        "under_prob": 50.02091408432471
+      },
+      {
+        "line": 229.2703136654264,
+        "over_prob": 40.109098134383444,
+        "under_prob": 59.890901865616556
+      },
+      {
+        "line": 231.5406273308528,
+        "over_prob": 30.835299676666736,
+        "under_prob": 69.16470032333326
+      }
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 0.27393336539824986
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 28,
+        "q1_away": 25,
+        "q2_home": 25,
+        "q2_away": 30,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 20.297935440593562,
+      "meta_metadata": {
+        "raw_prediction": 230.27393336539825,
+        "final_prediction": 230.27393336539825,
+        "features": {
+          "halftime_total": 108,
+          "pace_halftime": 95.0,
+          "efg_home": 0.5,
+          "efg_away": 0.5,
+          "to_rate_home": 0.13,
+          "to_rate_away": 0.13,
+          "ft_rate_home": 0.2,
+          "ft_rate_away": 0.2,
+          "home_lead": -2,
+          "is_close_game": 1,
+          "momentum_score": 2
+        },
+        "adjustments": []
+      },
+      "is_halftime": true,
+      "prediction_timing": "q2"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "0238D5EA",
+    "metadata": {
+      "timestamp": "2025-11-24T01:27:35.554681",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Boston Celtics",
+      "away_team": "Orlando Magic",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 245.5,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 235.31198120117188,
+      "context_adjusted_prediction": 249.9587829302033,
+      "final_prediction": 249.9587829302033,
+      "adjustments": {
+        "blowout_adjustment": 14.646801729031438,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      {
+        "line": 243.4593726691472,
+        "over_prob": 67.96123551936063,
+        "under_prob": 32.03876448063938
+      },
+      {
+        "line": 245.7296863345736,
+        "over_prob": 58.574583714462634,
+        "under_prob": 41.425416285537366
+      },
+      {
+        "line": 248.0,
+        "over_prob": 48.66838210627032,
+        "under_prob": 51.33161789372968
+      },
+      {
+        "line": 250.2703136654264,
+        "over_prob": 38.84408968478725,
+        "under_prob": 61.15591031521275
+      },
+      {
+        "line": 252.5406273308528,
+        "over_prob": 29.688358014999622,
+        "under_prob": 70.31164198500038
+      }
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 4.458782930203313
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 32,
+        "q1_away": 27,
+        "q2_home": 48,
+        "q2_away": 30,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 14.646801729031438,
+      "meta_metadata": {
+        "raw_prediction": 249.9587829302033,
+        "final_prediction": 249.9587829302033,
+        "features": {
+          "halftime_total": 137,
+          "pace_halftime": 95.0,
+          "efg_home": 0.5,
+          "efg_away": 0.5,
+          "to_rate_home": 0.13,
+          "to_rate_away": 0.13,
+          "ft_rate_home": 0.2,
+          "ft_rate_away": 0.2,
+          "home_lead": 23,
+          "is_close_game": 0,
+          "momentum_score": 19
+        },
+        "adjustments": []
+      },
+      "is_halftime": true,
+      "prediction_timing": "q2"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "CAE5890F",
+    "metadata": {
+      "timestamp": "2025-11-24T01:30:04.561965",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Boston Celtics",
+      "away_team": "Orlando Magic",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 245.5,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 239.8804473876953,
+      "context_adjusted_prediction": 249.9587829302033,
+      "final_prediction": 249.9587829302033,
+      "adjustments": {
+        "blowout_adjustment": 10.078335542508,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      {
+        "line": 235.4593726691472,
+        "over_prob": 68.68124496708118,
+        "under_prob": 31.318755032918816
+      },
+      {
+        "line": 237.7296863345736,
+        "over_prob": 59.3607691030541,
+        "under_prob": 40.6392308969459
+      },
+      {
+        "line": 240.0,
+        "over_prob": 49.474816906627275,
+        "under_prob": 50.525183093372725
+      },
+      {
+        "line": 242.2703136654264,
+        "over_prob": 39.62117924251355,
+        "under_prob": 60.37882075748645
+      },
+      {
+        "line": 244.5406273308528,
+        "over_prob": 30.391803432932335,
+        "under_prob": 69.60819656706767
+      }
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 4.458782930203313
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 32,
+        "q1_away": 27,
+        "q2_home": 48,
+        "q2_away": 30,
+        "q3_home": 7,
+        "q3_away": 6,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 10.078335542508,
+      "meta_metadata": {
+        "raw_prediction": 249.9587829302033,
+        "final_prediction": 249.9587829302033,
+        "features": {
+          "halftime_total": 137,
+          "pace_halftime": 95.0,
+          "efg_home": 0.5,
+          "efg_away": 0.5,
+          "to_rate_home": 0.13,
+          "to_rate_away": 0.13,
+          "ft_rate_home": 0.2,
+          "ft_rate_away": 0.2,
+          "home_lead": 23,
+          "is_close_game": 0,
+          "momentum_score": 19
+        },
+        "adjustments": []
+      },
+      "prediction_timing": "q3_progress"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "26DCA199",
+    "metadata": {
+      "timestamp": "2025-11-24T01:31:41.399941",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Toronto Raptors",
+      "away_team": "Brooklyn Nets",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 235.0,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 226.16256713867188,
+      "context_adjusted_prediction": 247.56360165390367,
+      "final_prediction": 247.56360165390367,
+      "adjustments": {
+        "blowout_adjustment": 21.4010345152318,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      {
+        "line": 233.4593726691472,
+        "over_prob": 70.98085190269305,
+        "under_prob": 29.019148097306953
+      },
+      {
+        "line": 235.7296863345736,
+        "over_prob": 61.89885440184171,
+        "under_prob": 38.10114559815829
+      },
+      {
+        "line": 238.0,
+        "over_prob": 52.10644952506869,
+        "under_prob": 47.89355047493131
+      },
+      {
+        "line": 240.2703136654264,
+        "over_prob": 42.18454602061951,
+        "under_prob": 57.81545397938049
+      },
+      {
+        "line": 242.5406273308528,
+        "over_prob": 32.73745059792493,
+        "under_prob": 67.26254940207507
+      }
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 12.563601653903675
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 34,
+        "q1_away": 28,
+        "q2_home": 31,
+        "q2_away": 30,
+        "q3_home": 5,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 21.4010345152318,
+      "meta_metadata": {
+        "raw_prediction": 247.56360165390367,
+        "final_prediction": 247.56360165390367,
+        "features": {
+          "halftime_total": 123,
+          "pace_halftime": 95.0,
+          "efg_home": 0.5,
+          "efg_away": 0.5,
+          "to_rate_home": 0.13,
+          "to_rate_away": 0.13,
+          "ft_rate_home": 0.2,
+          "ft_rate_away": 0.2,
+          "home_lead": 7,
+          "is_close_game": 1,
+          "momentum_score": -1
+        },
+        "adjustments": []
+      },
+      "prediction_timing": "q3_progress"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "8B48E074",
+    "metadata": {
+      "timestamp": "2025-11-24T01:34:13.216454",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Toronto Raptors",
+      "away_team": "Brooklyn Nets",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 235.0,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 222.73231506347656,
+      "context_adjusted_prediction": 247.56360165390367,
+      "final_prediction": 247.56360165390367,
+      "adjustments": {
+        "blowout_adjustment": 24.831286590427112,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      {
+        "line": 229.4593726691472,
+        "over_prob": 70.88786572205846,
+        "under_prob": 29.112134277941536
+      },
+      {
+        "line": 231.7296863345736,
+        "over_prob": 61.79540651521634,
+        "under_prob": 38.20459348478366
+      },
+      {
+        "line": 234.0,
+        "over_prob": 51.99833564662493,
+        "under_prob": 48.00166435337507
+      },
+      {
+        "line": 236.2703136654264,
+        "over_prob": 42.07840142580505,
+        "under_prob": 57.92159857419495
+      },
+      {
+        "line": 238.5406273308528,
+        "over_prob": 32.639553248985365,
+        "under_prob": 67.36044675101463
+      }
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 12.563601653903675
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 34,
+        "q1_away": 28,
+        "q2_home": 31,
+        "q2_away": 30,
+        "q3_home": 5,
+        "q3_away": 5,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 24.831286590427112,
+      "meta_metadata": {
+        "raw_prediction": 247.56360165390367,
+        "final_prediction": 247.56360165390367,
+        "features": {
+          "halftime_total": 123,
+          "pace_halftime": 95.0,
+          "efg_home": 0.5,
+          "efg_away": 0.5,
+          "to_rate_home": 0.13,
+          "to_rate_away": 0.13,
+          "ft_rate_home": 0.2,
+          "ft_rate_away": 0.2,
+          "home_lead": 7,
+          "is_close_game": 1,
+          "momentum_score": -1
+        },
+        "adjustments": []
+      },
+      "prediction_timing": "q3_progress"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "F5925F50",
+    "metadata": {
+      "timestamp": "2025-11-24T03:18:42.216758",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Phoenix Suns",
+      "away_team": "San Antonio Spurs",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 219.0,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 207.25030517578125,
+      "context_adjusted_prediction": 230.9937623027854,
+      "final_prediction": 230.9937623027854,
+      "adjustments": {
+        "blowout_adjustment": 23.74345712700415,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      {
+        "line": 219.4593726691472,
+        "over_prob": 68.13238002784507,
+        "under_prob": 31.867619972154927
+      },
+      {
+        "line": 221.7296863345736,
+        "over_prob": 58.761098492702935,
+        "under_prob": 41.238901507297065
+      },
+      {
+        "line": 224.0,
+        "over_prob": 48.859332331393176,
+        "under_prob": 51.140667668606824
+      },
+      {
+        "line": 226.2703136654264,
+        "over_prob": 39.02773664661663,
+        "under_prob": 60.97226335338337
+      },
+      {
+        "line": 228.5406273308528,
+        "over_prob": 29.85428001269665,
+        "under_prob": 70.14571998730335
+      }
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 11.993762302785399
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 25,
+        "q1_away": 30,
+        "q2_home": 24,
+        "q2_away": 26,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 23.74345712700415,
+      "meta_metadata": {
+        "raw_prediction": 230.9937623027854,
+        "final_prediction": 230.9937623027854,
+        "features": {
+          "halftime_total": 105,
+          "pace_halftime": 95.0,
+          "efg_home": 0.5,
+          "efg_away": 0.5,
+          "to_rate_home": 0.13,
+          "to_rate_away": 0.13,
+          "ft_rate_home": 0.2,
+          "ft_rate_away": 0.2,
+          "home_lead": -7,
+          "is_close_game": 1,
+          "momentum_score": -5
+        },
+        "adjustments": []
+      },
+      "is_halftime": true,
+      "prediction_timing": "q2"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "9D625BD5",
+    "metadata": {
+      "timestamp": "2025-11-24T03:20:32.148929",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Utah Jazz",
+      "away_team": "Los Angeles Lakers",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 237.0,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 213.06675720214844,
+      "context_adjusted_prediction": 241.5684623022354,
+      "final_prediction": 241.5684623022354,
+      "adjustments": {
+        "blowout_adjustment": 28.50170510008695,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      {
+        "line": 219.4593726691472,
+        "over_prob": 70.22628850988643,
+        "under_prob": 29.773711490113573
+      },
+      {
+        "line": 221.7296863345736,
+        "over_prob": 61.061411317839834,
+        "under_prob": 38.938588682160166
+      },
+      {
+        "line": 224.0,
+        "over_prob": 51.23333231433293,
+        "under_prob": 48.76666768566707
+      },
+      {
+        "line": 226.2703136654264,
+        "over_prob": 41.32938582485319,
+        "under_prob": 58.67061417514681
+      },
+      {
+        "line": 228.5406273308528,
+        "over_prob": 31.95062208887194,
+        "under_prob": 68.04937791112806
+      }
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 4.568462302235389
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 30,
+        "q1_away": 32,
+        "q2_home": 25,
+        "q2_away": 30,
+        "q3_home": 3,
+        "q3_away": 3,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 28.50170510008695,
+      "meta_metadata": {
+        "raw_prediction": 245.07016740232234,
+        "final_prediction": 241.5684623022354,
+        "features": {
+          "halftime_total": 117,
+          "pace_halftime": 95.0,
+          "efg_home": 0.5,
+          "efg_away": 0.5,
+          "to_rate_home": 0.13,
+          "to_rate_away": 0.13,
+          "ft_rate_home": 0.2,
+          "ft_rate_away": 0.2,
+          "home_lead": -7,
+          "is_close_game": 1,
+          "momentum_score": -7
+        },
+        "adjustments": [
+          "Soft clamped deviation from base 213.1"
+        ]
+      },
+      "prediction_timing": "q3_progress"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "10FA9F37",
+    "metadata": {
+      "timestamp": "2025-11-24T03:21:50.249210",
+      "date": "2025-11-24",
+      "version": "1.1"
+    },
+    "matchup": {
+      "home_team": "Utah Jazz",
+      "away_team": "Los Angeles Lakers",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 237.0,
+      "bookmaker": "API Auto",
+      "api_endpoint": "the-odds-api.com",
+      "acquisition_method": "automatic"
+    },
+    "predictions": {
+      "base_model_prediction": 222.2127227783203,
+      "context_adjusted_prediction": 245.07016740232234,
+      "final_prediction": 245.07016740232234,
+      "adjustments": {
+        "blowout_adjustment": 22.857444624002028,
+        "context_adjustments": {},
+        "adjustment_factor": 1.0,
+        "applied_adjustments": []
+      }
+    },
+    "probabilities": [
+      {
+        "line": 217.4593726691472,
+        "over_prob": 69.96605197397398,
+        "under_prob": 30.033948026026025
+      },
+      {
+        "line": 219.7296863345736,
+        "over_prob": 60.77364937648927,
+        "under_prob": 39.22635062351073
+      },
+      {
+        "line": 222.0,
+        "over_prob": 50.93441218454579,
+        "under_prob": 49.06558781545421
+      },
+      {
+        "line": 224.2703136654264,
+        "over_prob": 41.037687663589594,
+        "under_prob": 58.962312336410406
+      },
+      {
+        "line": 226.5406273308528,
+        "over_prob": 31.68321744639914,
+        "under_prob": 68.31678255360086
+      }
+    ],
+    "analysis": {
+      "confidence_score": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 8.07016740232234
+    },
+    "game_context": {
+      "quarter_scores": {
+        "q1_home": 30,
+        "q1_away": 32,
+        "q2_home": 25,
+        "q2_away": 30,
+        "q3_home": 6,
+        "q3_away": 5,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 22.857444624002028,
+      "meta_metadata": {
+        "raw_prediction": 245.07016740232234,
+        "final_prediction": 245.07016740232234,
+        "features": {
+          "halftime_total": 117,
+          "pace_halftime": 95.0,
+          "efg_home": 0.5,
+          "efg_away": 0.5,
+          "to_rate_home": 0.13,
+          "to_rate_away": 0.13,
+          "ft_rate_home": 0.2,
+          "ft_rate_away": 0.2,
+          "home_lead": -7,
+          "is_close_game": 1,
+          "momentum_score": -7
+        },
+        "adjustments": []
+      },
+      "prediction_timing": "q3_progress"
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  }
+]

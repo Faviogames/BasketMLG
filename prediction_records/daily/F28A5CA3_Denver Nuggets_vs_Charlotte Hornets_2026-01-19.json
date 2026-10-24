@@ -1,0 +1,78 @@
+{
+  "prediction_id": "F28A5CA3",
+  "metadata": {
+    "timestamp": "2026-01-19T03:14:59.638008",
+    "date": "2026-01-19",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Denver Nuggets",
+    "away_team": "Charlotte Hornets",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 209.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 201.82319437446637,
+    "context_adjusted_prediction": 201.82319437446637,
+    "final_prediction": 201.82319437446637,
+    "predictions_list": [
+      {
+        "line": 197.88567336151664,
+        "over_prob": 68.38575871477343,
+        "under_prob": 31.614241285226573
+      },
+      {
+        "line": 199.94283668075832,
+        "over_prob": 59.037643737173525,
+        "under_prob": 40.962356262826475
+      },
+      {
+        "line": 202.0,
+        "over_prob": 49.14287538836718,
+        "under_prob": 50.85712461163282
+      },
+      {
+        "line": 204.05716331924168,
+        "over_prob": 39.30084095359515,
+        "under_prob": 60.69915904640485
+      },
+      {
+        "line": 206.11432663848336,
+        "over_prob": 30.10139255588389,
+        "under_prob": 69.89860744411611
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 3.43387828972901,
+    "edge_magnitude": 7.176805625533632
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 18,
+      "q1_away": 33,
+      "q2_home": 16,
+      "q2_away": 27,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

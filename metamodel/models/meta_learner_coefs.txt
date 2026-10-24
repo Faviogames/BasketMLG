@@ -1,0 +1,3 @@
+Intercept: 0.09990640085563751
+base_model_prediction: 0.24715510795725623
+pace_poisson_projection: 0.7577792921608889

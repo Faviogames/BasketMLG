@@ -1,0 +1,78 @@
+{
+  "prediction_id": "E87CA29B",
+  "metadata": {
+    "timestamp": "2025-12-07T03:15:02.734664",
+    "date": "2025-12-07",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Miami Heat",
+    "away_team": "Sacramento Kings",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 244.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 250.98461834938084,
+    "context_adjusted_prediction": 250.98461834938084,
+    "final_prediction": 250.98461834938084,
+    "predictions_list": [
+      {
+        "line": 246.88567336151664,
+        "over_prob": 69.08040456135026,
+        "under_prob": 30.91959543864974
+      },
+      {
+        "line": 248.94283668075832,
+        "over_prob": 59.7983366512837,
+        "under_prob": 40.2016633487163
+      },
+      {
+        "line": 251.0,
+        "over_prob": 49.925426591762104,
+        "under_prob": 50.074573408237896
+      },
+      {
+        "line": 253.05716331924168,
+        "over_prob": 40.05710529210999,
+        "under_prob": 59.94289470789001
+      },
+      {
+        "line": 255.11432663848336,
+        "over_prob": 30.78797381591646,
+        "under_prob": 69.21202618408354
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 2.6521956439185432,
+    "edge_magnitude": 6.484618349380838
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 31,
+      "q1_away": 34,
+      "q2_home": 24,
+      "q2_away": 38,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

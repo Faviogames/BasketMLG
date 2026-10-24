@@ -1,0 +1,78 @@
+{
+  "prediction_id": "5296E0AE",
+  "metadata": {
+    "timestamp": "2025-11-30T05:17:46.741707",
+    "date": "2025-11-30",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Los Angeles Clippers",
+    "away_team": "Dallas Mavericks",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 214.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 216.48463846547514,
+    "context_adjusted_prediction": 216.48463846547514,
+    "final_prediction": 216.48463846547514,
+    "predictions_list": [
+      {
+        "line": 211.88567336151664,
+        "over_prob": 71.18838037961125,
+        "under_prob": 28.811619620388758
+      },
+      {
+        "line": 213.94283668075832,
+        "over_prob": 62.12998512948978,
+        "under_prob": 37.87001487051022
+      },
+      {
+        "line": 216.0,
+        "over_prob": 52.34827071429683,
+        "under_prob": 47.65172928570317
+      },
+      {
+        "line": 218.05716331924168,
+        "over_prob": 42.422223316055906,
+        "under_prob": 57.577776683944094
+      },
+      {
+        "line": 220.11432663848336,
+        "over_prob": 32.95690167639904,
+        "under_prob": 67.04309832360096
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 1.1610460119042725,
+    "edge_magnitude": 2.484638465475143
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 28,
+      "q1_away": 25,
+      "q2_home": 28,
+      "q2_away": 24,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

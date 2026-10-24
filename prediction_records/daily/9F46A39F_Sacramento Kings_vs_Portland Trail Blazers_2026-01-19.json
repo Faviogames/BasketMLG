@@ -1,0 +1,78 @@
+{
+  "prediction_id": "9F46A39F",
+  "metadata": {
+    "timestamp": "2026-01-19T04:13:03.331753",
+    "date": "2026-01-19",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Sacramento Kings",
+    "away_team": "Portland Trail Blazers",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 227.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 234.8349735414943,
+    "context_adjusted_prediction": 234.8349735414943,
+    "final_prediction": 234.8349735414943,
+    "predictions_list": [
+      {
+        "line": 230.88567336151664,
+        "over_prob": 68.43667136342748,
+        "under_prob": 31.56332863657253
+      },
+      {
+        "line": 232.94283668075832,
+        "over_prob": 59.09327073565515,
+        "under_prob": 40.90672926434485
+      },
+      {
+        "line": 235.0,
+        "over_prob": 49.199970925402724,
+        "under_prob": 50.800029074597276
+      },
+      {
+        "line": 237.05716331924168,
+        "over_prob": 39.35589323194826,
+        "under_prob": 60.64410676805174
+      },
+      {
+        "line": 239.11432663848336,
+        "over_prob": 30.151258613147263,
+        "under_prob": 69.84874138685274
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 3.451530194490878,
+    "edge_magnitude": 7.834973541494293
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 32,
+      "q1_away": 32,
+      "q2_home": 21,
+      "q2_away": 32,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

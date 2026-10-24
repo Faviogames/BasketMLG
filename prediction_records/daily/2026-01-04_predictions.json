@@ -1,0 +1,158 @@
+[
+  {
+    "prediction_id": "C7146B72",
+    "metadata": {
+      "timestamp": "2026-01-04T03:48:03.681352",
+      "date": "2026-01-04",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Dallas Mavericks",
+      "away_team": "Houston Rockets",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 226.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 218.53721208291196,
+      "context_adjusted_prediction": 218.53721208291196,
+      "final_prediction": 218.53721208291196,
+      "predictions_list": [
+        {
+          "line": 214.88567336151664,
+          "over_prob": 67.13915730185467,
+          "under_prob": 32.86084269814533
+        },
+        {
+          "line": 216.94283668075832,
+          "over_prob": 57.681769324037354,
+          "under_prob": 42.318230675962646
+        },
+        {
+          "line": 219.0,
+          "over_prob": 47.75748987347561,
+          "under_prob": 52.24251012652439
+        },
+        {
+          "line": 221.05716331924168,
+          "over_prob": 37.97105682037555,
+          "under_prob": 62.02894317962445
+        },
+        {
+          "line": 223.11432663848336,
+          "over_prob": 28.902304773790092,
+          "under_prob": 71.09769522620991
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 3.5155796543435036,
+      "edge_magnitude": 7.962787917088036
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 25,
+        "q1_away": 31,
+        "q2_home": 32,
+        "q2_away": 19,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "403FAA2C",
+    "metadata": {
+      "timestamp": "2026-01-04T22:24:02.086543",
+      "date": "2026-01-04",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Orlando Magic",
+      "away_team": "Indiana Pacers",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 238.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 249.59231174405997,
+      "context_adjusted_prediction": 249.59231174405997,
+      "final_prediction": 249.59231174405997,
+      "predictions_list": [
+        {
+          "line": 245.88567336151664,
+          "over_prob": 67.3808818918859,
+          "under_prob": 32.619118108114094
+        },
+        {
+          "line": 247.94283668075832,
+          "over_prob": 57.94376433766819,
+          "under_prob": 42.05623566233181
+        },
+        {
+          "line": 250.0,
+          "over_prob": 48.024250614717765,
+          "under_prob": 51.975749385282235
+        },
+        {
+          "line": 252.05716331924168,
+          "over_prob": 38.22621382874644,
+          "under_prob": 61.77378617125356
+        },
+        {
+          "line": 254.11432663848336,
+          "over_prob": 29.131576121514826,
+          "under_prob": 70.86842387848517
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 4.870719220193265,
+      "edge_magnitude": 11.59231174405997
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 28,
+        "q1_away": 36,
+        "q2_home": 41,
+        "q2_away": 22,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  }
+]

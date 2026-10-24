@@ -1,0 +1,78 @@
+{
+  "prediction_id": "FEA3E930",
+  "metadata": {
+    "timestamp": "2026-01-19T04:41:26.067238",
+    "date": "2026-01-19",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Los Angeles Lakers",
+    "away_team": "Toronto Raptors",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 225.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 224.34573930277037,
+    "context_adjusted_prediction": 224.34573930277037,
+    "final_prediction": 224.34573930277037,
+    "predictions_list": [
+      {
+        "line": 219.88567336151664,
+        "over_prob": 70.6096434243317,
+        "under_prob": 29.390356575668307
+      },
+      {
+        "line": 221.94283668075832,
+        "over_prob": 61.48630001086812,
+        "under_prob": 38.51369998913188
+      },
+      {
+        "line": 224.0,
+        "over_prob": 51.67572321566563,
+        "under_prob": 48.32427678433437
+      },
+      {
+        "line": 226.05716331924168,
+        "over_prob": 41.762092975277824,
+        "under_prob": 58.237907024722176
+      },
+      {
+        "line": 228.11432663848336,
+        "over_prob": 32.34821518166423,
+        "under_prob": 67.65178481833577
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 0.2907825321020583,
+    "edge_magnitude": 0.6542606972296312
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 23,
+      "q1_away": 30,
+      "q2_home": 32,
+      "q2_away": 24,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prediction_id": "B15D9E54",
+  "metadata": {
+    "timestamp": "2025-12-19T03:13:16.962675",
+    "date": "2025-12-19",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "New Orleans Pelicans",
+    "away_team": "Houston Rockets",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 233.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 226.1177241029223,
+    "context_adjusted_prediction": 226.1177241029223,
+    "final_prediction": 226.1177241029223,
+    "predictions_list": [
+      {
+        "line": 221.88567336151664,
+        "over_prob": 69.64811781875389,
+        "under_prob": 30.351882181246108
+      },
+      {
+        "line": 223.94283668075832,
+        "over_prob": 60.422816493351775,
+        "under_prob": 39.577183506648225
+      },
+      {
+        "line": 226.0,
+        "over_prob": 50.57073154521853,
+        "under_prob": 49.42926845478147
+      },
+      {
+        "line": 228.05716331924168,
+        "over_prob": 40.68352982857086,
+        "under_prob": 59.31647017142914
+      },
+      {
+        "line": 230.11432663848336,
+        "over_prob": 31.359228413627534,
+        "under_prob": 68.64077158637247
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 2.9537664794324914,
+    "edge_magnitude": 6.8822758970777045
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 24,
+      "q1_away": 33,
+      "q2_home": 21,
+      "q2_away": 34,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

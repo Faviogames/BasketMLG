@@ -1,0 +1,78 @@
+{
+  "prediction_id": "BCBC63A3",
+  "metadata": {
+    "timestamp": "2025-12-08T01:03:50.869056",
+    "date": "2025-12-08",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Charlotte Hornets",
+    "away_team": "Denver Nuggets",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 237.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 231.01585246249263,
+    "context_adjusted_prediction": 231.01585246249263,
+    "final_prediction": 231.01585246249263,
+    "predictions_list": [
+      {
+        "line": 226.88567336151664,
+        "over_prob": 69.21403865214168,
+        "under_prob": 30.785961347858322
+      },
+      {
+        "line": 228.94283668075832,
+        "over_prob": 59.94510602061026,
+        "under_prob": 40.05489397938974
+      },
+      {
+        "line": 231.0,
+        "over_prob": 50.07685599832672,
+        "under_prob": 49.92314400167328
+      },
+      {
+        "line": 233.05716331924168,
+        "over_prob": 40.20387676084367,
+        "under_prob": 59.79612323915633
+      },
+      {
+        "line": 235.11432663848336,
+        "over_prob": 30.921611729772167,
+        "under_prob": 69.07838827022783
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 2.730167384213629,
+    "edge_magnitude": 6.4841475375073685
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 34,
+      "q1_away": 34,
+      "q2_home": 24,
+      "q2_away": 23,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

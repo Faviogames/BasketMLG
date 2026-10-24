@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>BasketMLG · Conexión local</title>
+<link rel="stylesheet" href="panel.css">
+<main>
+  <h1>BasketMLG · SofaScore</h1>
+  <p>Arranca el modo live en la consola y copia aquí su código de conexión. Mantén este panel y la pestaña de SofaScore abiertos durante el seguimiento.</p>
+  <label for="token">Código de conexión de la consola</label>
+  <input id="token" type="password" autocomplete="off" spellcheck="false">
+  <label for="tab">Pestaña de SofaScore</label>
+  <select id="tab"></select>
+  <label for="mode">Cómo obtener los datos</label>
+  <select id="mode">
+    <option value="navigation">Abrir el enlace y leer el JSON de la página</option>
+    <option value="fetch">Consultar con fetch (comparación)</option>
+  </select>
+  <p>El primer modo utiliza la pestaña seleccionada para abrir los enlaces de datos. Dedica una pestaña de SofaScore a esta conexión.</p>
+  <div class="buttons">
+    <button id="refresh">Actualizar pestañas</button>
+    <button id="open">Abrir SofaScore</button>
+  </div>
+  <div class="buttons">
+    <button id="connect">Conectar</button>
+    <button id="disconnect" disabled>Desconectar</button>
+  </div>
+  <p id="status" role="status" aria-live="polite">Sin conexión.</p>
+  <p>Si aparece una verificación de SofaScore, resuélvela tú en su pestaña y vuelve a intentarlo desde la consola. Este panel no resuelve verificaciones ni copia cookies.</p>
+</main>
+<script src="panel.js"></script>
+</html>

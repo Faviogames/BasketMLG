@@ -1,0 +1,1172 @@
+[
+  {
+    "prediction_id": "CE04CD63",
+    "metadata": {
+      "timestamp": "2025-12-07T00:03:26.886650",
+      "date": "2025-12-07",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Brooklyn Nets",
+      "away_team": "New Orleans Pelicans",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 217.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 217.52826942613288,
+      "context_adjusted_prediction": 217.52826942613288,
+      "final_prediction": 217.52826942613288,
+      "predictions_list": [
+        {
+          "line": 213.88567336151664,
+          "over_prob": 67.09985740307152,
+          "under_prob": 32.900142596928475
+        },
+        {
+          "line": 215.94283668075832,
+          "over_prob": 57.639215240007275,
+          "under_prob": 42.360784759992725
+        },
+        {
+          "line": 218.0,
+          "over_prob": 47.71420385311745,
+          "under_prob": 52.28579614688255
+        },
+        {
+          "line": 220.05716331924168,
+          "over_prob": 37.92969394995599,
+          "under_prob": 62.07030605004401
+        },
+        {
+          "line": 222.11432663848336,
+          "over_prob": 28.865174318281788,
+          "under_prob": 71.13482568171821
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 0.012997437302473549,
+      "edge_magnitude": 0.02826942613287997
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 35,
+        "q1_away": 24,
+        "q2_home": 27,
+        "q2_away": 20,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "B0893B28",
+    "metadata": {
+      "timestamp": "2025-12-07T02:13:18.337187",
+      "date": "2025-12-07",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Washington Wizards",
+      "away_team": "Atlanta Hawks",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 236.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 246.93686762418432,
+      "context_adjusted_prediction": 246.93686762418432,
+      "final_prediction": 246.93686762418432,
+      "predictions_list": [
+        {
+          "line": 242.88567336151664,
+          "over_prob": 68.87561631770302,
+          "under_prob": 31.124383682296987
+        },
+        {
+          "line": 244.94283668075832,
+          "over_prob": 59.57368892031166,
+          "under_prob": 40.42631107968834
+        },
+        {
+          "line": 247.0,
+          "over_prob": 49.69392407192175,
+          "under_prob": 50.30607592807825
+        },
+        {
+          "line": 249.05716331924168,
+          "over_prob": 39.832992792357615,
+          "under_prob": 60.167007207642385
+        },
+        {
+          "line": 251.11432663848336,
+          "over_prob": 30.584160240361342,
+          "under_prob": 69.41583975963866
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 4.413051849549394,
+      "edge_magnitude": 10.436867624184316
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 28,
+        "q1_away": 35,
+        "q2_home": 27,
+        "q2_away": 35,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "DBF6DEC3",
+    "metadata": {
+      "timestamp": "2025-12-07T02:36:40.899380",
+      "date": "2025-12-07",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Cleveland Cavaliers",
+      "away_team": "Golden State Warriors",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 198.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 165.38395148970588,
+      "context_adjusted_prediction": 165.38395148970588,
+      "final_prediction": 165.38395148970588,
+      "predictions_list": [
+        {
+          "line": 160.88567336151664,
+          "over_prob": 70.76939356880459,
+          "under_prob": 29.230606431195405
+        },
+        {
+          "line": 162.94283668075832,
+          "over_prob": 61.66370681280864,
+          "under_prob": 38.33629318719136
+        },
+        {
+          "line": 165.0,
+          "over_prob": 51.860801693151764,
+          "under_prob": 48.139198306848236
+        },
+        {
+          "line": 167.05716331924168,
+          "over_prob": 41.94347665701707,
+          "under_prob": 58.05652334298293
+        },
+        {
+          "line": 169.11432663848336,
+          "over_prob": 32.515207752791,
+          "under_prob": 67.484792247209
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 16.68314786412802,
+      "edge_magnitude": 33.11604851029412
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 18,
+        "q1_away": 12,
+        "q2_home": 18,
+        "q2_away": 33,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "EE0EBEFD",
+    "metadata": {
+      "timestamp": "2025-12-07T02:49:42.554072",
+      "date": "2025-12-07",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Detroit Pistons",
+      "away_team": "Milwaukee Bucks",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 219.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 234.0654083532825,
+      "context_adjusted_prediction": 234.0654083532825,
+      "final_prediction": 234.0654083532825,
+      "predictions_list": [
+        {
+          "line": 229.88567336151664,
+          "over_prob": 69.42553934482198,
+          "under_prob": 30.574460655178015
+        },
+        {
+          "line": 231.94283668075832,
+          "over_prob": 60.17768093952224,
+          "under_prob": 39.82231906047776
+        },
+        {
+          "line": 234.0,
+          "over_prob": 50.31711000512633,
+          "under_prob": 49.68288999487367
+        },
+        {
+          "line": 236.05716331924168,
+          "over_prob": 40.437026576962644,
+          "under_prob": 59.562973423037356
+        },
+        {
+          "line": 238.11432663848336,
+          "over_prob": 31.13415932327412,
+          "under_prob": 68.86584067672588
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 6.879181896476023,
+      "edge_magnitude": 15.065408353282493
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 29,
+        "q1_away": 22,
+        "q2_home": 32,
+        "q2_away": 34,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "82B40FA2",
+    "metadata": {
+      "timestamp": "2025-12-07T03:09:37.972962",
+      "date": "2025-12-07",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Miami Heat",
+      "away_team": "Sacramento Kings",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 256.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 250.98461834938084,
+      "context_adjusted_prediction": 250.98461834938084,
+      "final_prediction": 250.98461834938084,
+      "predictions_list": [
+        {
+          "line": 246.88567336151664,
+          "over_prob": 69.08040456135026,
+          "under_prob": 30.91959543864974
+        },
+        {
+          "line": 248.94283668075832,
+          "over_prob": 59.7983366512837,
+          "under_prob": 40.2016633487163
+        },
+        {
+          "line": 251.0,
+          "over_prob": 49.925426591762104,
+          "under_prob": 50.074573408237896
+        },
+        {
+          "line": 253.05716331924168,
+          "over_prob": 40.05710529210999,
+          "under_prob": 59.94289470789001
+        },
+        {
+          "line": 255.11432663848336,
+          "over_prob": 30.78797381591646,
+          "under_prob": 69.21202618408354
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 2.15024625755133,
+      "edge_magnitude": 5.515381650619162
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 31,
+        "q1_away": 34,
+        "q2_home": 24,
+        "q2_away": 38,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "25E8EA93",
+    "metadata": {
+      "timestamp": "2025-12-07T03:11:13.531800",
+      "date": "2025-12-07",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Minnesota Timberwolves",
+      "away_team": "Los Angeles Clippers",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 212.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 206.54166234987926,
+      "context_adjusted_prediction": 206.54166234987926,
+      "final_prediction": 206.54166234987926,
+      "predictions_list": [
+        {
+          "line": 202.88567336151664,
+          "over_prob": 67.15870763480817,
+          "under_prob": 32.84129236519183
+        },
+        {
+          "line": 204.94283668075832,
+          "over_prob": 57.70294280840526,
+          "under_prob": 42.29705719159474
+        },
+        {
+          "line": 207.0,
+          "over_prob": 47.77903192710274,
+          "under_prob": 52.22096807289726
+        },
+        {
+          "line": 209.05716331924168,
+          "over_prob": 37.991645972778656,
+          "under_prob": 62.008354027221344
+        },
+        {
+          "line": 211.11432663848336,
+          "over_prob": 28.920790921952104,
+          "under_prob": 71.0792090780479
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 2.8039236000568186,
+      "edge_magnitude": 5.95833765012074
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 22,
+        "q1_away": 34,
+        "q2_home": 20,
+        "q2_away": 22,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "E87CA29B",
+    "metadata": {
+      "timestamp": "2025-12-07T03:15:02.734664",
+      "date": "2025-12-07",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Miami Heat",
+      "away_team": "Sacramento Kings",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 244.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 250.98461834938084,
+      "context_adjusted_prediction": 250.98461834938084,
+      "final_prediction": 250.98461834938084,
+      "predictions_list": [
+        {
+          "line": 246.88567336151664,
+          "over_prob": 69.08040456135026,
+          "under_prob": 30.91959543864974
+        },
+        {
+          "line": 248.94283668075832,
+          "over_prob": 59.7983366512837,
+          "under_prob": 40.2016633487163
+        },
+        {
+          "line": 251.0,
+          "over_prob": 49.925426591762104,
+          "under_prob": 50.074573408237896
+        },
+        {
+          "line": 253.05716331924168,
+          "over_prob": 40.05710529210999,
+          "under_prob": 59.94289470789001
+        },
+        {
+          "line": 255.11432663848336,
+          "over_prob": 30.78797381591646,
+          "under_prob": 69.21202618408354
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 2.6521956439185432,
+      "edge_magnitude": 6.484618349380838
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 31,
+        "q1_away": 34,
+        "q2_home": 24,
+        "q2_away": 38,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "A5793423",
+    "metadata": {
+      "timestamp": "2025-12-07T03:45:41.820787",
+      "date": "2025-12-07",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Dallas Mavericks",
+      "away_team": "Houston Rockets",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 229.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 229.1461221731644,
+      "context_adjusted_prediction": 229.1461221731644,
+      "final_prediction": 229.1461221731644,
+      "predictions_list": [
+        {
+          "line": 224.88567336151664,
+          "over_prob": 69.76863417961714,
+          "under_prob": 30.231365820382862
+        },
+        {
+          "line": 226.94283668075832,
+          "over_prob": 60.55570938303987,
+          "under_prob": 39.44429061696013
+        },
+        {
+          "line": 229.0,
+          "over_prob": 50.708393554062724,
+          "under_prob": 49.291606445937276
+        },
+        {
+          "line": 231.05716331924168,
+          "over_prob": 40.81749227876919,
+          "under_prob": 59.18250772123081
+        },
+        {
+          "line": 233.11432663848336,
+          "over_prob": 31.481692482169635,
+          "under_prob": 68.51830751783037
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 0.06380880924209617,
+      "edge_magnitude": 0.14612217316440024
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 29,
+        "q1_away": 26,
+        "q2_home": 28,
+        "q2_away": 31,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "CD22C229",
+    "metadata": {
+      "timestamp": "2025-12-07T19:18:38.006851",
+      "date": "2025-12-07",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "New York Knicks",
+      "away_team": "Orlando Magic",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 221.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 223.30478094082306,
+      "context_adjusted_prediction": 223.30478094082306,
+      "final_prediction": 223.30478094082306,
+      "predictions_list": [
+        {
+          "line": 218.88567336151664,
+          "over_prob": 70.43796562691242,
+          "under_prob": 29.562034373087588
+        },
+        {
+          "line": 220.94283668075832,
+          "over_prob": 61.29587639036597,
+          "under_prob": 38.70412360963403
+        },
+        {
+          "line": 223.0,
+          "over_prob": 51.47730380548138,
+          "under_prob": 48.52269619451862
+        },
+        {
+          "line": 225.05716331924168,
+          "over_prob": 41.56786841741255,
+          "under_prob": 58.43213158258745
+        },
+        {
+          "line": 227.11432663848336,
+          "over_prob": 32.16961545924397,
+          "under_prob": 67.83038454075603
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 1.0428873035398483,
+      "edge_magnitude": 2.304780940823065
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 35,
+        "q1_away": 31,
+        "q2_home": 19,
+        "q2_away": 24,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "BB99B3E8",
+    "metadata": {
+      "timestamp": "2025-12-07T22:50:48.381700",
+      "date": "2025-12-07",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Toronto Raptors",
+      "away_team": "Boston Celtics",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 246.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 262.7238676018855,
+      "context_adjusted_prediction": 262.7238676018855,
+      "final_prediction": 262.7238676018855,
+      "predictions_list": [
+        {
+          "line": 258.88567336151664,
+          "over_prob": 67.95506293646908,
+          "under_prob": 32.044937063530924
+        },
+        {
+          "line": 260.9428366807583,
+          "over_prob": 58.56786094911916,
+          "under_prob": 41.43213905088084
+        },
+        {
+          "line": 263.0,
+          "over_prob": 48.661503735704535,
+          "under_prob": 51.338496264295465
+        },
+        {
+          "line": 265.0571633192417,
+          "over_prob": 38.83747849261906,
+          "under_prob": 61.16252150738094
+        },
+        {
+          "line": 267.11432663848336,
+          "over_prob": 29.68238861628592,
+          "under_prob": 70.31761138371408
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 6.798320163368091,
+      "edge_magnitude": 16.7238676018855
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 26,
+        "q1_away": 34,
+        "q2_home": 33,
+        "q2_away": 43,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "864CA043",
+    "metadata": {
+      "timestamp": "2025-12-07T22:57:40.180898",
+      "date": "2025-12-07",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Toronto Raptors",
+      "away_team": "Boston Celtics",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 246.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 260.11184380382605,
+      "context_adjusted_prediction": 260.11184380382605,
+      "final_prediction": 260.11184380382605,
+      "predictions_list": [
+        {
+          "line": 255.88567336151664,
+          "over_prob": 69.62313608376257,
+          "under_prob": 30.37686391623742
+        },
+        {
+          "line": 257.9428366807583,
+          "over_prob": 60.39528357614,
+          "under_prob": 39.60471642386
+        },
+        {
+          "line": 260.0,
+          "over_prob": 50.542225402389825,
+          "under_prob": 49.457774597610175
+        },
+        {
+          "line": 262.0571633192417,
+          "over_prob": 40.65580420766668,
+          "under_prob": 59.34419579233332
+        },
+        {
+          "line": 264.11432663848336,
+          "over_prob": 31.33389575908376,
+          "under_prob": 68.66610424091624
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 5.736521871474003,
+      "edge_magnitude": 14.111843803826048
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 26,
+        "q1_away": 34,
+        "q2_home": 33,
+        "q2_away": 43,
+        "q3_home": 5,
+        "q3_away": 4,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "5BBA2751",
+    "metadata": {
+      "timestamp": "2025-12-07T23:00:18.436549",
+      "date": "2025-12-07",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Toronto Raptors",
+      "away_team": "Boston Celtics",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 246.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 256.57334829852135,
+      "context_adjusted_prediction": 256.57334829852135,
+      "final_prediction": 256.57334829852135,
+      "predictions_list": [
+        {
+          "line": 252.88567336151664,
+          "over_prob": 67.29777016322963,
+          "under_prob": 32.70222983677037
+        },
+        {
+          "line": 254.94283668075832,
+          "over_prob": 57.8536335793591,
+          "under_prob": 42.1463664206409
+        },
+        {
+          "line": 257.0,
+          "over_prob": 47.9324299692258,
+          "under_prob": 52.0675700307742
+        },
+        {
+          "line": 259.0571633192417,
+          "over_prob": 38.138339045882695,
+          "under_prob": 61.861660954117305
+        },
+        {
+          "line": 261.11432663848336,
+          "over_prob": 29.05257290103411,
+          "under_prob": 70.94742709896589
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 4.298109064439575,
+      "edge_magnitude": 10.573348298521353
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 26,
+        "q1_away": 34,
+        "q2_home": 33,
+        "q2_away": 43,
+        "q3_home": 5,
+        "q3_away": 10,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "6EF7E858",
+    "metadata": {
+      "timestamp": "2025-12-07T23:05:37.580244",
+      "date": "2025-12-07",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Toronto Raptors",
+      "away_team": "Boston Celtics",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 246.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 254.33000467333414,
+      "context_adjusted_prediction": 254.33000467333414,
+      "final_prediction": 254.33000467333414,
+      "predictions_list": [
+        {
+          "line": 249.88567336151664,
+          "over_prob": 70.5437459596465,
+          "under_prob": 29.456254040353503
+        },
+        {
+          "line": 251.94283668075832,
+          "over_prob": 61.413179051846086,
+          "under_prob": 38.586820948153914
+        },
+        {
+          "line": 254.0,
+          "over_prob": 51.59950274000886,
+          "under_prob": 48.40049725999114
+        },
+        {
+          "line": 256.0571633192417,
+          "over_prob": 41.68745531209104,
+          "under_prob": 58.31254468790896
+        },
+        {
+          "line": 258.11432663848336,
+          "over_prob": 32.27955562166801,
+          "under_prob": 67.72044437833199
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 3.386180761517945,
+      "edge_magnitude": 8.330004673334145
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 26,
+        "q1_away": 34,
+        "q2_home": 33,
+        "q2_away": 43,
+        "q3_home": 11,
+        "q3_away": 12,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "27431F72",
+    "metadata": {
+      "timestamp": "2025-12-07T23:10:57.744810",
+      "date": "2025-12-07",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Toronto Raptors",
+      "away_team": "Boston Celtics",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 246.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 251.3816227127677,
+      "context_adjusted_prediction": 251.3816227127677,
+      "final_prediction": 251.3816227127677,
+      "predictions_list": [
+        {
+          "line": 246.88567336151664,
+          "over_prob": 70.75966943229798,
+          "under_prob": 29.24033056770202
+        },
+        {
+          "line": 248.94283668075832,
+          "over_prob": 61.65290200940845,
+          "under_prob": 38.34709799059155
+        },
+        {
+          "line": 251.0,
+          "over_prob": 51.849523506278,
+          "under_prob": 48.150476493722
+        },
+        {
+          "line": 253.05716331924168,
+          "over_prob": 41.9324175948674,
+          "under_prob": 58.0675824051326
+        },
+        {
+          "line": 255.11432663848336,
+          "over_prob": 32.50502057452091,
+          "under_prob": 67.49497942547909
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 2.18765150925516,
+      "edge_magnitude": 5.381622712767694
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 26,
+        "q1_away": 34,
+        "q2_home": 33,
+        "q2_away": 43,
+        "q3_home": 18,
+        "q3_away": 12,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "71DCA873",
+    "metadata": {
+      "timestamp": "2025-12-07T23:15:00.727587",
+      "date": "2025-12-07",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Toronto Raptors",
+      "away_team": "Boston Celtics",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 246.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 245.6177441244651,
+      "context_adjusted_prediction": 245.6177441244651,
+      "final_prediction": 245.6177441244651,
+      "predictions_list": [
+        {
+          "line": 241.88567336151664,
+          "over_prob": 67.49220979971608,
+          "under_prob": 32.50779020028392
+        },
+        {
+          "line": 243.94283668075832,
+          "over_prob": 58.06457565963303,
+          "under_prob": 41.93542434036697
+        },
+        {
+          "line": 246.0,
+          "over_prob": 48.14741009345723,
+          "under_prob": 51.85258990654277
+        },
+        {
+          "line": 248.05716331924168,
+          "over_prob": 38.34416022180098,
+          "under_prob": 61.65583977819902
+        },
+        {
+          "line": 250.11432663848336,
+          "over_prob": 29.237686558412236,
+          "under_prob": 70.76231344158776
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 0.15538856729060774,
+      "edge_magnitude": 0.38225587553489504
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 26,
+        "q1_away": 34,
+        "q2_home": 33,
+        "q2_away": 43,
+        "q3_home": 22,
+        "q3_away": 14,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  }
+]

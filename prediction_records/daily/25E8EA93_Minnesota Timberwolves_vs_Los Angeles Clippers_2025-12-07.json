@@ -1,0 +1,78 @@
+{
+  "prediction_id": "25E8EA93",
+  "metadata": {
+    "timestamp": "2025-12-07T03:11:13.531800",
+    "date": "2025-12-07",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Minnesota Timberwolves",
+    "away_team": "Los Angeles Clippers",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 212.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 206.54166234987926,
+    "context_adjusted_prediction": 206.54166234987926,
+    "final_prediction": 206.54166234987926,
+    "predictions_list": [
+      {
+        "line": 202.88567336151664,
+        "over_prob": 67.15870763480817,
+        "under_prob": 32.84129236519183
+      },
+      {
+        "line": 204.94283668075832,
+        "over_prob": 57.70294280840526,
+        "under_prob": 42.29705719159474
+      },
+      {
+        "line": 207.0,
+        "over_prob": 47.77903192710274,
+        "under_prob": 52.22096807289726
+      },
+      {
+        "line": 209.05716331924168,
+        "over_prob": 37.991645972778656,
+        "under_prob": 62.008354027221344
+      },
+      {
+        "line": 211.11432663848336,
+        "over_prob": 28.920790921952104,
+        "under_prob": 71.0792090780479
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 2.8039236000568186,
+    "edge_magnitude": 5.95833765012074
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 22,
+      "q1_away": 34,
+      "q2_home": 20,
+      "q2_away": 22,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

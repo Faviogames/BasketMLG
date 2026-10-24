@@ -1,0 +1,17 @@
+{
+  "useless_features": [
+    "ft_rate_combined",
+    "diff_ema_game_flow_indicator_long_term_11",
+    "home_opponent_pace_ema_5",
+    "diff_ema_scoring_efficiency_long_term_11",
+    "home_ema_clutch_performance_long_term_11",
+    "home_ema_plus_minus_long_term_11",
+    "home_ema_win_long_term_11",
+    "home_avg_pace_last_5",
+    "diff_ema_win_long_term_11",
+    "diff_ema_clutch_efficiency_long_term_11",
+    "away_ema_clutch_performance_long_term_11"
+  ],
+  "last_updated": "2025-11-28 01:03:35.469029",
+  "total_features": 11
+}

@@ -1,0 +1,222 @@
+{
+  "artifact_type": "bundle",
+  "league_name": "WNBA",
+  "created_at": "2025-10-09 06:35:37.281887",
+  "base": {
+    "model_type": "xgboost",
+    "mae": 4.52094841003418,
+    "std_dev": 6.414144960695836,
+    "teams_count": 13,
+    "matches_count": 1046,
+    "features_count": 153,
+    "features_used": null
+  },
+  "league_stats": {
+    "average_total_points": 162.99,
+    "median_total_points": 163.0,
+    "scoring_distribution": {
+      "min": 117.0,
+      "max": 223.0,
+      "q1": 151.0,
+      "q3": 175.0
+    },
+    "overs_unders_tendency": {
+      "over_200": 0.017,
+      "over_210": 0.006,
+      "over_220": 0.002,
+      "over_230": 0.0,
+      "over_240": 0.0
+    },
+    "league_bias": "unders_favored"
+  },
+  "feature_analysis": {
+    "top_10_features": [
+      {
+        "name": "halftime_total",
+        "importance": 0.3425,
+        "category": "scoring"
+      },
+      {
+        "name": "q2_total",
+        "importance": 0.0454,
+        "category": "scoring"
+      },
+      {
+        "name": "home_ema_clutch_efficiency_long_term_11",
+        "importance": 0.0273,
+        "category": "pace"
+      },
+      {
+        "name": "q1_total",
+        "importance": 0.0232,
+        "category": "scoring"
+      },
+      {
+        "name": "diff_ema_plus_minus_long_term_11",
+        "importance": 0.0214,
+        "category": "defensive"
+      },
+      {
+        "name": "away_avg_possessions_last_5",
+        "importance": 0.018,
+        "category": "pace"
+      },
+      {
+        "name": "home_ema_clutch_time_performance_long_term_11",
+        "importance": 0.0176,
+        "category": "defensive"
+      },
+      {
+        "name": "diff_ema_clutch_time_performance_long_term_11",
+        "importance": 0.015,
+        "category": "defensive"
+      },
+      {
+        "name": "q2_trend",
+        "importance": 0.0143,
+        "category": "scoring"
+      },
+      {
+        "name": "home_ema_clutch_time_performance_medium_term_8",
+        "importance": 0.0138,
+        "category": "defensive"
+      }
+    ],
+    "useless_features": [
+      "quarter_consistency",
+      "home_ema_clutch_performance_long_term_11",
+      "diff_pmci",
+      "live_momentum_shift",
+      "away_ema_scoring_efficiency_long_term_11",
+      "game_balance_score",
+      "diff_ema_game_flow_indicator_short_term_3",
+      "home_ema_game_flow_indicator_long_term_11",
+      "diff_ema_clutch_time_performance_medium_term_8",
+      "away_ema_clutch_performance_long_term_11",
+      "lead_stability",
+      "home_ema_defensive_stops_medium_term_8",
+      "diff_ema_scoring_efficiency_medium_term_8",
+      "away_ema_scoring_efficiency_medium_term_8",
+      "away_cprc",
+      "diff_ema_win_medium_term_8",
+      "away_ema_win_long_term_11",
+      "diff_ema_win_long_term_11",
+      "diff_ema_clutch_performance_long_term_11",
+      "away_ema_defensive_stops_long_term_11",
+      "away_ema_win_medium_term_8",
+      "home_ema_win_long_term_11",
+      "diff_ema_clutch_efficiency_long_term_11",
+      "q3_diff",
+      "diff_ema_defensive_stops_long_term_11",
+      "is_potential_blowout",
+      "diff_ema_turnover_momentum_long_term_11",
+      "comeback_indicator",
+      "home_ema_defensive_stops_long_term_11",
+      "diff_ema_game_flow_indicator_long_term_11",
+      "live_pace_estimate",
+      "away_ema_turnover_momentum_long_term_11",
+      "away_ema_plus_minus_long_term_11"
+    ],
+    "feature_categories": {
+      "scoring": 0.4,
+      "pace": 0.2,
+      "defensive": 0.4
+    }
+  },
+  "training_insights": {
+    "performance_metrics": {
+      "r2_score": 0.837,
+      "explained_variance": 0.837,
+      "median_absolute_error": 2.86
+    },
+    "prediction_distribution": {
+      "under_predictions": 0.433,
+      "accurate_predictions": 0.686,
+      "over_predictions": 0.567
+    },
+    "model_stability": {
+      "feature_stability_score": 0.539
+    }
+  },
+  "meta": {
+    "artifact_type": "meta_model",
+    "model_type": "ridge",
+    "league_name": "WNBA",
+    "feature_names": [
+      "base_pred",
+      "live_pace_estimate",
+      "live_efficiency_home",
+      "live_efficiency_away",
+      "game_balance_score",
+      "is_potential_blowout",
+      "intensity_drop_factor",
+      "lead_stability",
+      "q1_total",
+      "q2_total",
+      "q3_total",
+      "q1_diff",
+      "q2_diff",
+      "q3_diff",
+      "q2_trend",
+      "q3_trend",
+      "quarter_variance",
+      "context_adjusted_pred",
+      "signal_strength",
+      "active_signals",
+      "adjustment_magnitude"
+    ],
+    "impute_values": {
+      "base_pred": 163.09757423765572,
+      "live_pace_estimate": 100.58188451242829,
+      "live_efficiency_home": 0.5069668072740562,
+      "live_efficiency_away": 0.49303319272594376,
+      "game_balance_score": 0.7580836828495779,
+      "is_potential_blowout": 0.121414913957935,
+      "intensity_drop_factor": 0.9015319114523839,
+      "lead_stability": 0.6630019120458891,
+      "q1_total": 41.43977055449331,
+      "q2_total": 40.67304015296367,
+      "q3_total": 20.624282982791588,
+      "q1_diff": 0.25047801147227533,
+      "q2_diff": 1.0860420650095601,
+      "q3_diff": -0.0372848948374761,
+      "q2_trend": -0.7667304015296367,
+      "q3_trend": 0.28776290630975143,
+      "quarter_variance": 12.474707278771671,
+      "context_adjusted_pred": 171.16517105359765,
+      "signal_strength": 0.19619586852356577,
+      "active_signals": 1.4923518164435947,
+      "adjustment_magnitude": 0.04946662318122842
+    },
+    "clip": 8.0,
+    "oof_mae_base": 8.018722680057213,
+    "oof_mae_stacked": 10.474525967516154,
+    "uplift": -2.4558032874589415,
+    "n_rows": 1046,
+    "created_at": "2025-10-09 06:35:34.399870",
+    "coef": [
+      5.099009938116761,
+      0.3968471137821524,
+      1.4205085417092864,
+      -1.420508541709205,
+      3.723383408015175,
+      -1.6957810072884305,
+      9.35583586422561,
+      -0.7977781491836904,
+      0.4683570970162441,
+      0.5432949187980078,
+      0.2908644474856406,
+      -0.04806393656464937,
+      -0.02124388269517994,
+      -0.028128075275928963,
+      0.07493782188566367,
+      0.3565509381682672,
+      0.3354927512364345,
+      -5.3924061295617385,
+      -1.1374700684508166,
+      6.688169061809965,
+      0.020016374390864095
+    ],
+    "intercept": -28.740531136414525
+  }
+}

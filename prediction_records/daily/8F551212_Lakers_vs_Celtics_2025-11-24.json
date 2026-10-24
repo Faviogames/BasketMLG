@@ -1,0 +1,81 @@
+{
+  "prediction_id": "8F551212",
+  "metadata": {
+    "timestamp": "2025-11-24T00:48:31.407755",
+    "date": "2025-11-24",
+    "version": "1.1"
+  },
+  "matchup": {
+    "home_team": "Lakers",
+    "away_team": "Celtics",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 220.5,
+    "bookmaker": "API Auto",
+    "api_endpoint": "the-odds-api.com",
+    "acquisition_method": "automatic"
+  },
+  "predictions": {
+    "base_model_prediction": 220.0,
+    "context_adjusted_prediction": 226.3252554393307,
+    "final_prediction": 226.3252554393307,
+    "adjustments": {
+      "blowout_adjustment": 6.325255439330704,
+      "context_adjustments": {},
+      "adjustment_factor": 1.0,
+      "applied_adjustments": []
+    }
+  },
+  "probabilities": [
+    0.3,
+    0.4,
+    0.3
+  ],
+  "analysis": {
+    "confidence_score": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 5.825255439330704
+  },
+  "game_context": {
+    "quarter_scores": {
+      "q1_home": 25,
+      "q1_away": 25,
+      "q2_home": 25,
+      "q2_away": 25,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 6.325255439330704,
+    "meta_metadata": {
+      "raw_prediction": 226.3252554393307,
+      "final_prediction": 226.3252554393307,
+      "features": {
+        "halftime_total": 100,
+        "pace_halftime": 95.0,
+        "efg_home": 0.5,
+        "efg_away": 0.5,
+        "to_rate_home": 0.13,
+        "to_rate_away": 0.13,
+        "ft_rate_home": 0.2,
+        "ft_rate_away": 0.2,
+        "home_lead": 0,
+        "is_close_game": 1,
+        "momentum_score": 0
+      },
+      "adjustments": []
+    },
+    "is_halftime": true,
+    "prediction_timing": "q2"
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

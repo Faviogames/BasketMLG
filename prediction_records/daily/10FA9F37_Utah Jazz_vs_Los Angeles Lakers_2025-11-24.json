@@ -1,0 +1,102 @@
+{
+  "prediction_id": "10FA9F37",
+  "metadata": {
+    "timestamp": "2025-11-24T03:21:50.249210",
+    "date": "2025-11-24",
+    "version": "1.1"
+  },
+  "matchup": {
+    "home_team": "Utah Jazz",
+    "away_team": "Los Angeles Lakers",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 237.0,
+    "bookmaker": "API Auto",
+    "api_endpoint": "the-odds-api.com",
+    "acquisition_method": "automatic"
+  },
+  "predictions": {
+    "base_model_prediction": 222.2127227783203,
+    "context_adjusted_prediction": 245.07016740232234,
+    "final_prediction": 245.07016740232234,
+    "adjustments": {
+      "blowout_adjustment": 22.857444624002028,
+      "context_adjustments": {},
+      "adjustment_factor": 1.0,
+      "applied_adjustments": []
+    }
+  },
+  "probabilities": [
+    {
+      "line": 217.4593726691472,
+      "over_prob": 69.96605197397398,
+      "under_prob": 30.033948026026025
+    },
+    {
+      "line": 219.7296863345736,
+      "over_prob": 60.77364937648927,
+      "under_prob": 39.22635062351073
+    },
+    {
+      "line": 222.0,
+      "over_prob": 50.93441218454579,
+      "under_prob": 49.06558781545421
+    },
+    {
+      "line": 224.2703136654264,
+      "over_prob": 41.037687663589594,
+      "under_prob": 58.962312336410406
+    },
+    {
+      "line": 226.5406273308528,
+      "over_prob": 31.68321744639914,
+      "under_prob": 68.31678255360086
+    }
+  ],
+  "analysis": {
+    "confidence_score": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 8.07016740232234
+  },
+  "game_context": {
+    "quarter_scores": {
+      "q1_home": 30,
+      "q1_away": 32,
+      "q2_home": 25,
+      "q2_away": 30,
+      "q3_home": 6,
+      "q3_away": 5,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 22.857444624002028,
+    "meta_metadata": {
+      "raw_prediction": 245.07016740232234,
+      "final_prediction": 245.07016740232234,
+      "features": {
+        "halftime_total": 117,
+        "pace_halftime": 95.0,
+        "efg_home": 0.5,
+        "efg_away": 0.5,
+        "to_rate_home": 0.13,
+        "to_rate_away": 0.13,
+        "ft_rate_home": 0.2,
+        "ft_rate_away": 0.2,
+        "home_lead": -7,
+        "is_close_game": 1,
+        "momentum_score": -7
+      },
+      "adjustments": []
+    },
+    "prediction_timing": "q3_progress"
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

@@ -1,0 +1,582 @@
+{
+  "index_metadata": {
+    "league": "NBA",
+    "year": "2025",
+    "month": "11",
+    "created_at": "2025-11-23T19:38:27.376417",
+    "last_updated": "2025-11-30T22:18:48.837920",
+    "total_predictions": 57
+  },
+  "prediction_references": [
+    {
+      "prediction_id": "18F1082A",
+      "date": "2025-11-23",
+      "home_team": "Philadelphia 76ers",
+      "away_team": "Miami Heat",
+      "final_prediction": 203.3125762939453,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "32E6A0DE",
+      "date": "2025-11-23",
+      "home_team": "Philadelphia 76ers",
+      "away_team": "Miami Heat",
+      "final_prediction": 237.8404541015625,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "CD9A9974",
+      "date": "2025-11-24",
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "final_prediction": 220.0,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "DBE5542E",
+      "date": "2025-11-24",
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "final_prediction": 220.0,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "0F9CE7FB",
+      "date": "2025-11-24",
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "final_prediction": 226.3252554393307,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "D73D1649",
+      "date": "2025-11-24",
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "final_prediction": 226.3252554393307,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "5D5E97B8",
+      "date": "2025-11-24",
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "final_prediction": 226.3252554393307,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "C5D10F58",
+      "date": "2025-11-24",
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "final_prediction": 226.3252554393307,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "BA41D873",
+      "date": "2025-11-24",
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "final_prediction": 226.3252554393307,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "438B9766",
+      "date": "2025-11-24",
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "final_prediction": 226.3252554393307,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "8F551212",
+      "date": "2025-11-24",
+      "home_team": "Lakers",
+      "away_team": "Celtics",
+      "final_prediction": 226.3252554393307,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "D2C19DC0",
+      "date": "2025-11-24",
+      "home_team": "Atlanta Hawks",
+      "away_team": "Charlotte Hornets",
+      "final_prediction": 221.28051266829496,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "FA0AAD32",
+      "date": "2025-11-24",
+      "home_team": "Atlanta Hawks",
+      "away_team": "Charlotte Hornets",
+      "final_prediction": 230.27393336539825,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "0238D5EA",
+      "date": "2025-11-24",
+      "home_team": "Boston Celtics",
+      "away_team": "Orlando Magic",
+      "final_prediction": 249.9587829302033,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "CAE5890F",
+      "date": "2025-11-24",
+      "home_team": "Boston Celtics",
+      "away_team": "Orlando Magic",
+      "final_prediction": 249.9587829302033,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "26DCA199",
+      "date": "2025-11-24",
+      "home_team": "Toronto Raptors",
+      "away_team": "Brooklyn Nets",
+      "final_prediction": 247.56360165390367,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "8B48E074",
+      "date": "2025-11-24",
+      "home_team": "Toronto Raptors",
+      "away_team": "Brooklyn Nets",
+      "final_prediction": 247.56360165390367,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "F5925F50",
+      "date": "2025-11-24",
+      "home_team": "Phoenix Suns",
+      "away_team": "San Antonio Spurs",
+      "final_prediction": 230.9937623027854,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "9D625BD5",
+      "date": "2025-11-24",
+      "home_team": "Utah Jazz",
+      "away_team": "Los Angeles Lakers",
+      "final_prediction": 241.5684623022354,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "10FA9F37",
+      "date": "2025-11-24",
+      "home_team": "Utah Jazz",
+      "away_team": "Los Angeles Lakers",
+      "final_prediction": 245.07016740232234,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "28FDB8C3",
+      "date": "2025-11-25",
+      "home_team": "Indiana Pacers",
+      "away_team": "Detroit Pistons",
+      "final_prediction": 227.38592529296875,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "DD3237CB",
+      "date": "2025-11-29",
+      "home_team": "New York Knicks",
+      "away_team": "Milwaukee Bucks",
+      "final_prediction": 227.20975070769757,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "7496D978",
+      "date": "2025-11-29",
+      "home_team": "New York Knicks",
+      "away_team": "Milwaukee Bucks",
+      "final_prediction": 244.47251124366477,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "82A15206",
+      "date": "2025-11-29",
+      "home_team": "Atlanta Hawks",
+      "away_team": "Cleveland Cavaliers",
+      "final_prediction": 202.05050700337537,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "273FEEE1",
+      "date": "2025-11-29",
+      "home_team": "Atlanta Hawks",
+      "away_team": "Cleveland Cavaliers",
+      "final_prediction": 211.8816809540218,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "566ED301",
+      "date": "2025-11-29",
+      "home_team": "Atlanta Hawks",
+      "away_team": "Cleveland Cavaliers",
+      "final_prediction": 218.22880730146716,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "24222469",
+      "date": "2025-11-29",
+      "home_team": "Atlanta Hawks",
+      "away_team": "Cleveland Cavaliers",
+      "final_prediction": 217.20539858029034,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "DFC387B9",
+      "date": "2025-11-29",
+      "home_team": "Atlanta Hawks",
+      "away_team": "Cleveland Cavaliers",
+      "final_prediction": 226.02603618623544,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "70677A56",
+      "date": "2025-11-29",
+      "home_team": "Atlanta Hawks",
+      "away_team": "Cleveland Cavaliers",
+      "final_prediction": 232.32649161905331,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "039E0E41",
+      "date": "2025-11-29",
+      "home_team": "Indiana Pacers",
+      "away_team": "Washington Wizards",
+      "final_prediction": 224.68974556415353,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "A365C876",
+      "date": "2025-11-29",
+      "home_team": "Indiana Pacers",
+      "away_team": "Washington Wizards",
+      "final_prediction": 224.68974556415353,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "47FCAD16",
+      "date": "2025-11-29",
+      "home_team": "Brooklyn Nets",
+      "away_team": "Philadelphia 76ers",
+      "final_prediction": 209.51116755329207,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "CAD74765",
+      "date": "2025-11-29",
+      "home_team": "Brooklyn Nets",
+      "away_team": "Philadelphia 76ers",
+      "final_prediction": 218.33180515923718,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "27300F19",
+      "date": "2025-11-29",
+      "home_team": "New York Knicks",
+      "away_team": "Milwaukee Bucks",
+      "final_prediction": 241.0906313393957,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "121838A2",
+      "date": "2025-11-29",
+      "home_team": "Utah Jazz",
+      "away_team": "Sacramento Kings",
+      "final_prediction": 171.14299348338145,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "C587CEAA",
+      "date": "2025-11-29",
+      "home_team": "Oklahoma City Thunder",
+      "away_team": "Phoenix Suns",
+      "final_prediction": 176.98347608770072,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "8AD652BB",
+      "date": "2025-11-29",
+      "home_team": "Oklahoma City Thunder",
+      "away_team": "Phoenix Suns",
+      "final_prediction": 179.5036582608279,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "F905D2A6",
+      "date": "2025-11-29",
+      "home_team": "Los Angeles Clippers",
+      "away_team": "Memphis Grizzlies",
+      "final_prediction": 227.3466564716091,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "1586882E",
+      "date": "2025-11-29",
+      "home_team": "Los Angeles Lakers",
+      "away_team": "Dallas Mavericks",
+      "final_prediction": 242.2260740577571,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "64921E6E",
+      "date": "2025-11-30",
+      "home_team": "Indiana Pacers",
+      "away_team": "Chicago Bulls",
+      "final_prediction": 234.0610372237592,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "5FA388B1",
+      "date": "2025-11-30",
+      "home_team": "Milwaukee Bucks",
+      "away_team": "Brooklyn Nets",
+      "final_prediction": 242.51514071949117,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "AEECAFDA",
+      "date": "2025-11-30",
+      "home_team": "Milwaukee Bucks",
+      "away_team": "Brooklyn Nets",
+      "final_prediction": 242.51514071949117,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "E8CAE1E4",
+      "date": "2025-11-30",
+      "home_team": "Miami Heat",
+      "away_team": "Detroit Pistons",
+      "final_prediction": 253.46669446614757,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "B2715757",
+      "date": "2025-11-30",
+      "home_team": "Golden State Warriors",
+      "away_team": "New Orleans Pelicans",
+      "final_prediction": 173.56738859214576,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "EB47F5FB",
+      "date": "2025-11-30",
+      "home_team": "Golden State Warriors",
+      "away_team": "New Orleans Pelicans",
+      "final_prediction": 289.02268448612375,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "002154A4",
+      "date": "2025-11-30",
+      "home_team": "Golden State Warriors",
+      "away_team": "New Orleans Pelicans",
+      "final_prediction": 187.87151508846827,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "9C9751E7",
+      "date": "2025-11-30",
+      "home_team": "Golden State Warriors",
+      "away_team": "New Orleans Pelicans",
+      "final_prediction": 309.2518394030921,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "11546EF1",
+      "date": "2025-11-30",
+      "home_team": "Golden State Warriors",
+      "away_team": "New Orleans Pelicans",
+      "final_prediction": 135.73122488764918,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "50FB40D3",
+      "date": "2025-11-30",
+      "home_team": "Golden State Warriors",
+      "away_team": "New Orleans Pelicans",
+      "final_prediction": 209.45267147244766,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "F001E57B",
+      "date": "2025-11-30",
+      "home_team": "Golden State Warriors",
+      "away_team": "New Orleans Pelicans",
+      "final_prediction": 349.9862994370823,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "4A9E1271",
+      "date": "2025-11-30",
+      "home_team": "Golden State Warriors",
+      "away_team": "New Orleans Pelicans",
+      "final_prediction": 143.87787130976312,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "72177CF5",
+      "date": "2025-11-30",
+      "home_team": "Golden State Warriors",
+      "away_team": "New Orleans Pelicans",
+      "final_prediction": 212.74124949303638,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "9E8A898A",
+      "date": "2025-11-30",
+      "home_team": "Golden State Warriors",
+      "away_team": "New Orleans Pelicans",
+      "final_prediction": 365.94567010688695,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "073581F2",
+      "date": "2025-11-30",
+      "home_team": "Phoenix Suns",
+      "away_team": "Denver Nuggets",
+      "final_prediction": 243.82703236825455,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "16ACC9B6",
+      "date": "2025-11-30",
+      "home_team": "Phoenix Suns",
+      "away_team": "Denver Nuggets",
+      "final_prediction": 243.82703236825455,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "5296E0AE",
+      "date": "2025-11-30",
+      "home_team": "Los Angeles Clippers",
+      "away_team": "Dallas Mavericks",
+      "final_prediction": 216.48463846547514,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "30B32890",
+      "date": "2025-11-30",
+      "home_team": "Utah Jazz",
+      "away_team": "Houston Rockets",
+      "final_prediction": 231.8521367334858,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    }
+  ]
+}

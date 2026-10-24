@@ -1,0 +1,78 @@
+{
+  "prediction_id": "094BD0D5",
+  "metadata": {
+    "timestamp": "2026-01-05T04:24:05.997329",
+    "date": "2026-01-05",
+    "version": "2.0",
+    "prediction_timing": "q3_progress"
+  },
+  "matchup": {
+    "home_team": "Sacramento Kings",
+    "away_team": "Milwaukee Bucks",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 216.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 188.7799809686007,
+    "context_adjusted_prediction": 188.7799809686007,
+    "final_prediction": 188.7799809686007,
+    "predictions_list": [
+      {
+        "line": 184.88567336151664,
+        "over_prob": 68.19868090074509,
+        "under_prob": 31.80131909925491
+      },
+      {
+        "line": 186.94283668075832,
+        "over_prob": 58.83341383022397,
+        "under_prob": 41.16658616977603
+      },
+      {
+        "line": 189.0,
+        "over_prob": 48.933428916235,
+        "under_prob": 51.066571083765
+      },
+      {
+        "line": 191.05716331924168,
+        "over_prob": 39.09905849144424,
+        "under_prob": 60.90094150855576
+      },
+      {
+        "line": 193.11432663848336,
+        "over_prob": 29.918771671488102,
+        "under_prob": 70.0812283285119
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 12.803703940600133,
+    "edge_magnitude": 27.72001903139929
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 26,
+      "q1_away": 28,
+      "q2_home": 18,
+      "q2_away": 34,
+      "q3_home": 2,
+      "q3_away": 2,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

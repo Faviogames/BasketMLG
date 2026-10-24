@@ -1,0 +1,78 @@
+{
+  "prediction_id": "673203C0",
+  "metadata": {
+    "timestamp": "2025-12-06T02:47:20.743349",
+    "date": "2025-12-06",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Cleveland Cavaliers",
+    "away_team": "San Antonio Spurs",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 249.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 263.9111896378413,
+    "context_adjusted_prediction": 263.9111896378413,
+    "final_prediction": 263.9111896378413,
+    "predictions_list": [
+      {
+        "line": 259.88567336151664,
+        "over_prob": 68.76524870896984,
+        "under_prob": 31.23475129103017
+      },
+      {
+        "line": 261.9428366807583,
+        "over_prob": 59.452753282824844,
+        "under_prob": 40.547246717175156
+      },
+      {
+        "line": 264.0,
+        "over_prob": 49.56943719251744,
+        "under_prob": 50.43056280748256
+      },
+      {
+        "line": 266.0571633192417,
+        "over_prob": 39.712614139378246,
+        "under_prob": 60.287385860621754
+      },
+      {
+        "line": 268.11432663848336,
+        "over_prob": 30.474806914737428,
+        "under_prob": 69.52519308526257
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 5.988429573430237,
+    "edge_magnitude": 14.91118963784129
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 30,
+      "q1_away": 35,
+      "q2_home": 34,
+      "q2_away": 37,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

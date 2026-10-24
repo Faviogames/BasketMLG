@@ -1,0 +1,78 @@
+{
+  "prediction_id": "4CDF36F2",
+  "metadata": {
+    "timestamp": "2026-01-24T02:21:17.287055",
+    "date": "2026-01-24",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Detroit Pistons",
+    "away_team": "Houston Rockets",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 215.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 214.50885833437985,
+    "context_adjusted_prediction": 214.50885833437985,
+    "final_prediction": 214.50885833437985,
+    "predictions_list": [
+      {
+        "line": 210.88567336151664,
+        "over_prob": 67.01448731077056,
+        "under_prob": 32.98551268922944
+      },
+      {
+        "line": 212.94283668075832,
+        "over_prob": 57.54681597948918,
+        "under_prob": 42.45318402051082
+      },
+      {
+        "line": 215.0,
+        "over_prob": 47.620255786396534,
+        "under_prob": 52.379744213603466
+      },
+      {
+        "line": 217.05716331924168,
+        "over_prob": 37.83995854913186,
+        "under_prob": 62.16004145086814
+      },
+      {
+        "line": 219.11432663848336,
+        "over_prob": 28.784655688820564,
+        "under_prob": 71.21534431117944
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 0.22843798400937124,
+    "edge_magnitude": 0.49114166562014816
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 20,
+      "q1_away": 28,
+      "q2_home": 32,
+      "q2_away": 24,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

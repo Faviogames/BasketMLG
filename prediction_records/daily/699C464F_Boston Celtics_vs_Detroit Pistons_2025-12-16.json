@@ -1,0 +1,78 @@
+{
+  "prediction_id": "699C464F",
+  "metadata": {
+    "timestamp": "2025-12-16T02:25:22.408023",
+    "date": "2025-12-16",
+    "version": "2.0",
+    "prediction_timing": "q1"
+  },
+  "matchup": {
+    "home_team": "Boston Celtics",
+    "away_team": "Detroit Pistons",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 222.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 204.88024496862823,
+    "context_adjusted_prediction": 204.88024496862823,
+    "final_prediction": 204.88024496862823,
+    "predictions_list": [
+      {
+        "line": 200.88567336151664,
+        "over_prob": 68.63202019036257,
+        "under_prob": 31.36797980963743
+      },
+      {
+        "line": 202.94283668075832,
+        "over_prob": 59.306893254388726,
+        "under_prob": 40.693106745611274
+      },
+      {
+        "line": 205.0,
+        "over_prob": 49.419423114996654,
+        "under_prob": 50.580576885003346
+      },
+      {
+        "line": 207.05716331924168,
+        "over_prob": 39.56767543845123,
+        "under_prob": 60.43232456154877
+      },
+      {
+        "line": 209.11432663848336,
+        "over_prob": 30.343256161222712,
+        "under_prob": 69.65674383877729
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 7.918991025335625,
+    "edge_magnitude": 17.619755031371767
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 33,
+      "q1_away": 25,
+      "q2_home": 0,
+      "q2_away": 0,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

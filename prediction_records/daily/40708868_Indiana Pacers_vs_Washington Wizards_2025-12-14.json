@@ -1,0 +1,78 @@
+{
+  "prediction_id": "40708868",
+  "metadata": {
+    "timestamp": "2025-12-14T22:58:59.647356",
+    "date": "2025-12-14",
+    "version": "2.0",
+    "prediction_timing": "q3_progress"
+  },
+  "matchup": {
+    "home_team": "Indiana Pacers",
+    "away_team": "Washington Wizards",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 203.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 204.63514594154012,
+    "context_adjusted_prediction": 204.63514594154012,
+    "final_prediction": 204.63514594154012,
+    "predictions_list": [
+      {
+        "line": 200.88567336151664,
+        "over_prob": 67.56829484712242,
+        "under_prob": 32.43170515287758
+      },
+      {
+        "line": 202.94283668075832,
+        "over_prob": 58.14719572022644,
+        "under_prob": 41.85280427977356
+      },
+      {
+        "line": 205.0,
+        "over_prob": 48.231690827172535,
+        "under_prob": 51.768309172827465
+      },
+      {
+        "line": 207.05716331924168,
+        "over_prob": 38.42492606125497,
+        "under_prob": 61.57507393874503
+      },
+      {
+        "line": 209.11432663848336,
+        "over_prob": 29.310394813119686,
+        "under_prob": 70.68960518688031
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 0.8054906115961165,
+    "edge_magnitude": 1.6351459415401166
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 32,
+      "q1_away": 31,
+      "q2_home": 15,
+      "q2_away": 27,
+      "q3_home": 19,
+      "q3_away": 23,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

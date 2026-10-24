@@ -1,0 +1,78 @@
+{
+  "prediction_id": "2EAE4A2E",
+  "metadata": {
+    "timestamp": "2025-12-08T01:31:06.748276",
+    "date": "2025-12-08",
+    "version": "2.0",
+    "prediction_timing": "q3_progress"
+  },
+  "matchup": {
+    "home_team": "Memphis Grizzlies",
+    "away_team": "Portland Trail Blazers",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 221.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 226.7776869840562,
+    "context_adjusted_prediction": 226.7776869840562,
+    "final_prediction": 226.7776869840562,
+    "predictions_list": [
+      {
+        "line": 222.88567336151664,
+        "over_prob": 68.18873682333412,
+        "under_prob": 31.811263176665882
+      },
+      {
+        "line": 224.94283668075832,
+        "over_prob": 58.82256553710595,
+        "under_prob": 41.17743446289405
+      },
+      {
+        "line": 227.0,
+        "over_prob": 48.9223112169995,
+        "under_prob": 51.0776887830005
+      },
+      {
+        "line": 229.05716331924168,
+        "over_prob": 39.088355010854094,
+        "under_prob": 60.911644989145906
+      },
+      {
+        "line": 231.11432663848336,
+        "over_prob": 29.909091306644683,
+        "under_prob": 70.09090869335532
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 2.3827029273391434,
+    "edge_magnitude": 5.277686984056203
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 40,
+      "q1_away": 20,
+      "q2_home": 26,
+      "q2_away": 26,
+      "q3_home": 0,
+      "q3_away": 3,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

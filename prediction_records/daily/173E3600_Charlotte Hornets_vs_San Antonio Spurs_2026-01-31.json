@@ -1,0 +1,78 @@
+{
+  "prediction_id": "173E3600",
+  "metadata": {
+    "timestamp": "2026-01-31T19:26:28.244473",
+    "date": "2026-01-31",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Charlotte Hornets",
+    "away_team": "San Antonio Spurs",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 219.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 221.50135242698784,
+    "context_adjusted_prediction": 221.50135242698784,
+    "final_prediction": 221.50135242698784,
+    "predictions_list": [
+      {
+        "line": 217.88567336151664,
+        "over_prob": 66.98145248062613,
+        "under_prob": 33.01854751937387
+      },
+      {
+        "line": 219.94283668075832,
+        "over_prob": 57.51107575656658,
+        "under_prob": 42.48892424343342
+      },
+      {
+        "line": 222.0,
+        "over_prob": 47.583931337616924,
+        "under_prob": 52.416068662383076
+      },
+      {
+        "line": 224.05716331924168,
+        "over_prob": 37.80527708648302,
+        "under_prob": 62.19472291351698
+      },
+      {
+        "line": 226.11432663848336,
+        "over_prob": 28.753549101028455,
+        "under_prob": 71.24645089897155
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 1.1421700579853133,
+    "edge_magnitude": 2.501352426987836
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 26,
+      "q1_away": 30,
+      "q2_home": 35,
+      "q2_away": 17,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

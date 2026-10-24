@@ -1,0 +1,88 @@
+{
+  "prediction_id": "7496D978",
+  "metadata": {
+    "timestamp": "2025-11-29T03:01:04.099770",
+    "date": "2025-11-29",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "New York Knicks",
+    "away_team": "Milwaukee Bucks",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 242.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 239.4097630744542,
+    "context_adjusted_prediction": 244.47251124366477,
+    "final_prediction": 244.47251124366477,
+    "predictions_list": [
+      {
+        "line": 234.88567336151664,
+        "over_prob": 70.87707262027826,
+        "under_prob": 29.122927379721737
+      },
+      {
+        "line": 236.94283668075832,
+        "over_prob": 61.78340364484053,
+        "under_prob": 38.21659635515947
+      },
+      {
+        "line": 239.0,
+        "over_prob": 51.98579613695876,
+        "under_prob": 48.01420386304124
+      },
+      {
+        "line": 241.05716331924168,
+        "over_prob": 42.06609498156584,
+        "under_prob": 57.93390501843416
+      },
+      {
+        "line": 243.11432663848336,
+        "over_prob": 32.62820728979828,
+        "under_prob": 67.37179271020172
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 1.0216988610184996,
+    "edge_magnitude": 2.472511243664769
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 33,
+      "q1_away": 37,
+      "q2_home": 28,
+      "q2_away": 25,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 5.062748169210579,
+    "meta_metadata": {
+      "chronos_prediction": 244.47251124366477,
+      "adjustment": 5.062748169210579,
+      "model_version": "v5.0_huber",
+      "components": {
+        "base_prediction": 239.4097630744542,
+        "pacer_projection": 244.4
+      },
+      "pacer_prob_over": 0.5441971232835615,
+      "pacer_prob_under": 0.4558028767164385
+    }
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

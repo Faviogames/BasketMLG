@@ -1,0 +1,78 @@
+{
+  "prediction_id": "0F9B9CFA",
+  "metadata": {
+    "timestamp": "2026-10-25T01:15:45.366058",
+    "date": "2026-10-25",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Dallas Mavericks",
+    "away_team": "San Antonio Spurs",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 233.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 251.30415076583208,
+    "context_adjusted_prediction": 251.30415076583208,
+    "final_prediction": 251.30415076583208,
+    "predictions_list": [
+      {
+        "line": 246.88567336151664,
+        "over_prob": 70.43532063850715,
+        "under_prob": 29.564679361492846
+      },
+      {
+        "line": 248.94283668075832,
+        "over_prob": 61.292944442935635,
+        "under_prob": 38.707055557064365
+      },
+      {
+        "line": 251.0,
+        "over_prob": 51.474250676296776,
+        "under_prob": 48.525749323703224
+      },
+      {
+        "line": 253.05716331924168,
+        "over_prob": 41.56488172308572,
+        "under_prob": 58.43511827691428
+      },
+      {
+        "line": 255.11432663848336,
+        "over_prob": 32.16687077134041,
+        "under_prob": 67.83312922865959
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 7.624903968236435,
+    "edge_magnitude": 17.804150765832077
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 37,
+      "q1_away": 39,
+      "q2_home": 23,
+      "q2_away": 29,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

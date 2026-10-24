@@ -1,0 +1,78 @@
+{
+  "prediction_id": "92B465EA",
+  "metadata": {
+    "timestamp": "2025-12-23T03:07:19.347766",
+    "date": "2025-12-23",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "New Orleans Pelicans",
+    "away_team": "Dallas Mavericks",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 245.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 238.84142499648775,
+    "context_adjusted_prediction": 238.84142499648775,
+    "final_prediction": 238.84142499648775,
+    "predictions_list": [
+      {
+        "line": 234.88567336151664,
+        "over_prob": 68.46454142856598,
+        "under_prob": 31.535458571434017
+      },
+      {
+        "line": 236.94283668075832,
+        "over_prob": 59.123729914914705,
+        "under_prob": 40.876270085085295
+      },
+      {
+        "line": 239.0,
+        "over_prob": 49.231242878509754,
+        "under_prob": 50.768757121490246
+      },
+      {
+        "line": 241.05716331924168,
+        "over_prob": 39.38605441773486,
+        "under_prob": 60.61394558226514
+      },
+      {
+        "line": 243.11432663848336,
+        "over_prob": 30.17858601943712,
+        "under_prob": 69.82141398056288
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 2.5137040830662265,
+    "edge_magnitude": 6.158575003512254
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 36,
+      "q1_away": 34,
+      "q2_home": 21,
+      "q2_away": 29,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

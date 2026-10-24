@@ -1,0 +1,78 @@
+{
+  "prediction_id": "39845A09",
+  "metadata": {
+    "timestamp": "2026-10-15T03:39:22.115388",
+    "date": "2026-10-15",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Los Angeles Clippers",
+    "away_team": "Denver Nuggets",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": null,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 223.94834245136852,
+    "context_adjusted_prediction": 223.94834245136852,
+    "final_prediction": 223.94834245136852,
+    "predictions_list": [
+      {
+        "line": 219.88567336151664,
+        "over_prob": 68.92488201790533,
+        "under_prob": 31.075117982094664
+      },
+      {
+        "line": 221.94283668075832,
+        "over_prob": 59.62770243755345,
+        "under_prob": 40.37229756244655
+      },
+      {
+        "line": 224.0,
+        "over_prob": 49.74955507062575,
+        "under_prob": 50.25044492937425
+      },
+      {
+        "line": 226.05716331924168,
+        "over_prob": 39.886818265235426,
+        "under_prob": 60.113181734764574
+      },
+      {
+        "line": 228.11432663848336,
+        "over_prob": 30.63308350735423,
+        "under_prob": 69.36691649264577
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "NEUTRAL",
+    "edge_percentage": 0.0,
+    "edge_magnitude": 0.0
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 24,
+      "q1_away": 24,
+      "q2_home": 34,
+      "q2_away": 28,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

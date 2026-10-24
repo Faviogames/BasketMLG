@@ -1,0 +1,16 @@
+{
+    "features": [
+        "minutes_elapsed",
+        "current_total",
+        "score_diff",
+        "possessions_avg",
+        "ortg_home",
+        "ortg_away",
+        "true_pace",
+        "efficiency_gap",
+        "pace_projection"
+    ],
+    "mae": 11.385581970214844,
+    "r2": 0.40847688913345337,
+    "training_samples": 4149
+}

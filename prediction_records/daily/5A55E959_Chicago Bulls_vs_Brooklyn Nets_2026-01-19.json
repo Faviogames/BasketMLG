@@ -1,0 +1,78 @@
+{
+  "prediction_id": "5A55E959",
+  "metadata": {
+    "timestamp": "2026-01-19T02:23:56.076973",
+    "date": "2026-01-19",
+    "version": "2.0",
+    "prediction_timing": "q3_progress"
+  },
+  "matchup": {
+    "home_team": "Chicago Bulls",
+    "away_team": "Brooklyn Nets",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 226.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 238.04723124215698,
+    "context_adjusted_prediction": 238.04723124215698,
+    "final_prediction": 238.04723124215698,
+    "predictions_list": [
+      {
+        "line": 233.88567336151664,
+        "over_prob": 69.34803556477945,
+        "under_prob": 30.651964435220556
+      },
+      {
+        "line": 235.94283668075832,
+        "over_prob": 60.09241391826804,
+        "under_prob": 39.90758608173196
+      },
+      {
+        "line": 238.0,
+        "over_prob": 50.22898565967681,
+        "under_prob": 49.77101434032319
+      },
+      {
+        "line": 240.05716331924168,
+        "over_prob": 40.35146725721971,
+        "under_prob": 59.64853274278029
+      },
+      {
+        "line": 242.11432663848336,
+        "over_prob": 31.05612326082688,
+        "under_prob": 68.94387673917312
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 5.098115338700655,
+    "edge_magnitude": 11.547231242156982
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 39,
+      "q1_away": 22,
+      "q2_home": 31,
+      "q2_away": 29,
+      "q3_home": 9,
+      "q3_away": 3,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prediction_id": "C5233EC4",
+  "metadata": {
+    "timestamp": "2026-01-10T02:16:49.919850",
+    "date": "2026-01-10",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Orlando Magic",
+    "away_team": "Philadelphia 76ers",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 214.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 220.77846193907104,
+    "context_adjusted_prediction": 220.77846193907104,
+    "final_prediction": 220.77846193907104,
+    "predictions_list": [
+      {
+        "line": 216.88567336151664,
+        "over_prob": 68.19209628327306,
+        "under_prob": 31.807903716726948
+      },
+      {
+        "line": 218.94283668075832,
+        "over_prob": 58.82623038842315,
+        "under_prob": 41.17376961157685
+      },
+      {
+        "line": 221.0,
+        "over_prob": 48.92606699443509,
+        "under_prob": 51.07393300556491
+      },
+      {
+        "line": 223.05716331924168,
+        "over_prob": 39.091970773648924,
+        "under_prob": 60.908029226351076
+      },
+      {
+        "line": 225.11432663848336,
+        "over_prob": 29.912361373335244,
+        "under_prob": 70.08763862666476
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 3.1675055790051574,
+    "edge_magnitude": 6.778461939071036
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 28,
+      "q1_away": 24,
+      "q2_home": 26,
+      "q2_away": 29,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

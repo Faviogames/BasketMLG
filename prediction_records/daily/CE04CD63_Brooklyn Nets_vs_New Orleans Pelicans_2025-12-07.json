@@ -1,0 +1,78 @@
+{
+  "prediction_id": "CE04CD63",
+  "metadata": {
+    "timestamp": "2025-12-07T00:03:26.886650",
+    "date": "2025-12-07",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Brooklyn Nets",
+    "away_team": "New Orleans Pelicans",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 217.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 217.52826942613288,
+    "context_adjusted_prediction": 217.52826942613288,
+    "final_prediction": 217.52826942613288,
+    "predictions_list": [
+      {
+        "line": 213.88567336151664,
+        "over_prob": 67.09985740307152,
+        "under_prob": 32.900142596928475
+      },
+      {
+        "line": 215.94283668075832,
+        "over_prob": 57.639215240007275,
+        "under_prob": 42.360784759992725
+      },
+      {
+        "line": 218.0,
+        "over_prob": 47.71420385311745,
+        "under_prob": 52.28579614688255
+      },
+      {
+        "line": 220.05716331924168,
+        "over_prob": 37.92969394995599,
+        "under_prob": 62.07030605004401
+      },
+      {
+        "line": 222.11432663848336,
+        "over_prob": 28.865174318281788,
+        "under_prob": 71.13482568171821
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 0.012997437302473549,
+    "edge_magnitude": 0.02826942613287997
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 35,
+      "q1_away": 24,
+      "q2_home": 27,
+      "q2_away": 20,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "prediction_id": "F5925F50",
+  "metadata": {
+    "timestamp": "2025-11-24T03:18:42.216758",
+    "date": "2025-11-24",
+    "version": "1.1"
+  },
+  "matchup": {
+    "home_team": "Phoenix Suns",
+    "away_team": "San Antonio Spurs",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 219.0,
+    "bookmaker": "API Auto",
+    "api_endpoint": "the-odds-api.com",
+    "acquisition_method": "automatic"
+  },
+  "predictions": {
+    "base_model_prediction": 207.25030517578125,
+    "context_adjusted_prediction": 230.9937623027854,
+    "final_prediction": 230.9937623027854,
+    "adjustments": {
+      "blowout_adjustment": 23.74345712700415,
+      "context_adjustments": {},
+      "adjustment_factor": 1.0,
+      "applied_adjustments": []
+    }
+  },
+  "probabilities": [
+    {
+      "line": 219.4593726691472,
+      "over_prob": 68.13238002784507,
+      "under_prob": 31.867619972154927
+    },
+    {
+      "line": 221.7296863345736,
+      "over_prob": 58.761098492702935,
+      "under_prob": 41.238901507297065
+    },
+    {
+      "line": 224.0,
+      "over_prob": 48.859332331393176,
+      "under_prob": 51.140667668606824
+    },
+    {
+      "line": 226.2703136654264,
+      "over_prob": 39.02773664661663,
+      "under_prob": 60.97226335338337
+    },
+    {
+      "line": 228.5406273308528,
+      "over_prob": 29.85428001269665,
+      "under_prob": 70.14571998730335
+    }
+  ],
+  "analysis": {
+    "confidence_score": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 11.993762302785399
+  },
+  "game_context": {
+    "quarter_scores": {
+      "q1_home": 25,
+      "q1_away": 30,
+      "q2_home": 24,
+      "q2_away": 26,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 23.74345712700415,
+    "meta_metadata": {
+      "raw_prediction": 230.9937623027854,
+      "final_prediction": 230.9937623027854,
+      "features": {
+        "halftime_total": 105,
+        "pace_halftime": 95.0,
+        "efg_home": 0.5,
+        "efg_away": 0.5,
+        "to_rate_home": 0.13,
+        "to_rate_away": 0.13,
+        "ft_rate_home": 0.2,
+        "ft_rate_away": 0.2,
+        "home_lead": -7,
+        "is_close_game": 1,
+        "momentum_score": -5
+      },
+      "adjustments": []
+    },
+    "is_halftime": true,
+    "prediction_timing": "q2"
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

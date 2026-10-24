@@ -1,0 +1,10 @@
+body {font: 16px/1.6 system-ui, sans-serif; background: #eef2f6; color: #172535; margin: 0;}
+main {max-width: 680px; margin: 48px auto; padding: 32px; background: white; border-radius: 16px;}
+h1 {font-size: 26px; margin-top: 0;}
+label {display: block; font-weight: 600; margin-top: 18px;}
+input, select {box-sizing: border-box; width: 100%; padding: 12px; font: inherit; border: 1px solid #7a8896; border-radius: 6px;}
+.buttons {display: flex; gap: 12px; margin-top: 18px;}
+button {padding: 10px 16px; font: inherit; cursor: pointer; border: 1px solid #456481; border-radius: 6px; background: #f5f8fc;}
+button:disabled {opacity: .5; cursor: default;}
+#connect {background: #174d7b; color: white;}
+#status {padding: 14px; background: #e8f2fc; overflow-wrap: anywhere;}

@@ -1,0 +1,1586 @@
+[
+  {
+    "prediction_id": "DD3237CB",
+    "metadata": {
+      "timestamp": "2025-11-29T02:54:05.475182",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "New York Knicks",
+      "away_team": "Milwaukee Bucks",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 242.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 169.56390522978168,
+      "context_adjusted_prediction": 227.20975070769757,
+      "final_prediction": 227.20975070769757,
+      "predictions_list": [
+        {
+          "line": 165.88567336151664,
+          "over_prob": 67.25635165655355,
+          "under_prob": 32.74364834344645
+        },
+        {
+          "line": 167.94283668075832,
+          "over_prob": 57.808736534975594,
+          "under_prob": 42.191263465024406
+        },
+        {
+          "line": 170.0,
+          "over_prob": 47.88671087000649,
+          "under_prob": 52.11328912999351
+        },
+        {
+          "line": 172.05716331924168,
+          "over_prob": 38.0946035377976,
+          "under_prob": 61.9053964622024
+        },
+        {
+          "line": 174.11432663848336,
+          "over_prob": 29.01326975770668,
+          "under_prob": 70.98673024229332
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 6.1116732612819975,
+      "edge_magnitude": 14.790249292302434
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 33,
+        "q1_away": 37,
+        "q2_home": 28,
+        "q2_away": 25,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 57.645845477915884,
+      "meta_metadata": {
+        "chronos_prediction": 227.20975070769757,
+        "adjustment": 57.645845477915884,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 169.56390522978168,
+          "pacer_projection": 244.4
+        },
+        "pacer_prob_over": 0.5441971232835615,
+        "pacer_prob_under": 0.4558028767164385
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "7496D978",
+    "metadata": {
+      "timestamp": "2025-11-29T03:01:04.099770",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "New York Knicks",
+      "away_team": "Milwaukee Bucks",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 242.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 239.4097630744542,
+      "context_adjusted_prediction": 244.47251124366477,
+      "final_prediction": 244.47251124366477,
+      "predictions_list": [
+        {
+          "line": 234.88567336151664,
+          "over_prob": 70.87707262027826,
+          "under_prob": 29.122927379721737
+        },
+        {
+          "line": 236.94283668075832,
+          "over_prob": 61.78340364484053,
+          "under_prob": 38.21659635515947
+        },
+        {
+          "line": 239.0,
+          "over_prob": 51.98579613695876,
+          "under_prob": 48.01420386304124
+        },
+        {
+          "line": 241.05716331924168,
+          "over_prob": 42.06609498156584,
+          "under_prob": 57.93390501843416
+        },
+        {
+          "line": 243.11432663848336,
+          "over_prob": 32.62820728979828,
+          "under_prob": 67.37179271020172
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 1.0216988610184996,
+      "edge_magnitude": 2.472511243664769
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 33,
+        "q1_away": 37,
+        "q2_home": 28,
+        "q2_away": 25,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 5.062748169210579,
+      "meta_metadata": {
+        "chronos_prediction": 244.47251124366477,
+        "adjustment": 5.062748169210579,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 239.4097630744542,
+          "pacer_projection": 244.4
+        },
+        "pacer_prob_over": 0.5441971232835615,
+        "pacer_prob_under": 0.4558028767164385
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "82A15206",
+    "metadata": {
+      "timestamp": "2025-11-29T03:04:18.372129",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Atlanta Hawks",
+      "away_team": "Cleveland Cavaliers",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 243.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 232.5153195179583,
+      "context_adjusted_prediction": 202.05050700337537,
+      "final_prediction": 202.05050700337537,
+      "predictions_list": [
+        {
+          "line": 228.88567336151664,
+          "over_prob": 67.04291350252038,
+          "under_prob": 32.95708649747963
+        },
+        {
+          "line": 230.94283668075832,
+          "over_prob": 57.577576664721605,
+          "under_prob": 42.422423335278395
+        },
+        {
+          "line": 233.0,
+          "over_prob": 47.651525933651094,
+          "under_prob": 52.348474066348906
+        },
+        {
+          "line": 235.05716331924168,
+          "over_prob": 37.86982065586366,
+          "under_prob": 62.13017934413634
+        },
+        {
+          "line": 237.11432663848336,
+          "over_prob": 28.81144537070719,
+          "under_prob": 71.18855462929281
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 17.02237905405529,
+      "edge_magnitude": 41.44949299662463
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 33,
+        "q1_away": 23,
+        "q2_home": 27,
+        "q2_away": 39,
+        "q3_home": 14,
+        "q3_away": 7,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": -30.464812514582917,
+      "meta_metadata": {
+        "chronos_prediction": 202.05050700337537,
+        "adjustment": -30.464812514582917,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 232.5153195179583,
+          "pacer_projection": 190.66666666666666
+        },
+        "pacer_prob_over": 0.00011715107938792269,
+        "pacer_prob_under": 0.9998828489206121
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "273FEEE1",
+    "metadata": {
+      "timestamp": "2025-11-29T03:08:18.709158",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Atlanta Hawks",
+      "away_team": "Cleveland Cavaliers",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 249.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 235.50058027511562,
+      "context_adjusted_prediction": 211.8816809540218,
+      "final_prediction": 211.8816809540218,
+      "predictions_list": [
+        {
+          "line": 231.88567336151664,
+          "over_prob": 66.97805335160487,
+          "under_prob": 33.02194664839512
+        },
+        {
+          "line": 233.94283668075832,
+          "over_prob": 57.50739871772101,
+          "under_prob": 42.49260128227899
+        },
+        {
+          "line": 236.0,
+          "over_prob": 47.58019466214471,
+          "under_prob": 52.41980533785529
+        },
+        {
+          "line": 238.05716331924168,
+          "over_prob": 37.80170987268202,
+          "under_prob": 62.19829012731798
+        },
+        {
+          "line": 240.11432663848336,
+          "over_prob": 28.75034998867598,
+          "under_prob": 71.24965001132402
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 14.906955440151892,
+      "edge_magnitude": 37.11831904597821
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 33,
+        "q1_away": 23,
+        "q2_home": 27,
+        "q2_away": 39,
+        "q3_home": 19,
+        "q3_away": 11,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": -23.618899321093835,
+      "meta_metadata": {
+        "chronos_prediction": 211.8816809540218,
+        "adjustment": -23.618899321093835,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 235.50058027511562,
+          "pacer_projection": 202.66666666666666
+        },
+        "pacer_prob_over": 0.0007232818051955414,
+        "pacer_prob_under": 0.9992767181948045
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "566ED301",
+    "metadata": {
+      "timestamp": "2025-11-29T03:10:34.847757",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Atlanta Hawks",
+      "away_team": "Cleveland Cavaliers",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 249.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 236.6532653744157,
+      "context_adjusted_prediction": 218.22880730146716,
+      "final_prediction": 218.22880730146716,
+      "predictions_list": [
+        {
+          "line": 232.88567336151664,
+          "over_prob": 67.64743960704021,
+          "under_prob": 32.35256039295979
+        },
+        {
+          "line": 234.94283668075832,
+          "over_prob": 58.23318468141661,
+          "under_prob": 41.76681531858339
+        },
+        {
+          "line": 237.0,
+          "over_prob": 48.31945552150356,
+          "under_prob": 51.68054447849644
+        },
+        {
+          "line": 239.05716331924168,
+          "over_prob": 38.50907595901592,
+          "under_prob": 61.49092404098408
+        },
+        {
+          "line": 241.11432663848336,
+          "over_prob": 29.386190404633723,
+          "under_prob": 70.61380959536628
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 12.357908714270218,
+      "edge_magnitude": 30.771192698532843
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 33,
+        "q1_away": 23,
+        "q2_home": 27,
+        "q2_away": 39,
+        "q3_home": 23,
+        "q3_away": 13,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": -18.42445807294854,
+      "meta_metadata": {
+        "chronos_prediction": 218.22880730146716,
+        "adjustment": -18.42445807294854,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 236.6532653744157,
+          "pacer_projection": 210.66666666666666
+        },
+        "pacer_prob_over": 0.004524329409721806,
+        "pacer_prob_under": 0.9954756705902782
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "24222469",
+    "metadata": {
+      "timestamp": "2025-11-29T03:12:43.079303",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Atlanta Hawks",
+      "away_team": "Cleveland Cavaliers",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 249.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 220.24848246974042,
+      "context_adjusted_prediction": 217.20539858029034,
+      "final_prediction": 217.20539858029034,
+      "predictions_list": [
+        {
+          "line": 215.88567336151664,
+          "over_prob": 70.20124015317778,
+          "under_prob": 29.79875984682222
+        },
+        {
+          "line": 217.94283668075832,
+          "over_prob": 61.033690106539034,
+          "under_prob": 38.966309893460966
+        },
+        {
+          "line": 220.0,
+          "over_prob": 51.20451179760293,
+          "under_prob": 48.79548820239707
+        },
+        {
+          "line": 222.05716331924168,
+          "over_prob": 41.301237800435466,
+          "under_prob": 58.698762199564534
+        },
+        {
+          "line": 224.11432663848336,
+          "over_prob": 31.924796473948163,
+          "under_prob": 68.07520352605184
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 12.768916232815124,
+      "edge_magnitude": 31.794601419709664
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 33,
+        "q1_away": 23,
+        "q2_home": 27,
+        "q2_away": 39,
+        "q3_home": 25,
+        "q3_away": 14,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": -3.043083889450088,
+      "meta_metadata": {
+        "chronos_prediction": 217.20539858029034,
+        "adjustment": -3.043083889450088,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 220.24848246974042,
+          "pacer_projection": 214.66666666666666
+        },
+        "pacer_prob_over": 0.00994951298255009,
+        "pacer_prob_under": 0.9900504870174499
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "DFC387B9",
+    "metadata": {
+      "timestamp": "2025-11-29T03:15:00.912831",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Atlanta Hawks",
+      "away_team": "Cleveland Cavaliers",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 249.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 227.3210891965754,
+      "context_adjusted_prediction": 226.02603618623544,
+      "final_prediction": 226.02603618623544,
+      "predictions_list": [
+        {
+          "line": 222.88567336151664,
+          "over_prob": 70.50637723631273,
+          "under_prob": 29.493622763687267
+        },
+        {
+          "line": 224.94283668075832,
+          "over_prob": 61.371729597372564,
+          "under_prob": 38.628270402627436
+        },
+        {
+          "line": 227.0,
+          "over_prob": 51.556312464458564,
+          "under_prob": 48.443687535541436
+        },
+        {
+          "line": 229.05716331924168,
+          "over_prob": 41.64517777024193,
+          "under_prob": 58.35482222975807
+        },
+        {
+          "line": 231.11432663848336,
+          "over_prob": 32.240678860290345,
+          "under_prob": 67.75932113970966
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 9.226491491471709,
+      "edge_magnitude": 22.973963813764556
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 33,
+        "q1_away": 23,
+        "q2_home": 27,
+        "q2_away": 39,
+        "q3_home": 27,
+        "q3_away": 19,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": -1.2950530103399558,
+      "meta_metadata": {
+        "chronos_prediction": 226.02603618623544,
+        "adjustment": -1.2950530103399558,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 227.3210891965754,
+          "pacer_projection": 224.0
+        },
+        "pacer_prob_over": 0.04610562644758087,
+        "pacer_prob_under": 0.9538943735524191
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "70677A56",
+    "metadata": {
+      "timestamp": "2025-11-29T03:16:22.222921",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Atlanta Hawks",
+      "away_team": "Cleveland Cavaliers",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 249.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 232.37295114431464,
+      "context_adjusted_prediction": 232.32649161905331,
+      "final_prediction": 232.32649161905331,
+      "predictions_list": [
+        {
+          "line": 227.88567336151664,
+          "over_prob": 70.7234468547665,
+          "under_prob": 29.276553145233507
+        },
+        {
+          "line": 229.94283668075832,
+          "over_prob": 61.6126606543402,
+          "under_prob": 38.3873393456598
+        },
+        {
+          "line": 232.0,
+          "over_prob": 51.80752610288417,
+          "under_prob": 48.19247389711583
+        },
+        {
+          "line": 234.05716331924168,
+          "over_prob": 41.89124304306846,
+          "under_prob": 58.10875695693154
+        },
+        {
+          "line": 236.11432663848336,
+          "over_prob": 32.46709851474738,
+          "under_prob": 67.53290148525262
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 6.696188104797867,
+      "edge_magnitude": 16.673508380946686
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 33,
+        "q1_away": 23,
+        "q2_home": 27,
+        "q2_away": 39,
+        "q3_home": 29,
+        "q3_away": 22,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": -0.04645952526132646,
+      "meta_metadata": {
+        "chronos_prediction": 232.32649161905331,
+        "adjustment": -0.04645952526132646,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 232.37295114431464,
+          "pacer_projection": 230.66666666666666
+        },
+        "pacer_prob_over": 0.10849954695968334,
+        "pacer_prob_under": 0.8915004530403167
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "039E0E41",
+    "metadata": {
+      "timestamp": "2025-11-29T03:17:36.214896",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Indiana Pacers",
+      "away_team": "Washington Wizards",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 229.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 226.00241026969516,
+      "context_adjusted_prediction": 224.68974556415353,
+      "final_prediction": 224.68974556415353,
+      "predictions_list": [
+        {
+          "line": 221.88567336151664,
+          "over_prob": 69.15655778121562,
+          "under_prob": 30.84344221878437
+        },
+        {
+          "line": 223.94283668075832,
+          "over_prob": 59.88195811910688,
+          "under_prob": 40.11804188089312
+        },
+        {
+          "line": 226.0,
+          "over_prob": 50.011685490230974,
+          "under_prob": 49.988314509769026
+        },
+        {
+          "line": 228.05716331924168,
+          "over_prob": 40.140693811899375,
+          "under_prob": 59.859306188100625
+        },
+        {
+          "line": 230.11432663848336,
+          "over_prob": 30.86406703672614,
+          "under_prob": 69.13593296327386
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 1.8822071772255347,
+      "edge_magnitude": 4.310254435846474
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 30,
+        "q1_away": 24,
+        "q2_home": 34,
+        "q2_away": 28,
+        "q3_home": 30,
+        "q3_away": 21,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": -1.3126647055416356,
+      "meta_metadata": {
+        "chronos_prediction": 224.68974556415353,
+        "adjustment": -1.3126647055416356,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 226.00241026969516,
+          "pacer_projection": 222.66666666666666
+        },
+        "pacer_prob_over": 0.3203422510633961,
+        "pacer_prob_under": 0.6796577489366039
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "A365C876",
+    "metadata": {
+      "timestamp": "2025-11-29T03:20:20.501411",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Indiana Pacers",
+      "away_team": "Washington Wizards",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 229.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 226.00241026969516,
+      "context_adjusted_prediction": 224.68974556415353,
+      "final_prediction": 224.68974556415353,
+      "predictions_list": [
+        {
+          "line": 221.88567336151664,
+          "over_prob": 69.15655778121562,
+          "under_prob": 30.84344221878437
+        },
+        {
+          "line": 223.94283668075832,
+          "over_prob": 59.88195811910688,
+          "under_prob": 40.11804188089312
+        },
+        {
+          "line": 226.0,
+          "over_prob": 50.011685490230974,
+          "under_prob": 49.988314509769026
+        },
+        {
+          "line": 228.05716331924168,
+          "over_prob": 40.140693811899375,
+          "under_prob": 59.859306188100625
+        },
+        {
+          "line": 230.11432663848336,
+          "over_prob": 30.86406703672614,
+          "under_prob": 69.13593296327386
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 1.8822071772255347,
+      "edge_magnitude": 4.310254435846474
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 30,
+        "q1_away": 24,
+        "q2_home": 34,
+        "q2_away": 28,
+        "q3_home": 30,
+        "q3_away": 21,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": -1.3126647055416356,
+      "meta_metadata": {
+        "chronos_prediction": 224.68974556415353,
+        "adjustment": -1.3126647055416356,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 226.00241026969516,
+          "pacer_projection": 222.66666666666666
+        },
+        "pacer_prob_over": 0.3203422510633961,
+        "pacer_prob_under": 0.6796577489366039
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "47FCAD16",
+    "metadata": {
+      "timestamp": "2025-11-29T03:26:39.058276",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Brooklyn Nets",
+      "away_team": "Philadelphia 76ers",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 214.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 213.6453549713867,
+      "context_adjusted_prediction": 209.51116755329207,
+      "final_prediction": 209.51116755329207,
+      "predictions_list": [
+        {
+          "line": 209.88567336151664,
+          "over_prob": 67.61289716049767,
+          "under_prob": 32.38710283950233
+        },
+        {
+          "line": 211.94283668075832,
+          "over_prob": 58.195649286093165,
+          "under_prob": 41.804350713906835
+        },
+        {
+          "line": 214.0,
+          "over_prob": 48.281139051550106,
+          "under_prob": 51.718860948449894
+        },
+        {
+          "line": 216.05716331924168,
+          "over_prob": 38.47233194608256,
+          "under_prob": 61.52766805391744
+        },
+        {
+          "line": 218.11432663848336,
+          "over_prob": 29.353089163631836,
+          "under_prob": 70.64691083636816
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 2.3257960124512502,
+      "edge_magnitude": 4.9888324467079315
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 23,
+        "q1_away": 31,
+        "q2_home": 25,
+        "q2_away": 32,
+        "q3_home": 23,
+        "q3_away": 21,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": -4.134187418094626,
+      "meta_metadata": {
+        "chronos_prediction": 209.51116755329207,
+        "adjustment": -4.134187418094626,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 213.6453549713867,
+          "pacer_projection": 206.66666666666666
+        },
+        "pacer_prob_over": 0.29012074339232463,
+        "pacer_prob_under": 0.7098792566076754
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "CAD74765",
+    "metadata": {
+      "timestamp": "2025-11-29T03:32:18.665417",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Brooklyn Nets",
+      "away_team": "Philadelphia 76ers",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 214.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 220.71796169822167,
+      "context_adjusted_prediction": 218.33180515923718,
+      "final_prediction": 218.33180515923718,
+      "predictions_list": [
+        {
+          "line": 216.88567336151664,
+          "over_prob": 67.92937697163133,
+          "under_prob": 32.07062302836867
+        },
+        {
+          "line": 218.94283668075832,
+          "over_prob": 58.53988862344754,
+          "under_prob": 41.46011137655246
+        },
+        {
+          "line": 221.0,
+          "over_prob": 48.63288714682829,
+          "under_prob": 51.36711285317171
+        },
+        {
+          "line": 223.05716331924168,
+          "over_prob": 38.80997652613137,
+          "under_prob": 61.19002347386863
+        },
+        {
+          "line": 225.11432663848336,
+          "over_prob": 29.65755921606295,
+          "under_prob": 70.34244078393705
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 1.7863893516257237,
+      "edge_magnitude": 3.8318051592371773
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 23,
+        "q1_away": 31,
+        "q2_home": 25,
+        "q2_away": 32,
+        "q3_home": 27,
+        "q3_away": 24,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": -2.386156538984494,
+      "meta_metadata": {
+        "chronos_prediction": 218.33180515923718,
+        "adjustment": -2.386156538984494,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 220.71796169822167,
+          "pacer_projection": 216.0
+        },
+        "pacer_prob_over": 0.5361825385536936,
+        "pacer_prob_under": 0.46381746144630637
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "27300F19",
+    "metadata": {
+      "timestamp": "2025-11-29T03:39:24.512661",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "New York Knicks",
+      "away_team": "Milwaukee Bucks",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 240.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 239.21696504104523,
+      "context_adjusted_prediction": 241.0906313393957,
+      "final_prediction": 241.0906313393957,
+      "predictions_list": [
+        {
+          "line": 234.88567336151664,
+          "over_prob": 70.06833861594464,
+          "under_prob": 29.931661384055364
+        },
+        {
+          "line": 236.94283668075832,
+          "over_prob": 60.88669064274479,
+          "under_prob": 39.11330935725521
+        },
+        {
+          "line": 239.0,
+          "over_prob": 51.05176992000699,
+          "under_prob": 48.94823007999301
+        },
+        {
+          "line": 241.05716331924168,
+          "over_prob": 41.152144843781336,
+          "under_prob": 58.847855156218664
+        },
+        {
+          "line": 243.11432663848336,
+          "over_prob": 31.788082547104253,
+          "under_prob": 68.21191745289575
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 0.24558475650549413,
+      "edge_magnitude": 0.5906313393957134
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 33,
+        "q1_away": 37,
+        "q2_home": 28,
+        "q2_away": 25,
+        "q3_home": 31,
+        "q3_away": 26,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 1.8736662983504857,
+      "meta_metadata": {
+        "chronos_prediction": 241.0906313393957,
+        "adjustment": 1.8736662983504857,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 239.21696504104523,
+          "pacer_projection": 240.0
+        },
+        "pacer_prob_over": 0.4828413945144533,
+        "pacer_prob_under": 0.5171586054855467
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "121838A2",
+    "metadata": {
+      "timestamp": "2025-11-29T04:57:12.440861",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Utah Jazz",
+      "away_team": "Sacramento Kings",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 230.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 205.57443925099238,
+      "context_adjusted_prediction": 171.14299348338145,
+      "final_prediction": 171.14299348338145,
+      "predictions_list": [
+        {
+          "line": 201.88567336151664,
+          "over_prob": 67.30255384880616,
+          "under_prob": 32.69744615119385
+        },
+        {
+          "line": 203.94283668075832,
+          "over_prob": 57.8588198531684,
+          "under_prob": 42.1411801468316
+        },
+        {
+          "line": 206.0,
+          "over_prob": 47.93771204773121,
+          "under_prob": 52.06228795226879
+        },
+        {
+          "line": 208.05716331924168,
+          "over_prob": 38.143392762163096,
+          "under_prob": 61.856607237836904
+        },
+        {
+          "line": 210.11432663848336,
+          "over_prob": 29.05711517637549,
+          "under_prob": 70.94288482362451
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 25.590002833312415,
+      "edge_magnitude": 58.857006516618554
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 30,
+        "q1_away": 27,
+        "q2_home": 32,
+        "q2_away": 24,
+        "q3_home": 2,
+        "q3_away": 4,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": -34.43144576761094,
+      "meta_metadata": {
+        "chronos_prediction": 171.14299348338145,
+        "adjustment": -34.43144576761094,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 205.57443925099238,
+          "pacer_projection": 158.66666666666666
+        },
+        "pacer_prob_over": 4.39404272967181e-08,
+        "pacer_prob_under": 0.9999999560595727
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "C587CEAA",
+    "metadata": {
+      "timestamp": "2025-11-29T05:00:13.219284",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Oklahoma City Thunder",
+      "away_team": "Phoenix Suns",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 216.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 188.3251850219577,
+      "context_adjusted_prediction": 176.98347608770072,
+      "final_prediction": 176.98347608770072,
+      "predictions_list": [
+        {
+          "line": 183.88567336151664,
+          "over_prob": 70.52354737250839,
+          "under_prob": 29.47645262749161
+        },
+        {
+          "line": 185.94283668075832,
+          "over_prob": 61.3907733488432,
+          "under_prob": 38.6092266511568
+        },
+        {
+          "line": 188.0,
+          "over_prob": 51.57615457503733,
+          "under_prob": 48.42384542496267
+        },
+        {
+          "line": 190.05716331924168,
+          "over_prob": 41.66459913842534,
+          "under_prob": 58.33540086157466
+        },
+        {
+          "line": 192.11432663848336,
+          "over_prob": 32.25853667748528,
+          "under_prob": 67.74146332251472
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 18.25243598720521,
+      "edge_magnitude": 39.51652391229928
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 25,
+        "q1_away": 25,
+        "q2_home": 31,
+        "q2_away": 27,
+        "q3_home": 14,
+        "q3_away": 7,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": -11.341708934256985,
+      "meta_metadata": {
+        "chronos_prediction": 176.98347608770072,
+        "adjustment": -11.341708934256985,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 188.3251850219577,
+          "pacer_projection": 172.0
+        },
+        "pacer_prob_over": 0.0005323745223505538,
+        "pacer_prob_under": 0.9994676254776494
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "8AD652BB",
+    "metadata": {
+      "timestamp": "2025-11-29T05:02:35.749404",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Oklahoma City Thunder",
+      "away_team": "Phoenix Suns",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 216.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 190.34592980105342,
+      "context_adjusted_prediction": 179.5036582608279,
+      "final_prediction": 179.5036582608279,
+      "predictions_list": [
+        {
+          "line": 185.88567336151664,
+          "over_prob": 70.61044082338336,
+          "under_prob": 29.389559176616636
+        },
+        {
+          "line": 187.94283668075832,
+          "over_prob": 61.48718503265912,
+          "under_prob": 38.51281496734088
+        },
+        {
+          "line": 190.0,
+          "over_prob": 51.676645975767045,
+          "under_prob": 48.323354024232955
+        },
+        {
+          "line": 192.05716331924168,
+          "over_prob": 41.76299679173942,
+          "under_prob": 58.23700320826058
+        },
+        {
+          "line": 194.11432663848336,
+          "over_prob": 32.34904680808975,
+          "under_prob": 67.65095319191025
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 17.08837955619958,
+      "edge_magnitude": 36.996341739172095
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 25,
+        "q1_away": 25,
+        "q2_home": 31,
+        "q2_away": 27,
+        "q3_home": 16,
+        "q3_away": 7,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": -10.84227154022551,
+      "meta_metadata": {
+        "chronos_prediction": 179.5036582608279,
+        "adjustment": -10.84227154022551,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 190.34592980105342,
+          "pacer_projection": 174.66666666666666
+        },
+        "pacer_prob_over": 0.0010982694211041366,
+        "pacer_prob_under": 0.9989017305788959
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "F905D2A6",
+    "metadata": {
+      "timestamp": "2025-11-29T05:15:16.585504",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Los Angeles Clippers",
+      "away_team": "Memphis Grizzlies",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 225.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 227.75876341180938,
+      "context_adjusted_prediction": 227.3466564716091,
+      "final_prediction": 227.3466564716091,
+      "predictions_list": [
+        {
+          "line": 223.88567336151664,
+          "over_prob": 68.10665601874896,
+          "under_prob": 31.893343981251032
+        },
+        {
+          "line": 225.94283668075832,
+          "over_prob": 58.7330499787553,
+          "under_prob": 41.2669500212447
+        },
+        {
+          "line": 228.0,
+          "over_prob": 48.83060219717829,
+          "under_prob": 51.16939780282171
+        },
+        {
+          "line": 230.05716331924168,
+          "over_prob": 39.000091299387975,
+          "under_prob": 60.999908700612025
+        },
+        {
+          "line": 232.11432663848336,
+          "over_prob": 29.829290197790925,
+          "under_prob": 70.17070980220907
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 1.0429584318262641,
+      "edge_magnitude": 2.3466564716090943
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 35,
+        "q1_away": 24,
+        "q2_home": 28,
+        "q2_away": 26,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": -0.4121069402002888,
+      "meta_metadata": {
+        "chronos_prediction": 227.3466564716091,
+        "adjustment": -0.4121069402002888,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 227.75876341180938,
+          "pacer_projection": 225.6
+        },
+        "pacer_prob_over": 0.49822683223381437,
+        "pacer_prob_under": 0.5017731677661856
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "1586882E",
+    "metadata": {
+      "timestamp": "2025-11-29T05:25:12.640738",
+      "date": "2025-11-29",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Los Angeles Lakers",
+      "away_team": "Dallas Mavericks",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 237.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 240.13180580495697,
+      "context_adjusted_prediction": 242.2260740577571,
+      "final_prediction": 242.2260740577571,
+      "predictions_list": [
+        {
+          "line": 235.88567336151664,
+          "over_prob": 69.70790488468928,
+          "under_prob": 30.29209511531072
+        },
+        {
+          "line": 237.94283668075832,
+          "over_prob": 60.488729110965544,
+          "under_prob": 39.511270889034456
+        },
+        {
+          "line": 240.0,
+          "over_prob": 50.638994719478745,
+          "under_prob": 49.361005280521255
+        },
+        {
+          "line": 242.05716331924168,
+          "over_prob": 40.74994403698867,
+          "under_prob": 59.25005596301133
+        },
+        {
+          "line": 244.11432663848336,
+          "over_prob": 31.419928893394413,
+          "under_prob": 68.58007110660559
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 2.205094539138018,
+      "edge_magnitude": 5.226074057757103
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 28,
+        "q1_away": 22,
+        "q2_home": 32,
+        "q2_away": 40,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 2.094268252800134,
+      "meta_metadata": {
+        "chronos_prediction": 242.2260740577571,
+        "adjustment": 2.094268252800134,
+        "model_version": "v5.0_huber",
+        "components": {
+          "base_prediction": 240.13180580495697,
+          "pacer_projection": 241.20000000000002
+        },
+        "pacer_prob_over": 0.5902109507358887,
+        "pacer_prob_under": 0.4097890492641113
+      }
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  }
+]

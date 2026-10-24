@@ -1,0 +1,78 @@
+{
+  "prediction_id": "1D19AF81",
+  "metadata": {
+    "timestamp": "2025-12-08T03:12:33.050624",
+    "date": "2025-12-08",
+    "version": "2.0",
+    "prediction_timing": "q3_progress"
+  },
+  "matchup": {
+    "home_team": "Philadelphia 76ers",
+    "away_team": "Los Angeles Lakers",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 226.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 228.97246065528418,
+    "context_adjusted_prediction": 228.97246065528418,
+    "final_prediction": 228.97246065528418,
+    "predictions_list": [
+      {
+        "line": 224.88567336151664,
+        "over_prob": 69.02831981879388,
+        "under_prob": 30.971680181206118
+      },
+      {
+        "line": 226.94283668075832,
+        "over_prob": 59.7411700385464,
+        "under_prob": 40.2588299614536
+      },
+      {
+        "line": 229.0,
+        "over_prob": 49.86648375983168,
+        "under_prob": 50.13351624016832
+      },
+      {
+        "line": 231.05716331924168,
+        "over_prob": 40.00001317662923,
+        "under_prob": 59.99998682337077
+      },
+      {
+        "line": 233.11432663848336,
+        "over_prob": 30.736024734439198,
+        "under_prob": 69.2639752655608
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 1.0915941082932363,
+    "edge_magnitude": 2.4724606552841806
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 30,
+      "q1_away": 30,
+      "q2_home": 30,
+      "q2_away": 23,
+      "q3_home": 16,
+      "q3_away": 27,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

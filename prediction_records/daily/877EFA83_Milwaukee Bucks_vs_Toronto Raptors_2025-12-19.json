@@ -1,0 +1,78 @@
+{
+  "prediction_id": "877EFA83",
+  "metadata": {
+    "timestamp": "2025-12-19T03:07:01.979397",
+    "date": "2025-12-19",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Milwaukee Bucks",
+    "away_team": "Toronto Raptors",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 219.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 224.553762582248,
+    "context_adjusted_prediction": 224.553762582248,
+    "final_prediction": 224.553762582248,
+    "predictions_list": [
+      {
+        "line": 220.88567336151664,
+        "over_prob": 67.21184103705262,
+        "under_prob": 32.78815896294738
+      },
+      {
+        "line": 222.94283668075832,
+        "over_prob": 57.760502039417474,
+        "under_prob": 42.239497960582526
+      },
+      {
+        "line": 225.0,
+        "over_prob": 47.83760782310643,
+        "under_prob": 52.16239217689357
+      },
+      {
+        "line": 227.05716331924168,
+        "over_prob": 38.04764487296588,
+        "under_prob": 61.95235512703412
+      },
+      {
+        "line": 229.11432663848336,
+        "over_prob": 28.971082661119368,
+        "under_prob": 71.02891733888063
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 2.5359646494283097,
+    "edge_magnitude": 5.553762582247998
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 25,
+      "q1_away": 31,
+      "q2_home": 28,
+      "q2_away": 26,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

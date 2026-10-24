@@ -1,0 +1,78 @@
+{
+  "prediction_id": "5B7D9DA0",
+  "metadata": {
+    "timestamp": "2026-01-23T02:23:06.641393",
+    "date": "2026-01-23",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Philadelphia 76ers",
+    "away_team": "Houston Rockets",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 240.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 252.0449133859603,
+    "context_adjusted_prediction": 252.0449133859603,
+    "final_prediction": 252.0449133859603,
+    "predictions_list": [
+      {
+        "line": 247.88567336151664,
+        "over_prob": 69.33814642848516,
+        "under_prob": 30.66185357151484
+      },
+      {
+        "line": 249.94283668075832,
+        "over_prob": 60.08153761334674,
+        "under_prob": 39.91846238665326
+      },
+      {
+        "line": 252.0,
+        "over_prob": 50.217748385378734,
+        "under_prob": 49.782251614621266
+      },
+      {
+        "line": 254.05716331924168,
+        "over_prob": 40.34056046136738,
+        "under_prob": 59.65943953863262
+      },
+      {
+        "line": 256.11432663848336,
+        "over_prob": 31.046178599860923,
+        "under_prob": 68.95382140013908
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 5.018713910816797,
+    "edge_magnitude": 12.044913385960314
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 32,
+      "q1_away": 34,
+      "q2_home": 36,
+      "q2_away": 27,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

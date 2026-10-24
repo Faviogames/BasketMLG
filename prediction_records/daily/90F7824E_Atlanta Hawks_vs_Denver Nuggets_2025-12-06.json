@@ -1,0 +1,78 @@
+{
+  "prediction_id": "90F7824E",
+  "metadata": {
+    "timestamp": "2025-12-06T02:40:37.228686",
+    "date": "2025-12-06",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Atlanta Hawks",
+    "away_team": "Denver Nuggets",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 244.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 250.376193116828,
+    "context_adjusted_prediction": 250.376193116828,
+    "final_prediction": 250.376193116828,
+    "predictions_list": [
+      {
+        "line": 245.88567336151664,
+        "over_prob": 70.73699154950489,
+        "under_prob": 29.26300845049511
+      },
+      {
+        "line": 247.94283668075832,
+        "over_prob": 61.627706848109895,
+        "under_prob": 38.372293151890105
+      },
+      {
+        "line": 250.0,
+        "over_prob": 51.823227585930674,
+        "under_prob": 48.176772414069326
+      },
+      {
+        "line": 252.05716331924168,
+        "over_prob": 41.90663561862078,
+        "under_prob": 58.09336438137922
+      },
+      {
+        "line": 254.11432663848336,
+        "over_prob": 32.481274018735604,
+        "under_prob": 67.5187259812644
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 2.6131939003393465,
+    "edge_magnitude": 6.376193116828006
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 41,
+      "q1_away": 23,
+      "q2_home": 32,
+      "q2_away": 31,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

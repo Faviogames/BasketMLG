@@ -1,0 +1,78 @@
+{
+  "prediction_id": "FF210110",
+  "metadata": {
+    "timestamp": "2026-01-17T02:25:59.727841",
+    "date": "2026-01-17",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Philadelphia 76ers",
+    "away_team": "Cleveland Cavaliers",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 237.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 233.58485235949368,
+    "context_adjusted_prediction": 233.58485235949368,
+    "final_prediction": 233.58485235949368,
+    "predictions_list": [
+      {
+        "line": 229.88567336151664,
+        "over_prob": 67.34819966635847,
+        "under_prob": 32.65180033364153
+      },
+      {
+        "line": 231.94283668075832,
+        "over_prob": 57.90831580679881,
+        "under_prob": 42.09168419320119
+      },
+      {
+        "line": 234.0,
+        "over_prob": 47.988131137477275,
+        "under_prob": 52.011868862522725
+      },
+      {
+        "line": 236.05716331924168,
+        "over_prob": 38.19164049424909,
+        "under_prob": 61.80835950575091
+      },
+      {
+        "line": 238.11432663848336,
+        "over_prob": 29.100487771232025,
+        "under_prob": 70.89951222876797
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 1.4409905656144808,
+    "edge_magnitude": 3.4151476405063192
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 31,
+      "q1_away": 31,
+      "q2_home": 31,
+      "q2_away": 24,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

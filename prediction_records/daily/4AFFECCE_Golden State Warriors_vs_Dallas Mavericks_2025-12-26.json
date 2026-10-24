@@ -1,0 +1,78 @@
+{
+  "prediction_id": "4AFFECCE",
+  "metadata": {
+    "timestamp": "2025-12-26T00:27:21.314058",
+    "date": "2025-12-26",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Golden State Warriors",
+    "away_team": "Dallas Mavericks",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 234.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 252.45162036086626,
+    "context_adjusted_prediction": 252.45162036086626,
+    "final_prediction": 252.45162036086626,
+    "predictions_list": [
+      {
+        "line": 247.88567336151664,
+        "over_prob": 71.05129532988701,
+        "under_prob": 28.94870467011299
+      },
+      {
+        "line": 249.94283668075832,
+        "over_prob": 61.977270054602194,
+        "under_prob": 38.022729945397806
+      },
+      {
+        "line": 252.0,
+        "over_prob": 52.18845099765775,
+        "under_prob": 47.81154900234225
+      },
+      {
+        "line": 254.05716331924168,
+        "over_prob": 42.26510188193049,
+        "under_prob": 57.73489811806951
+      },
+      {
+        "line": 256.11432663848336,
+        "over_prob": 32.811791742612655,
+        "under_prob": 67.18820825738734
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 7.885307846524042,
+    "edge_magnitude": 18.451620360866258
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 40,
+      "q1_away": 28,
+      "q2_home": 31,
+      "q2_away": 30,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

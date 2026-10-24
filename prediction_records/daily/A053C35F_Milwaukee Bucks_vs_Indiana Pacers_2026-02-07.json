@@ -1,0 +1,78 @@
+{
+  "prediction_id": "A053C35F",
+  "metadata": {
+    "timestamp": "2026-02-07T03:09:40.196439",
+    "date": "2026-02-07",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Milwaukee Bucks",
+    "away_team": "Indiana Pacers",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 218.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 208.95833369002236,
+    "context_adjusted_prediction": 208.95833369002236,
+    "final_prediction": 208.95833369002236,
+    "predictions_list": [
+      {
+        "line": 204.88567336151664,
+        "over_prob": 68.96775050841585,
+        "under_prob": 31.032249491584157
+      },
+      {
+        "line": 206.94283668075832,
+        "over_prob": 59.67471756411878,
+        "under_prob": 40.32528243588122
+      },
+      {
+        "line": 209.0,
+        "over_prob": 49.79799389855436,
+        "under_prob": 50.20200610144564
+      },
+      {
+        "line": 211.05716331924168,
+        "over_prob": 39.93370027712161,
+        "under_prob": 60.06629972287839
+      },
+      {
+        "line": 213.11432663848336,
+        "over_prob": 30.67570959302914,
+        "under_prob": 69.32429040697086
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 4.366895336374207,
+    "edge_magnitude": 9.541666309977643
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 23,
+      "q1_away": 29,
+      "q2_home": 31,
+      "q2_away": 18,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

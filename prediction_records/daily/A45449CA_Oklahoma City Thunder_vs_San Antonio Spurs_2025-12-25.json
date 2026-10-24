@@ -1,0 +1,78 @@
+{
+  "prediction_id": "A45449CA",
+  "metadata": {
+    "timestamp": "2025-12-25T21:47:22.766546",
+    "date": "2025-12-25",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Oklahoma City Thunder",
+    "away_team": "San Antonio Spurs",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 244.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 253.29257602444474,
+    "context_adjusted_prediction": 253.29257602444474,
+    "final_prediction": 253.29257602444474,
+    "predictions_list": [
+      {
+        "line": 248.88567336151664,
+        "over_prob": 70.38671946943089,
+        "under_prob": 29.613280530569106
+      },
+      {
+        "line": 250.94283668075832,
+        "over_prob": 61.239080443613354,
+        "under_prob": 38.760919556386646
+      },
+      {
+        "line": 253.0,
+        "over_prob": 51.418170796351774,
+        "under_prob": 48.581829203648226
+      },
+      {
+        "line": 255.05716331924168,
+        "over_prob": 41.51003228865162,
+        "under_prob": 58.48996771134838
+      },
+      {
+        "line": 257.11432663848336,
+        "over_prob": 32.116475030749385,
+        "under_prob": 67.88352496925062
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 3.8084327969035825,
+    "edge_magnitude": 9.292576024444742
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 36,
+      "q1_away": 41,
+      "q2_home": 24,
+      "q2_away": 28,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

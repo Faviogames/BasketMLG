@@ -1,0 +1,78 @@
+{
+  "prediction_id": "A5793423",
+  "metadata": {
+    "timestamp": "2025-12-07T03:45:41.820787",
+    "date": "2025-12-07",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Dallas Mavericks",
+    "away_team": "Houston Rockets",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 229.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 229.1461221731644,
+    "context_adjusted_prediction": 229.1461221731644,
+    "final_prediction": 229.1461221731644,
+    "predictions_list": [
+      {
+        "line": 224.88567336151664,
+        "over_prob": 69.76863417961714,
+        "under_prob": 30.231365820382862
+      },
+      {
+        "line": 226.94283668075832,
+        "over_prob": 60.55570938303987,
+        "under_prob": 39.44429061696013
+      },
+      {
+        "line": 229.0,
+        "over_prob": 50.708393554062724,
+        "under_prob": 49.291606445937276
+      },
+      {
+        "line": 231.05716331924168,
+        "over_prob": 40.81749227876919,
+        "under_prob": 59.18250772123081
+      },
+      {
+        "line": 233.11432663848336,
+        "over_prob": 31.481692482169635,
+        "under_prob": 68.51830751783037
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 0.06380880924209617,
+    "edge_magnitude": 0.14612217316440024
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 29,
+      "q1_away": 26,
+      "q2_home": 28,
+      "q2_away": 31,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

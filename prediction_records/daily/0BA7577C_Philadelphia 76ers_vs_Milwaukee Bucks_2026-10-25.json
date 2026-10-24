@@ -1,0 +1,78 @@
+{
+  "prediction_id": "0BA7577C",
+  "metadata": {
+    "timestamp": "2026-10-25T01:02:22.388781",
+    "date": "2026-10-25",
+    "version": "2.0",
+    "prediction_timing": "q3_progress"
+  },
+  "matchup": {
+    "home_team": "Philadelphia 76ers",
+    "away_team": "Milwaukee Bucks",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 244.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 244.6973197611073,
+    "context_adjusted_prediction": 244.6973197611073,
+    "final_prediction": 244.6973197611073,
+    "predictions_list": [
+      {
+        "line": 240.88567336151664,
+        "over_prob": 67.83953363853922,
+        "under_prob": 32.16046636146077
+      },
+      {
+        "line": 242.94283668075832,
+        "over_prob": 58.44208760302129,
+        "under_prob": 41.55791239697871
+      },
+      {
+        "line": 245.0,
+        "over_prob": 48.53287390011927,
+        "under_prob": 51.46712609988073
+      },
+      {
+        "line": 247.05716331924168,
+        "over_prob": 38.71389757024423,
+        "under_prob": 61.28610242975577
+      },
+      {
+        "line": 249.11432663848336,
+        "over_prob": 29.57085192204329,
+        "under_prob": 70.42914807795671
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 0.08070337877599548,
+    "edge_magnitude": 0.19731976110730898
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 34,
+      "q1_away": 25,
+      "q2_home": 30,
+      "q2_away": 35,
+      "q3_home": 6,
+      "q3_away": 9,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

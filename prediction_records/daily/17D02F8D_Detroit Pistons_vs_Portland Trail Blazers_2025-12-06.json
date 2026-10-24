@@ -1,0 +1,78 @@
+{
+  "prediction_id": "17D02F8D",
+  "metadata": {
+    "timestamp": "2025-12-06T03:03:09.852332",
+    "date": "2025-12-06",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Detroit Pistons",
+    "away_team": "Portland Trail Blazers",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 224.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 245.60807576279078,
+    "context_adjusted_prediction": 245.60807576279078,
+    "final_prediction": 245.60807576279078,
+    "predictions_list": [
+      {
+        "line": 241.88567336151664,
+        "over_prob": 67.44990576290505,
+        "under_prob": 32.550094237094946
+      },
+      {
+        "line": 243.94283668075832,
+        "over_prob": 58.01865697653861,
+        "under_prob": 41.98134302346139
+      },
+      {
+        "line": 246.0,
+        "over_prob": 48.10058769726868,
+        "under_prob": 51.89941230273132
+      },
+      {
+        "line": 248.05716331924168,
+        "over_prob": 38.299308982832805,
+        "under_prob": 61.700691017167195
+      },
+      {
+        "line": 250.11432663848336,
+        "over_prob": 29.197326493921892,
+        "under_prob": 70.80267350607811
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 9.402260918837763,
+    "edge_magnitude": 21.108075762790776
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 30,
+      "q1_away": 28,
+      "q2_home": 35,
+      "q2_away": 30,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

@@ -1,0 +1,236 @@
+[
+  {
+    "prediction_id": "2565D6B8",
+    "metadata": {
+      "timestamp": "2026-01-23T02:05:40.278691",
+      "date": "2026-01-23",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Washington Wizards",
+      "away_team": "Denver Nuggets",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 213.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 199.4016317128011,
+      "context_adjusted_prediction": 199.4016317128011,
+      "final_prediction": 199.4016317128011,
+      "predictions_list": [
+        {
+          "line": 194.88567336151664,
+          "over_prob": 70.84317073065922,
+          "under_prob": 29.15682926934078
+        },
+        {
+          "line": 196.94283668075832,
+          "over_prob": 61.745707927174266,
+          "under_prob": 38.254292072825734
+        },
+        {
+          "line": 199.0,
+          "over_prob": 51.94642148540123,
+          "under_prob": 48.05357851459877
+        },
+        {
+          "line": 201.05716331924168,
+          "over_prob": 42.0274584592782,
+          "under_prob": 57.9725415407218
+        },
+        {
+          "line": 203.11432663848336,
+          "over_prob": 32.59259204531281,
+          "under_prob": 67.40740795468719
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 6.603451188383557,
+      "edge_magnitude": 14.098368287198895
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 23,
+        "q1_away": 27,
+        "q2_home": 23,
+        "q2_away": 21,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "5B7D9DA0",
+    "metadata": {
+      "timestamp": "2026-01-23T02:23:06.641393",
+      "date": "2026-01-23",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Philadelphia 76ers",
+      "away_team": "Houston Rockets",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 240.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 252.0449133859603,
+      "context_adjusted_prediction": 252.0449133859603,
+      "final_prediction": 252.0449133859603,
+      "predictions_list": [
+        {
+          "line": 247.88567336151664,
+          "over_prob": 69.33814642848516,
+          "under_prob": 30.66185357151484
+        },
+        {
+          "line": 249.94283668075832,
+          "over_prob": 60.08153761334674,
+          "under_prob": 39.91846238665326
+        },
+        {
+          "line": 252.0,
+          "over_prob": 50.217748385378734,
+          "under_prob": 49.782251614621266
+        },
+        {
+          "line": 254.05716331924168,
+          "over_prob": 40.34056046136738,
+          "under_prob": 59.65943953863262
+        },
+        {
+          "line": 256.11432663848336,
+          "over_prob": 31.046178599860923,
+          "under_prob": 68.95382140013908
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 5.018713910816797,
+      "edge_magnitude": 12.044913385960314
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 32,
+        "q1_away": 34,
+        "q2_home": 36,
+        "q2_away": 27,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "F95E1C13",
+    "metadata": {
+      "timestamp": "2026-01-23T02:52:12.898318",
+      "date": "2026-01-23",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Dallas Mavericks",
+      "away_team": "Golden State Warriors",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 225.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 215.79593345593932,
+      "context_adjusted_prediction": 215.79593345593932,
+      "final_prediction": 215.79593345593932,
+      "predictions_list": [
+        {
+          "line": 211.88567336151664,
+          "over_prob": 68.26779621487164,
+          "under_prob": 31.73220378512836
+        },
+        {
+          "line": 213.94283668075832,
+          "over_prob": 58.908834705221565,
+          "under_prob": 41.091165294778435
+        },
+        {
+          "line": 216.0,
+          "over_prob": 49.01074421711573,
+          "under_prob": 50.98925578288427
+        },
+        {
+          "line": 218.05716331924168,
+          "over_prob": 39.17351384623712,
+          "under_prob": 60.82648615376288
+        },
+        {
+          "line": 220.11432663848336,
+          "over_prob": 29.986128716776776,
+          "under_prob": 70.01387128322322
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 4.090696241804747,
+      "edge_magnitude": 9.20406654406068
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 24,
+        "q1_away": 27,
+        "q2_home": 31,
+        "q2_away": 23,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  }
+]

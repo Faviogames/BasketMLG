@@ -1,0 +1,32 @@
+{
+  "index_metadata": {
+    "league": "NBA",
+    "year": "2026",
+    "month": "02",
+    "created_at": "2026-02-01T22:47:18.112552",
+    "last_updated": "2026-02-07T03:09:40.210431",
+    "total_predictions": 2
+  },
+  "prediction_references": [
+    {
+      "prediction_id": "9AF8C97E",
+      "date": "2026-02-01",
+      "home_team": "Boston Celtics",
+      "away_team": "Milwaukee Bucks",
+      "final_prediction": 204.66799990174925,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    },
+    {
+      "prediction_id": "A053C35F",
+      "date": "2026-02-07",
+      "home_team": "Milwaukee Bucks",
+      "away_team": "Indiana Pacers",
+      "final_prediction": 208.95833369002236,
+      "actual_total": null,
+      "status": "pending",
+      "accuracy": null
+    }
+  ]
+}

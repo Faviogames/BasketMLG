@@ -1,0 +1,78 @@
+{
+  "prediction_id": "12A33895",
+  "metadata": {
+    "timestamp": "2025-12-14T22:44:09.944232",
+    "date": "2025-12-14",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Cleveland Cavaliers",
+    "away_team": "Charlotte Hornets",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 221.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 215.54229674873702,
+    "context_adjusted_prediction": 215.54229674873702,
+    "final_prediction": 215.54229674873702,
+    "predictions_list": [
+      {
+        "line": 211.88567336151664,
+        "over_prob": 67.16149421078876,
+        "under_prob": 32.83850578921124
+      },
+      {
+        "line": 213.94283668075832,
+        "over_prob": 57.705960970841986,
+        "under_prob": 42.294039029158014
+      },
+      {
+        "line": 216.0,
+        "over_prob": 47.78210286422957,
+        "under_prob": 52.21789713577043
+      },
+      {
+        "line": 218.05716331924168,
+        "over_prob": 37.99458129535677,
+        "under_prob": 62.00541870464323
+      },
+      {
+        "line": 220.11432663848336,
+        "over_prob": 28.923426630227752,
+        "under_prob": 71.07657336977225
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 2.689708014114214,
+    "edge_magnitude": 5.957703251262984
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 29,
+      "q1_away": 33,
+      "q2_home": 18,
+      "q2_away": 24,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

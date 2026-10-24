@@ -1,0 +1,78 @@
+{
+  "prediction_id": "16ACC9B6",
+  "metadata": {
+    "timestamp": "2025-11-30T04:18:24.383130",
+    "date": "2025-11-30",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Phoenix Suns",
+    "away_team": "Denver Nuggets",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 236.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 243.82703236825455,
+    "context_adjusted_prediction": 243.82703236825455,
+    "final_prediction": 243.82703236825455,
+    "predictions_list": [
+      {
+        "line": 239.88567336151664,
+        "over_prob": 68.40235136587285,
+        "under_prob": 31.59764863412716
+      },
+      {
+        "line": 241.94283668075832,
+        "over_prob": 59.05577062856443,
+        "under_prob": 40.94422937143557
+      },
+      {
+        "line": 244.0,
+        "over_prob": 49.161478580842385,
+        "under_prob": 50.838521419157615
+      },
+      {
+        "line": 246.05716331924168,
+        "over_prob": 39.318776236094024,
+        "under_prob": 60.681223763905976
+      },
+      {
+        "line": 248.11432663848336,
+        "over_prob": 30.117636278294327,
+        "under_prob": 69.88236372170567
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 3.098110937951184,
+    "edge_magnitude": 7.3270323682545495
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 25,
+      "q1_away": 30,
+      "q2_home": 35,
+      "q2_away": 33,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

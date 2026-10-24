@@ -1,0 +1,58 @@
+# Basketball MLG - Requirements
+# Python 3.14+ compatible
+
+# Core ML and data processing
+pandas>=1.5.0
+numpy>=1.21.0
+
+# Interactive prompts
+prompt_toolkit>=3.0.0
+
+# Statistical analysis
+scipy>=1.9.0
+
+# HTTP requests
+requests>=2.28.0
+
+# Data visualization
+seaborn>=0.11.0
+matplotlib>=3.5.0
+
+# SHAP for model explainability
+shap>=0.41.0
+
+# Hyperparameter optimization
+scikit-optimize>=0.10.2
+optuna>=4.6.0
+
+# Interactive visualizations
+plotly>=6.5.0
+
+# Web frameworks for dashboards
+dash>=3.3.0
+fastapi>=0.122.0
+uvicorn>=0.38.0
+
+# Jupyter notebooks
+jupyter>=1.1.1
+notebook>=7.5.0
+ipywidgets>=8.1.0
+
+# Network analysis and web scraping
+networkx>=3.6
+beautifulsoup4>=4.14.0
+selenium>=4.38.0
+
+# Financial data
+yfinance>=0.2.66
+
+# Development dependencies (uncomment for testing)
+# pytest>=7.0.0
+# black>=22.0.0
+# flake8>=5.0.0
+
+# Note: Streamlit requires PyArrow which has compilation issues on Windows
+# streamlit>=1.51.0
+
+# Note: TensorFlow not available for Python 3.14 yet
+# tensorflow>=2.15.0

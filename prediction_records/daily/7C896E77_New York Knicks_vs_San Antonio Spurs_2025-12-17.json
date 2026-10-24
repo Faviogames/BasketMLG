@@ -1,0 +1,78 @@
+{
+  "prediction_id": "7C896E77",
+  "metadata": {
+    "timestamp": "2025-12-17T03:46:16.211889",
+    "date": "2025-12-17",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "New York Knicks",
+    "away_team": "San Antonio Spurs",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 237.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 240.49781123963274,
+    "context_adjusted_prediction": 240.49781123963274,
+    "final_prediction": 240.49781123963274,
+    "predictions_list": [
+      {
+        "line": 235.88567336151664,
+        "over_prob": 71.24298568553401,
+        "under_prob": 28.75701431446599
+      },
+      {
+        "line": 237.94283668075832,
+        "over_prob": 62.190859074487825,
+        "under_prob": 37.809140925512175
+      },
+      {
+        "line": 240.0,
+        "over_prob": 52.412021369296795,
+        "under_prob": 47.587978630703205
+      },
+      {
+        "line": 242.05716331924168,
+        "over_prob": 42.48494164168446,
+        "under_prob": 57.51505835831554
+      },
+      {
+        "line": 244.11432663848336,
+        "over_prob": 33.014866011785145,
+        "under_prob": 66.98513398821486
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 1.2622363114243111,
+    "edge_magnitude": 2.997811239632739
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 28,
+      "q1_away": 30,
+      "q2_home": 31,
+      "q2_away": 31,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

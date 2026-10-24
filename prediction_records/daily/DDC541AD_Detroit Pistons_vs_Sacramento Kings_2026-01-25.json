@@ -1,0 +1,78 @@
+{
+  "prediction_id": "DDC541AD",
+  "metadata": {
+    "timestamp": "2026-01-25T22:25:21.685862",
+    "date": "2026-01-25",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Detroit Pistons",
+    "away_team": "Sacramento Kings",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 255.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 275.7761987370692,
+    "context_adjusted_prediction": 275.7761987370692,
+    "final_prediction": 275.7761987370692,
+    "predictions_list": [
+      {
+        "line": 271.88567336151664,
+        "over_prob": 68.18228479549859,
+        "under_prob": 31.817715204501418
+      },
+      {
+        "line": 273.9428366807583,
+        "over_prob": 58.81552723029064,
+        "under_prob": 41.18447276970936
+      },
+      {
+        "line": 276.0,
+        "over_prob": 48.91509853554555,
+        "under_prob": 51.08490146445445
+      },
+      {
+        "line": 278.0571633192417,
+        "over_prob": 39.081411455462,
+        "under_prob": 60.918588544538
+      },
+      {
+        "line": 280.11432663848336,
+        "over_prob": 29.90281182707652,
+        "under_prob": 70.09718817292348
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 8.147528916497723,
+    "edge_magnitude": 20.776198737069194
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 35,
+      "q1_away": 35,
+      "q2_home": 43,
+      "q2_away": 30,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

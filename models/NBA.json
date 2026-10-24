@@ -1,0 +1,119 @@
+{
+  "artifact_type": "bundle",
+  "league_name": "NBA",
+  "created_at": "2025-11-28 01:03:35.527731",
+  "base": {
+    "model_type": "xgboost",
+    "mae": 3.354490041732788,
+    "std_dev": 8.22865327696672,
+    "teams_count": 30,
+    "matches_count": 2968,
+    "features_count": 188,
+    "features_used": null
+  },
+  "league_stats": {
+    "average_total_points": 228.26,
+    "median_total_points": 229.0,
+    "scoring_distribution": {
+      "min": 172.0,
+      "max": 299.0,
+      "q1": 215.0,
+      "q3": 240.0
+    },
+    "overs_unders_tendency": {
+      "over_200": 0.918,
+      "over_210": 0.812,
+      "over_220": 0.659,
+      "over_230": 0.459,
+      "over_240": 0.248
+    },
+    "league_bias": "overs_favored"
+  },
+  "feature_analysis": {
+    "top_10_features": [
+      {
+        "name": "implied_pace_vs_avg",
+        "importance": 0.0469,
+        "category": "pace"
+      },
+      {
+        "name": "market_total_diff",
+        "importance": 0.0346,
+        "category": "scoring"
+      },
+      {
+        "name": "away_ema_win_long_term_11",
+        "importance": 0.0303,
+        "category": "defensive"
+      },
+      {
+        "name": "diff_ema_clutch_time_performance_long_term_11",
+        "importance": 0.0271,
+        "category": "defensive"
+      },
+      {
+        "name": "away_ema_pace_long_term_11",
+        "importance": 0.0256,
+        "category": "pace"
+      },
+      {
+        "name": "away_ema_pace_medium_term_8",
+        "importance": 0.0238,
+        "category": "pace"
+      },
+      {
+        "name": "home_ema_points_scored_long_term_11",
+        "importance": 0.0198,
+        "category": "scoring"
+      },
+      {
+        "name": "away_avg_possessions_last_5",
+        "importance": 0.0183,
+        "category": "pace"
+      },
+      {
+        "name": "home_ema_pace_medium_term_8",
+        "importance": 0.0179,
+        "category": "pace"
+      },
+      {
+        "name": "home_ema_defensive_stops_long_term_11",
+        "importance": 0.0132,
+        "category": "defensive"
+      }
+    ],
+    "useless_features": [
+      "ft_rate_combined",
+      "home_avg_pace_last_5",
+      "away_ema_clutch_performance_long_term_11",
+      "diff_ema_scoring_efficiency_long_term_11",
+      "diff_ema_win_long_term_11",
+      "home_ema_clutch_performance_long_term_11",
+      "home_opponent_pace_ema_5",
+      "home_ema_win_long_term_11",
+      "diff_ema_clutch_efficiency_long_term_11",
+      "home_ema_plus_minus_long_term_11",
+      "diff_ema_game_flow_indicator_long_term_11"
+    ],
+    "feature_categories": {
+      "pace": 0.5,
+      "scoring": 0.2,
+      "defensive": 0.3
+    }
+  },
+  "training_insights": {
+    "performance_metrics": {
+      "r2_score": 0.815,
+      "explained_variance": 0.816,
+      "median_absolute_error": 0.45
+    },
+    "prediction_distribution": {
+      "under_predictions": 0.48,
+      "accurate_predictions": 0.818,
+      "over_predictions": 0.52
+    },
+    "model_stability": {
+      "feature_stability_score": 0.258
+    }
+  }
+}

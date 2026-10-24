@@ -1,0 +1,78 @@
+{
+  "prediction_id": "8CB3CF78",
+  "metadata": {
+    "timestamp": "2025-12-06T03:04:51.634938",
+    "date": "2025-12-06",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Memphis Grizzlies",
+    "away_team": "Los Angeles Clippers",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 231.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 226.3506652276964,
+    "context_adjusted_prediction": 226.3506652276964,
+    "final_prediction": 226.3506652276964,
+    "predictions_list": [
+      {
+        "line": 221.88567336151664,
+        "over_prob": 70.63025943741835,
+        "under_prob": 29.369740562581647
+      },
+      {
+        "line": 223.94283668075832,
+        "over_prob": 61.509183074594375,
+        "under_prob": 38.490816925405625
+      },
+      {
+        "line": 226.0,
+        "over_prob": 51.699583754917214,
+        "under_prob": 48.300416245082786
+      },
+      {
+        "line": 228.05716331924168,
+        "over_prob": 41.78546535506757,
+        "under_prob": 58.21453464493243
+      },
+      {
+        "line": 230.11432663848336,
+        "over_prob": 32.36972229930636,
+        "under_prob": 67.63027770069364
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 2.0126990356292658,
+    "edge_magnitude": 4.649334772303604
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 30,
+      "q1_away": 33,
+      "q2_home": 24,
+      "q2_away": 25,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

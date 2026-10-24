@@ -1,0 +1,78 @@
+{
+  "prediction_id": "F8ADCB58",
+  "metadata": {
+    "timestamp": "2026-01-03T04:20:27.460259",
+    "date": "2026-01-03",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Phoenix Suns",
+    "away_team": "Sacramento Kings",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 225.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 238.0166345511474,
+    "context_adjusted_prediction": 238.0166345511474,
+    "final_prediction": 238.0166345511474,
+    "predictions_list": [
+      {
+        "line": 233.88567336151664,
+        "over_prob": 69.21738153362382,
+        "under_prob": 30.782618466376178
+      },
+      {
+        "line": 235.94283668075832,
+        "over_prob": 59.948779269985195,
+        "under_prob": 40.051220730014805
+      },
+      {
+        "line": 238.0,
+        "over_prob": 50.08064771992301,
+        "under_prob": 49.91935228007699
+      },
+      {
+        "line": 240.05716331924168,
+        "over_prob": 40.20755363753796,
+        "under_prob": 59.79244636246204
+      },
+      {
+        "line": 242.11432663848336,
+        "over_prob": 30.924961216678824,
+        "under_prob": 69.07503878332118
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 5.785170911621069,
+    "edge_magnitude": 13.016634551147405
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 32,
+      "q1_away": 29,
+      "q2_home": 30,
+      "q2_away": 27,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

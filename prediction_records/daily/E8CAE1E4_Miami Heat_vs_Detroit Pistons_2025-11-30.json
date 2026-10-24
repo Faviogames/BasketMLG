@@ -1,0 +1,88 @@
+{
+  "prediction_id": "E8CAE1E4",
+  "metadata": {
+    "timestamp": "2025-11-30T03:16:56.739760",
+    "date": "2025-11-30",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Miami Heat",
+    "away_team": "Detroit Pistons",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 245.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 245.7537394230121,
+    "context_adjusted_prediction": 253.46669446614757,
+    "final_prediction": 253.46669446614757,
+    "predictions_list": [
+      {
+        "line": 241.88567336151664,
+        "over_prob": 68.08484957066578,
+        "under_prob": 31.915150429334215
+      },
+      {
+        "line": 243.94283668075832,
+        "over_prob": 58.70927698489205,
+        "under_prob": 41.29072301510795
+      },
+      {
+        "line": 246.0,
+        "over_prob": 48.80625553552256,
+        "under_prob": 51.19374446447744
+      },
+      {
+        "line": 248.05716331924168,
+        "over_prob": 38.97666781182944,
+        "under_prob": 61.02333218817056
+      },
+      {
+        "line": 250.11432663848336,
+        "over_prob": 29.808120225385323,
+        "under_prob": 70.19187977461468
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 3.245089395579459,
+    "edge_magnitude": 7.9666944661475725
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 23,
+      "q1_away": 36,
+      "q2_home": 36,
+      "q2_away": 35,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 7.71295504313548,
+    "meta_metadata": {
+      "chronos_prediction": 253.46669446614757,
+      "adjustment": 7.71295504313548,
+      "model_version": "v5.0_huber",
+      "components": {
+        "base_prediction": 245.7537394230121,
+        "pacer_projection": 254.2
+      },
+      "pacer_prob_over": 0.7048186481274141,
+      "pacer_prob_under": 0.29518135187258593
+    }
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

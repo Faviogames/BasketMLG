@@ -1,0 +1,78 @@
+{
+  "prediction_id": "55128497",
+  "metadata": {
+    "timestamp": "2026-01-03T05:13:52.340109",
+    "date": "2026-01-03",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Golden State Warriors",
+    "away_team": "Oklahoma City Thunder",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 223.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 221.5959839520581,
+    "context_adjusted_prediction": 221.5959839520581,
+    "final_prediction": 221.5959839520581,
+    "predictions_list": [
+      {
+        "line": 217.88567336151664,
+        "over_prob": 67.39696624567407,
+        "under_prob": 32.60303375432593
+      },
+      {
+        "line": 219.94283668075832,
+        "over_prob": 57.96121306177414,
+        "under_prob": 42.03878693822586
+      },
+      {
+        "line": 222.0,
+        "over_prob": 48.04203260340738,
+        "under_prob": 51.95796739659262
+      },
+      {
+        "line": 224.05716331924168,
+        "over_prob": 38.243237513912945,
+        "under_prob": 61.756762486087055
+      },
+      {
+        "line": 226.11432663848336,
+        "over_prob": 29.146886411744447,
+        "under_prob": 70.85311358825555
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 0.6296036089425535,
+    "edge_magnitude": 1.4040160479418944
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 23,
+      "q1_away": 34,
+      "q2_home": 22,
+      "q2_away": 30,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

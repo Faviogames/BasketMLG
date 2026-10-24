@@ -1,0 +1,78 @@
+{
+  "prediction_id": "FB2F8B55",
+  "metadata": {
+    "timestamp": "2025-12-06T03:12:52.880007",
+    "date": "2025-12-06",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Milwaukee Bucks",
+    "away_team": "Philadelphia 76ers",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 224.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 236.2294364151533,
+    "context_adjusted_prediction": 236.2294364151533,
+    "final_prediction": 236.2294364151533,
+    "predictions_list": [
+      {
+        "line": 231.88567336151664,
+        "over_prob": 70.12095959479628,
+        "under_prob": 29.879040405203728
+      },
+      {
+        "line": 233.94283668075832,
+        "over_prob": 60.94487671763987,
+        "under_prob": 39.05512328236013
+      },
+      {
+        "line": 236.0,
+        "over_prob": 51.11221149890919,
+        "under_prob": 48.88778850109081
+      },
+      {
+        "line": 238.05716331924168,
+        "over_prob": 41.21112543750613,
+        "under_prob": 58.78887456249387
+      },
+      {
+        "line": 240.11432663848336,
+        "over_prob": 31.842150394501687,
+        "under_prob": 68.15784960549831
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 5.459569828193432,
+    "edge_magnitude": 12.229436415153287
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 20,
+      "q1_away": 33,
+      "q2_home": 29,
+      "q2_away": 36,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

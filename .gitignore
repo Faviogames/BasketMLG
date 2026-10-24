@@ -1,0 +1,17 @@
+# Entorno local / sensible
+.browser_profile/
+.diagnostics/
+.env
+graphify-out/
+
+# Cachés de Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Datasets de ligas: se conservan sólo en local
+/NBA.json
+/WNBA.json
+/NBL.json
+/NBA PreSeason.json
+/leagues/

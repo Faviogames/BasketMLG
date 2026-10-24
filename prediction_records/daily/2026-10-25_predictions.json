@@ -1,0 +1,314 @@
+[
+  {
+    "prediction_id": "0BA7577C",
+    "metadata": {
+      "timestamp": "2026-10-25T01:02:22.388781",
+      "date": "2026-10-25",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Philadelphia 76ers",
+      "away_team": "Milwaukee Bucks",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 244.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 244.6973197611073,
+      "context_adjusted_prediction": 244.6973197611073,
+      "final_prediction": 244.6973197611073,
+      "predictions_list": [
+        {
+          "line": 240.88567336151664,
+          "over_prob": 67.83953363853922,
+          "under_prob": 32.16046636146077
+        },
+        {
+          "line": 242.94283668075832,
+          "over_prob": 58.44208760302129,
+          "under_prob": 41.55791239697871
+        },
+        {
+          "line": 245.0,
+          "over_prob": 48.53287390011927,
+          "under_prob": 51.46712609988073
+        },
+        {
+          "line": 247.05716331924168,
+          "over_prob": 38.71389757024423,
+          "under_prob": 61.28610242975577
+        },
+        {
+          "line": 249.11432663848336,
+          "over_prob": 29.57085192204329,
+          "under_prob": 70.42914807795671
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 0.08070337877599548,
+      "edge_magnitude": 0.19731976110730898
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 34,
+        "q1_away": 25,
+        "q2_home": 30,
+        "q2_away": 35,
+        "q3_home": 6,
+        "q3_away": 9,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "A327C11D",
+    "metadata": {
+      "timestamp": "2026-10-25T01:11:41.123794",
+      "date": "2026-10-25",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Chicago Bulls",
+      "away_team": "Washington Wizards",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 238.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 239.06280735968667,
+      "context_adjusted_prediction": 239.06280735968667,
+      "final_prediction": 239.06280735968667,
+      "predictions_list": [
+        {
+          "line": 234.88567336151664,
+          "over_prob": 69.41445451981757,
+          "under_prob": 30.585545480182436
+        },
+        {
+          "line": 236.94283668075832,
+          "over_prob": 60.16548290593461,
+          "under_prob": 39.83451709406539
+        },
+        {
+          "line": 239.0,
+          "over_prob": 50.304500228206436,
+          "under_prob": 49.695499771793564
+        },
+        {
+          "line": 241.05716331924168,
+          "over_prob": 40.42478093443972,
+          "under_prob": 59.57521906556028
+        },
+        {
+          "line": 243.11432663848336,
+          "over_prob": 31.122987801247447,
+          "under_prob": 68.87701219875255
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 0.23597792858979985,
+      "edge_magnitude": 0.5628073596866727
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 27,
+        "q1_away": 28,
+        "q2_home": 35,
+        "q2_away": 29,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "58CC8059",
+    "metadata": {
+      "timestamp": "2026-10-25T01:12:43.301878",
+      "date": "2026-10-25",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Chicago Bulls",
+      "away_team": "Washington Wizards",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 238.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 239.06280735968667,
+      "context_adjusted_prediction": 239.06280735968667,
+      "final_prediction": 239.06280735968667,
+      "predictions_list": [
+        {
+          "line": 234.88567336151664,
+          "over_prob": 69.41445451981757,
+          "under_prob": 30.585545480182436
+        },
+        {
+          "line": 236.94283668075832,
+          "over_prob": 60.16548290593461,
+          "under_prob": 39.83451709406539
+        },
+        {
+          "line": 239.0,
+          "over_prob": 50.304500228206436,
+          "under_prob": 49.695499771793564
+        },
+        {
+          "line": 241.05716331924168,
+          "over_prob": 40.42478093443972,
+          "under_prob": 59.57521906556028
+        },
+        {
+          "line": 243.11432663848336,
+          "over_prob": 31.122987801247447,
+          "under_prob": 68.87701219875255
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 0.23597792858979985,
+      "edge_magnitude": 0.5628073596866727
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 27,
+        "q1_away": 28,
+        "q2_home": 35,
+        "q2_away": 29,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "0F9B9CFA",
+    "metadata": {
+      "timestamp": "2026-10-25T01:15:45.366058",
+      "date": "2026-10-25",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Dallas Mavericks",
+      "away_team": "San Antonio Spurs",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 233.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 251.30415076583208,
+      "context_adjusted_prediction": 251.30415076583208,
+      "final_prediction": 251.30415076583208,
+      "predictions_list": [
+        {
+          "line": 246.88567336151664,
+          "over_prob": 70.43532063850715,
+          "under_prob": 29.564679361492846
+        },
+        {
+          "line": 248.94283668075832,
+          "over_prob": 61.292944442935635,
+          "under_prob": 38.707055557064365
+        },
+        {
+          "line": 251.0,
+          "over_prob": 51.474250676296776,
+          "under_prob": 48.525749323703224
+        },
+        {
+          "line": 253.05716331924168,
+          "over_prob": 41.56488172308572,
+          "under_prob": 58.43511827691428
+        },
+        {
+          "line": 255.11432663848336,
+          "over_prob": 32.16687077134041,
+          "under_prob": 67.83312922865959
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 7.624903968236435,
+      "edge_magnitude": 17.804150765832077
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 37,
+        "q1_away": 39,
+        "q2_home": 23,
+        "q2_away": 29,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  }
+]

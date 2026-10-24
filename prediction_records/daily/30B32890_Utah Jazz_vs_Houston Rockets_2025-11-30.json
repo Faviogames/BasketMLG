@@ -1,0 +1,78 @@
+{
+  "prediction_id": "30B32890",
+  "metadata": {
+    "timestamp": "2025-11-30T22:18:48.808765",
+    "date": "2025-11-30",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Utah Jazz",
+    "away_team": "Houston Rockets",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 235.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 231.8521367334858,
+    "context_adjusted_prediction": 231.8521367334858,
+    "final_prediction": 231.8521367334858,
+    "predictions_list": [
+      {
+        "line": 227.88567336151664,
+        "over_prob": 68.5107925648117,
+        "under_prob": 31.489207435188305
+      },
+      {
+        "line": 229.94283668075832,
+        "over_prob": 59.17429093723644,
+        "under_prob": 40.82570906276356
+      },
+      {
+        "line": 232.0,
+        "over_prob": 49.28316660881067,
+        "under_prob": 50.71683339118933
+      },
+      {
+        "line": 234.05716331924168,
+        "over_prob": 39.436146896532954,
+        "under_prob": 60.563853103467046
+      },
+      {
+        "line": 236.11432663848336,
+        "over_prob": 30.223983918960954,
+        "under_prob": 69.77601608103905
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 1.3395162836230667,
+    "edge_magnitude": 3.1478632665142072
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 21,
+      "q1_away": 30,
+      "q2_home": 27,
+      "q2_away": 37,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

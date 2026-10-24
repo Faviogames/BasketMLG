@@ -1,0 +1,88 @@
+{
+  "prediction_id": "CAD74765",
+  "metadata": {
+    "timestamp": "2025-11-29T03:32:18.665417",
+    "date": "2025-11-29",
+    "version": "2.0",
+    "prediction_timing": "q3_progress"
+  },
+  "matchup": {
+    "home_team": "Brooklyn Nets",
+    "away_team": "Philadelphia 76ers",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 214.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 220.71796169822167,
+    "context_adjusted_prediction": 218.33180515923718,
+    "final_prediction": 218.33180515923718,
+    "predictions_list": [
+      {
+        "line": 216.88567336151664,
+        "over_prob": 67.92937697163133,
+        "under_prob": 32.07062302836867
+      },
+      {
+        "line": 218.94283668075832,
+        "over_prob": 58.53988862344754,
+        "under_prob": 41.46011137655246
+      },
+      {
+        "line": 221.0,
+        "over_prob": 48.63288714682829,
+        "under_prob": 51.36711285317171
+      },
+      {
+        "line": 223.05716331924168,
+        "over_prob": 38.80997652613137,
+        "under_prob": 61.19002347386863
+      },
+      {
+        "line": 225.11432663848336,
+        "over_prob": 29.65755921606295,
+        "under_prob": 70.34244078393705
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 1.7863893516257237,
+    "edge_magnitude": 3.8318051592371773
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 23,
+      "q1_away": 31,
+      "q2_home": 25,
+      "q2_away": 32,
+      "q3_home": 27,
+      "q3_away": 24,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": -2.386156538984494,
+    "meta_metadata": {
+      "chronos_prediction": 218.33180515923718,
+      "adjustment": -2.386156538984494,
+      "model_version": "v5.0_huber",
+      "components": {
+        "base_prediction": 220.71796169822167,
+        "pacer_projection": 216.0
+      },
+      "pacer_prob_over": 0.5361825385536936,
+      "pacer_prob_under": 0.46381746144630637
+    }
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

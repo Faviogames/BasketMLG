@@ -1,0 +1,78 @@
+{
+  "prediction_id": "B0893B28",
+  "metadata": {
+    "timestamp": "2025-12-07T02:13:18.337187",
+    "date": "2025-12-07",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Washington Wizards",
+    "away_team": "Atlanta Hawks",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 236.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 246.93686762418432,
+    "context_adjusted_prediction": 246.93686762418432,
+    "final_prediction": 246.93686762418432,
+    "predictions_list": [
+      {
+        "line": 242.88567336151664,
+        "over_prob": 68.87561631770302,
+        "under_prob": 31.124383682296987
+      },
+      {
+        "line": 244.94283668075832,
+        "over_prob": 59.57368892031166,
+        "under_prob": 40.42631107968834
+      },
+      {
+        "line": 247.0,
+        "over_prob": 49.69392407192175,
+        "under_prob": 50.30607592807825
+      },
+      {
+        "line": 249.05716331924168,
+        "over_prob": 39.832992792357615,
+        "under_prob": 60.167007207642385
+      },
+      {
+        "line": 251.11432663848336,
+        "over_prob": 30.584160240361342,
+        "under_prob": 69.41583975963866
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 4.413051849549394,
+    "edge_magnitude": 10.436867624184316
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 28,
+      "q1_away": 35,
+      "q2_home": 27,
+      "q2_away": 35,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "prediction_id": "64969A98",
+  "metadata": {
+    "timestamp": "2025-12-08T03:11:46.621303",
+    "date": "2025-12-08",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Utah Jazz",
+    "away_team": "Oklahoma City Thunder",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 237.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 242.8583067230608,
+    "context_adjusted_prediction": 242.8583067230608,
+    "final_prediction": 242.8583067230608,
+    "predictions_list": [
+      {
+        "line": 238.88567336151664,
+        "over_prob": 68.537420179924,
+        "under_prob": 31.462579820075998
+      },
+      {
+        "line": 240.94283668075832,
+        "over_prob": 59.20340729776139,
+        "under_prob": 40.79659270223861
+      },
+      {
+        "line": 243.0,
+        "over_prob": 49.31307537528754,
+        "under_prob": 50.68692462471246
+      },
+      {
+        "line": 245.05716331924168,
+        "over_prob": 39.46500823789897,
+        "under_prob": 60.53499176210103
+      },
+      {
+        "line": 247.11432663848336,
+        "over_prob": 30.25014713440561,
+        "under_prob": 69.74985286559439
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 2.4718593768189,
+    "edge_magnitude": 5.858306723060792
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 20,
+      "q1_away": 45,
+      "q2_home": 28,
+      "q2_away": 29,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

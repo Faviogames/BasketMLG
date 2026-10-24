@@ -1,0 +1,80 @@
+[
+  {
+    "prediction_id": "4E26B738",
+    "metadata": {
+      "timestamp": "2025-12-22T05:06:09.644834",
+      "date": "2025-12-22",
+      "version": "2.0",
+      "prediction_timing": "q1"
+    },
+    "matchup": {
+      "home_team": "Sacramento Kings",
+      "away_team": "Houston Rockets",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 236.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 229.40965846007217,
+      "context_adjusted_prediction": 229.40965846007217,
+      "final_prediction": 229.40965846007217,
+      "predictions_list": [
+        {
+          "line": 224.88567336151664,
+          "over_prob": 70.8766365709418,
+          "under_prob": 29.1233634290582
+        },
+        {
+          "line": 226.94283668075832,
+          "over_prob": 61.782918739799584,
+          "under_prob": 38.217081260200416
+        },
+        {
+          "line": 229.0,
+          "over_prob": 51.985289572911746,
+          "under_prob": 48.014710427088254
+        },
+        {
+          "line": 231.05716331924168,
+          "over_prob": 42.065597853111655,
+          "under_prob": 57.934402146888345
+        },
+        {
+          "line": 233.11432663848336,
+          "over_prob": 32.62774897964853,
+          "under_prob": 67.37225102035147
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 2.9980302494409448,
+      "edge_magnitude": 7.0903415399278344
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 30,
+        "q1_away": 31,
+        "q2_home": 0,
+        "q2_away": 0,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  }
+]

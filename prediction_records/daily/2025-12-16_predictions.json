@@ -1,0 +1,236 @@
+[
+  {
+    "prediction_id": "699C464F",
+    "metadata": {
+      "timestamp": "2025-12-16T02:25:22.408023",
+      "date": "2025-12-16",
+      "version": "2.0",
+      "prediction_timing": "q1"
+    },
+    "matchup": {
+      "home_team": "Boston Celtics",
+      "away_team": "Detroit Pistons",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 222.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 204.88024496862823,
+      "context_adjusted_prediction": 204.88024496862823,
+      "final_prediction": 204.88024496862823,
+      "predictions_list": [
+        {
+          "line": 200.88567336151664,
+          "over_prob": 68.63202019036257,
+          "under_prob": 31.36797980963743
+        },
+        {
+          "line": 202.94283668075832,
+          "over_prob": 59.306893254388726,
+          "under_prob": 40.693106745611274
+        },
+        {
+          "line": 205.0,
+          "over_prob": 49.419423114996654,
+          "under_prob": 50.580576885003346
+        },
+        {
+          "line": 207.05716331924168,
+          "over_prob": 39.56767543845123,
+          "under_prob": 60.43232456154877
+        },
+        {
+          "line": 209.11432663848336,
+          "over_prob": 30.343256161222712,
+          "under_prob": 69.65674383877729
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 7.918991025335625,
+      "edge_magnitude": 17.619755031371767
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 33,
+        "q1_away": 25,
+        "q2_home": 0,
+        "q2_away": 0,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "AF9BCE9F",
+    "metadata": {
+      "timestamp": "2025-12-16T02:29:15.259361",
+      "date": "2025-12-16",
+      "version": "2.0",
+      "prediction_timing": "q1"
+    },
+    "matchup": {
+      "home_team": "Boston Celtics",
+      "away_team": "Detroit Pistons",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 222.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 204.88024496862823,
+      "context_adjusted_prediction": 204.88024496862823,
+      "final_prediction": 204.88024496862823,
+      "predictions_list": [
+        {
+          "line": 200.88567336151664,
+          "over_prob": 68.63202019036257,
+          "under_prob": 31.36797980963743
+        },
+        {
+          "line": 202.94283668075832,
+          "over_prob": 59.306893254388726,
+          "under_prob": 40.693106745611274
+        },
+        {
+          "line": 205.0,
+          "over_prob": 49.419423114996654,
+          "under_prob": 50.580576885003346
+        },
+        {
+          "line": 207.05716331924168,
+          "over_prob": 39.56767543845123,
+          "under_prob": 60.43232456154877
+        },
+        {
+          "line": 209.11432663848336,
+          "over_prob": 30.343256161222712,
+          "under_prob": 69.65674383877729
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 7.918991025335625,
+      "edge_magnitude": 17.619755031371767
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 33,
+        "q1_away": 25,
+        "q2_home": 0,
+        "q2_away": 0,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "72D8F4DE",
+    "metadata": {
+      "timestamp": "2025-12-16T02:41:05.229445",
+      "date": "2025-12-16",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Miami Heat",
+      "away_team": "Toronto Raptors",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 215.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 207.42126862773497,
+      "context_adjusted_prediction": 207.42126862773497,
+      "final_prediction": 207.42126862773497,
+      "predictions_list": [
+        {
+          "line": 202.88567336151664,
+          "over_prob": 70.9250109794437,
+          "under_prob": 29.07498902055631
+        },
+        {
+          "line": 204.94283668075832,
+          "over_prob": 61.83672250075898,
+          "under_prob": 38.16327749924102
+        },
+        {
+          "line": 207.0,
+          "over_prob": 52.04150638324989,
+          "under_prob": 47.95849361675011
+        },
+        {
+          "line": 209.05716331924168,
+          "over_prob": 42.12077717592296,
+          "under_prob": 57.87922282407704
+        },
+        {
+          "line": 211.11432663848336,
+          "over_prob": 32.67862851438048,
+          "under_prob": 67.32137148561952
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 3.524991335937221,
+      "edge_magnitude": 7.578731372265025
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 22,
+        "q1_away": 23,
+        "q2_home": 30,
+        "q2_away": 23,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  }
+]

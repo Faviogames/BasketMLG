@@ -1,0 +1,78 @@
+{
+  "prediction_id": "B343481B",
+  "metadata": {
+    "timestamp": "2025-12-06T02:49:34.276160",
+    "date": "2025-12-06",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "New York Knicks",
+    "away_team": "Utah Jazz",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 240.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 233.85064765953518,
+    "context_adjusted_prediction": 233.85064765953518,
+    "final_prediction": 233.85064765953518,
+    "predictions_list": [
+      {
+        "line": 229.88567336151664,
+        "over_prob": 68.50436477644621,
+        "under_prob": 31.49563522355379
+      },
+      {
+        "line": 231.94283668075832,
+        "over_prob": 59.16726319442987,
+        "under_prob": 40.83273680557013
+      },
+      {
+        "line": 234.0,
+        "over_prob": 49.27594844482519,
+        "under_prob": 50.72405155517481
+      },
+      {
+        "line": 236.05716331924168,
+        "over_prob": 39.4291823278713,
+        "under_prob": 60.5708176721287
+      },
+      {
+        "line": 238.11432663848336,
+        "over_prob": 30.217671173195086,
+        "under_prob": 69.78232882680491
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 2.56223014186034,
+    "edge_magnitude": 6.149352340464816
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 41,
+      "q1_away": 13,
+      "q2_home": 27,
+      "q2_away": 34,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "prediction_id": "28FDB8C3",
+  "metadata": {
+    "timestamp": "2025-11-25T02:12:32.939954",
+    "date": "2025-11-25",
+    "version": "1.1"
+  },
+  "matchup": {
+    "home_team": "Indiana Pacers",
+    "away_team": "Detroit Pistons",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 239.5,
+    "bookmaker": "API Auto",
+    "api_endpoint": "the-odds-api.com",
+    "acquisition_method": "automatic"
+  },
+  "predictions": {
+    "base_model_prediction": 227.38592529296875,
+    "context_adjusted_prediction": 227.38592529296875,
+    "final_prediction": 227.38592529296875,
+    "adjustments": {
+      "blowout_adjustment": 0.0,
+      "context_adjustments": {},
+      "adjustment_factor": 1.0,
+      "applied_adjustments": []
+    }
+  },
+  "probabilities": [
+    {
+      "line": 237.4593726691472,
+      "over_prob": 70.47540084318592,
+      "under_prob": 29.52459915681408
+    },
+    {
+      "line": 239.7296863345736,
+      "over_prob": 61.33737903444941,
+      "under_prob": 38.66262096555059
+    },
+    {
+      "line": 242.0,
+      "over_prob": 51.52052808698866,
+      "under_prob": 48.47947191301134
+    },
+    {
+      "line": 244.2703136654264,
+      "over_prob": 41.61015829202823,
+      "under_prob": 58.38984170797177
+    },
+    {
+      "line": 246.5406273308528,
+      "over_prob": 32.20848430191484,
+      "under_prob": 67.79151569808516
+    }
+  ],
+  "analysis": {
+    "confidence_score": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 12.11407470703125
+  },
+  "game_context": {
+    "quarter_scores": {
+      "q1_home": 32,
+      "q1_away": 35,
+      "q2_home": 23,
+      "q2_away": 36,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {},
+    "is_halftime": true,
+    "prediction_timing": "q2"
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

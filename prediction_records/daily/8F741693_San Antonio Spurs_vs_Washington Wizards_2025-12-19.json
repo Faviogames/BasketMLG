@@ -1,0 +1,78 @@
+{
+  "prediction_id": "8F741693",
+  "metadata": {
+    "timestamp": "2025-12-19T03:08:46.736612",
+    "date": "2025-12-19",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "San Antonio Spurs",
+    "away_team": "Washington Wizards",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 232.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 224.90665675706205,
+    "context_adjusted_prediction": 224.90665675706205,
+    "final_prediction": 224.90665675706205,
+    "predictions_list": [
+      {
+        "line": 220.88567336151664,
+        "over_prob": 68.74574821452754,
+        "under_prob": 31.254251785472455
+      },
+      {
+        "line": 222.94283668075832,
+        "over_prob": 59.431395360153886,
+        "under_prob": 40.568604639846114
+      },
+      {
+        "line": 225.0,
+        "over_prob": 49.54746218704551,
+        "under_prob": 50.45253781295449
+      },
+      {
+        "line": 227.05716331924168,
+        "over_prob": 39.69137408767508,
+        "under_prob": 60.30862591232492
+      },
+      {
+        "line": 229.11432663848336,
+        "over_prob": 30.455521066592325,
+        "under_prob": 69.54447893340767
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 3.2659540829840634,
+    "edge_magnitude": 7.593343242937948
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 34,
+      "q1_away": 27,
+      "q2_home": 23,
+      "q2_away": 26,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

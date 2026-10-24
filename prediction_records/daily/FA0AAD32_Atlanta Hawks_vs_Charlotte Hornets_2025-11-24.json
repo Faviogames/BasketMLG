@@ -1,0 +1,103 @@
+{
+  "prediction_id": "FA0AAD32",
+  "metadata": {
+    "timestamp": "2025-11-24T01:07:48.312314",
+    "date": "2025-11-24",
+    "version": "1.1"
+  },
+  "matchup": {
+    "home_team": "Atlanta Hawks",
+    "away_team": "Charlotte Hornets",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 230.0,
+    "bookmaker": "API Auto",
+    "api_endpoint": "the-odds-api.com",
+    "acquisition_method": "automatic"
+  },
+  "predictions": {
+    "base_model_prediction": 209.9759979248047,
+    "context_adjusted_prediction": 230.27393336539825,
+    "final_prediction": 230.27393336539825,
+    "adjustments": {
+      "blowout_adjustment": 20.297935440593562,
+      "context_adjustments": {},
+      "adjustment_factor": 1.0,
+      "applied_adjustments": []
+    }
+  },
+  "probabilities": [
+    {
+      "line": 222.4593726691472,
+      "over_prob": 69.12778709363667,
+      "under_prob": 30.872212906363327
+    },
+    {
+      "line": 224.7296863345736,
+      "over_prob": 59.85036061430821,
+      "under_prob": 40.14963938569179
+    },
+    {
+      "line": 227.0,
+      "over_prob": 49.97908591567529,
+      "under_prob": 50.02091408432471
+    },
+    {
+      "line": 229.2703136654264,
+      "over_prob": 40.109098134383444,
+      "under_prob": 59.890901865616556
+    },
+    {
+      "line": 231.5406273308528,
+      "over_prob": 30.835299676666736,
+      "under_prob": 69.16470032333326
+    }
+  ],
+  "analysis": {
+    "confidence_score": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 0.27393336539824986
+  },
+  "game_context": {
+    "quarter_scores": {
+      "q1_home": 28,
+      "q1_away": 25,
+      "q2_home": 25,
+      "q2_away": 30,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 20.297935440593562,
+    "meta_metadata": {
+      "raw_prediction": 230.27393336539825,
+      "final_prediction": 230.27393336539825,
+      "features": {
+        "halftime_total": 108,
+        "pace_halftime": 95.0,
+        "efg_home": 0.5,
+        "efg_away": 0.5,
+        "to_rate_home": 0.13,
+        "to_rate_away": 0.13,
+        "ft_rate_home": 0.2,
+        "ft_rate_away": 0.2,
+        "home_lead": -2,
+        "is_close_game": 1,
+        "momentum_score": 2
+      },
+      "adjustments": []
+    },
+    "is_halftime": true,
+    "prediction_timing": "q2"
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

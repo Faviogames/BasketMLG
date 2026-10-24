@@ -1,0 +1,78 @@
+{
+  "prediction_id": "78A548CF",
+  "metadata": {
+    "timestamp": "2025-12-08T02:03:33.884532",
+    "date": "2025-12-08",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Chicago Bulls",
+    "away_team": "Golden State Warriors",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 229.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 218.76387525797455,
+    "context_adjusted_prediction": 218.76387525797455,
+    "final_prediction": 218.76387525797455,
+    "predictions_list": [
+      {
+        "line": 214.88567336151664,
+        "over_prob": 68.12883737759381,
+        "under_prob": 31.87116262240619
+      },
+      {
+        "line": 216.94283668075832,
+        "over_prob": 58.75723541710831,
+        "under_prob": 41.24276458289169
+      },
+      {
+        "line": 219.0,
+        "over_prob": 48.855375070076725,
+        "under_prob": 51.144624929923275
+      },
+      {
+        "line": 221.05716331924168,
+        "over_prob": 39.02392850712988,
+        "under_prob": 60.97607149287012
+      },
+      {
+        "line": 223.11432663848336,
+        "over_prob": 29.850837404801837,
+        "under_prob": 70.14916259519816
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 4.678049996525252,
+    "edge_magnitude": 10.736124742025453
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 25,
+      "q1_away": 38,
+      "q2_home": 21,
+      "q2_away": 22,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

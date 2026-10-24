@@ -1,0 +1,78 @@
+{
+  "prediction_id": "46FCC43A",
+  "metadata": {
+    "timestamp": "2026-01-18T02:43:14.859746",
+    "date": "2026-01-18",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "Detroit Pistons",
+    "away_team": "Indiana Pacers",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 199.5,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 174.01439892607692,
+    "context_adjusted_prediction": 174.01439892607692,
+    "final_prediction": 174.01439892607692,
+    "predictions_list": [
+      {
+        "line": 169.88567336151664,
+        "over_prob": 69.2078253779343,
+        "under_prob": 30.792174622065698
+      },
+      {
+        "line": 171.94283668075832,
+        "over_prob": 59.938278937256754,
+        "under_prob": 40.061721062743246
+      },
+      {
+        "line": 174.0,
+        "over_prob": 50.06980896240978,
+        "under_prob": 49.93019103759022
+      },
+      {
+        "line": 176.05716331924168,
+        "over_prob": 40.197043399923174,
+        "under_prob": 59.802956600076826
+      },
+      {
+        "line": 178.11432663848336,
+        "over_prob": 30.915387023983996,
+        "under_prob": 69.084612976016
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 12.77473738041257,
+    "edge_magnitude": 25.48560107392308
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 31,
+      "q1_away": 11,
+      "q2_home": 28,
+      "q2_away": 14,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "prediction_id": "3FE7E4DC",
+    "metadata": {
+      "timestamp": "2026-10-17T01:55:18.134042",
+      "date": "2026-10-17",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Chicago Bulls",
+      "away_team": "Minnesota Timberwolves",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": null,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 604.5537191845378,
+      "context_adjusted_prediction": 604.5537191845378,
+      "final_prediction": 604.5537191845378,
+      "predictions_list": [
+        {
+          "line": 600.8856733615166,
+          "over_prob": 67.2116505352681,
+          "under_prob": 32.788349464731894
+        },
+        {
+          "line": 602.9428366807583,
+          "over_prob": 57.76029563168896,
+          "under_prob": 42.23970436831104
+        },
+        {
+          "line": 605.0,
+          "over_prob": 47.83739773113535,
+          "under_prob": 52.16260226886465
+        },
+        {
+          "line": 607.0571633192417,
+          "over_prob": 38.047443987021204,
+          "under_prob": 61.952556012978796
+        },
+        {
+          "line": 609.1143266384834,
+          "over_prob": 28.970902215541855,
+          "under_prob": 71.02909778445814
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "NEUTRAL",
+      "edge_percentage": 0.0,
+      "edge_magnitude": 0.0
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 33,
+        "q1_away": 28,
+        "q2_home": 34,
+        "q2_away": 32,
+        "q3_home": 20,
+        "q3_away": 17,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  }
+]

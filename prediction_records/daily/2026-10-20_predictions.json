@@ -1,0 +1,80 @@
+[
+  {
+    "prediction_id": "A11512E5",
+    "metadata": {
+      "timestamp": "2026-10-20T20:14:39.855398",
+      "date": "2026-10-20",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Detroit Pistons",
+      "away_team": "Boston Celtics",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 209.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 212.83203194722503,
+      "context_adjusted_prediction": 212.83203194722503,
+      "final_prediction": 212.83203194722503,
+      "predictions_list": [
+        {
+          "line": 208.88567336151664,
+          "over_prob": 68.4239602942576,
+          "under_prob": 31.5760397057424
+        },
+        {
+          "line": 210.94283668075832,
+          "over_prob": 59.07938079698958,
+          "under_prob": 40.92061920301042
+        },
+        {
+          "line": 213.0,
+          "over_prob": 49.18571238176332,
+          "under_prob": 50.81428761823668
+        },
+        {
+          "line": 215.05716331924168,
+          "over_prob": 39.342143108240116,
+          "under_prob": 60.657856891759884
+        },
+        {
+          "line": 217.11432663848336,
+          "over_prob": 30.138802153169905,
+          "under_prob": 69.8611978468301
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 1.5904687098926173,
+      "edge_magnitude": 3.3320319472250333
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 27,
+        "q1_away": 28,
+        "q2_home": 18,
+        "q2_away": 30,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  }
+]

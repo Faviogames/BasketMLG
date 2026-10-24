@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "BasketMLG · SofaScore local",
+  "version": "0.2.0",
+  "description": "Conecta una pestaña de SofaScore de tu navegador con BasketMLG en este equipo.",
+  "permissions": ["scripting"],
+  "host_permissions": ["https://www.sofascore.com/*", "http://127.0.0.1:8766/*"],
+  "action": {"default_title": "Abrir conexión BasketMLG"},
+  "background": {"service_worker": "background.js"}
+}

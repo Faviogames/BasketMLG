@@ -1,0 +1,78 @@
+{
+  "prediction_id": "CD22C229",
+  "metadata": {
+    "timestamp": "2025-12-07T19:18:38.006851",
+    "date": "2025-12-07",
+    "version": "2.0",
+    "prediction_timing": "q2"
+  },
+  "matchup": {
+    "home_team": "New York Knicks",
+    "away_team": "Orlando Magic",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 221.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 223.30478094082306,
+    "context_adjusted_prediction": 223.30478094082306,
+    "final_prediction": 223.30478094082306,
+    "predictions_list": [
+      {
+        "line": 218.88567336151664,
+        "over_prob": 70.43796562691242,
+        "under_prob": 29.562034373087588
+      },
+      {
+        "line": 220.94283668075832,
+        "over_prob": 61.29587639036597,
+        "under_prob": 38.70412360963403
+      },
+      {
+        "line": 223.0,
+        "over_prob": 51.47730380548138,
+        "under_prob": 48.52269619451862
+      },
+      {
+        "line": 225.05716331924168,
+        "over_prob": 41.56786841741255,
+        "under_prob": 58.43213158258745
+      },
+      {
+        "line": 227.11432663848336,
+        "over_prob": 32.16961545924397,
+        "under_prob": 67.83038454075603
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "OVER",
+    "edge_percentage": 1.0428873035398483,
+    "edge_magnitude": 2.304780940823065
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 35,
+      "q1_away": 31,
+      "q2_home": 19,
+      "q2_away": 24,
+      "q3_home": 0,
+      "q3_away": 0,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": 0.0,
+    "meta_metadata": {}
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}

@@ -1,0 +1,236 @@
+[
+  {
+    "prediction_id": "C88F4F06",
+    "metadata": {
+      "timestamp": "2025-12-18T03:20:43.814161",
+      "date": "2025-12-18",
+      "version": "2.0",
+      "prediction_timing": "q2"
+    },
+    "matchup": {
+      "home_team": "Chicago Bulls",
+      "away_team": "Cleveland Cavaliers",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 244.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 239.46317732708798,
+      "context_adjusted_prediction": 239.46317732708798,
+      "final_prediction": 239.46317732708798,
+      "predictions_list": [
+        {
+          "line": 234.88567336151664,
+          "over_prob": 71.09931254802211,
+          "under_prob": 28.90068745197789
+        },
+        {
+          "line": 236.94283668075832,
+          "over_prob": 62.03074462215755,
+          "under_prob": 37.96925537784245
+        },
+        {
+          "line": 239.0,
+          "over_prob": 52.244395081478515,
+          "under_prob": 47.755604918521485
+        },
+        {
+          "line": 241.05716331924168,
+          "over_prob": 42.320083516886996,
+          "under_prob": 57.679916483113004
+        },
+        {
+          "line": 243.11432663848336,
+          "over_prob": 32.86255362675277,
+          "under_prob": 67.13744637324723
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "UNDER",
+      "edge_percentage": 1.859353554472141,
+      "edge_magnitude": 4.536822672912024
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 33,
+        "q1_away": 34,
+        "q2_home": 29,
+        "q2_away": 24,
+        "q3_home": 0,
+        "q3_away": 0,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "F75D6C84",
+    "metadata": {
+      "timestamp": "2025-12-18T03:22:27.868248",
+      "date": "2025-12-18",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Minnesota Timberwolves",
+      "away_team": "Memphis Grizzlies",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 233.0,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 244.32940857654432,
+      "context_adjusted_prediction": 244.32940857654432,
+      "final_prediction": 244.32940857654432,
+      "predictions_list": [
+        {
+          "line": 239.88567336151664,
+          "over_prob": 70.54124813483749,
+          "under_prob": 29.45875186516251
+        },
+        {
+          "line": 241.94283668075832,
+          "over_prob": 61.41040810992692,
+          "under_prob": 38.58959189007308
+        },
+        {
+          "line": 244.0,
+          "over_prob": 51.596615057344806,
+          "under_prob": 48.403384942655194
+        },
+        {
+          "line": 246.05716331924168,
+          "over_prob": 41.68462829715273,
+          "under_prob": 58.31537170284727
+        },
+        {
+          "line": 248.11432663848336,
+          "over_prob": 32.27695568160618,
+          "under_prob": 67.72304431839382
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 4.862407114396706,
+      "edge_magnitude": 11.329408576544324
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 27,
+        "q1_away": 29,
+        "q2_home": 35,
+        "q2_away": 32,
+        "q3_home": 5,
+        "q3_away": 2,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  },
+  {
+    "prediction_id": "22FDA30F",
+    "metadata": {
+      "timestamp": "2025-12-18T03:39:03.185090",
+      "date": "2025-12-18",
+      "version": "2.0",
+      "prediction_timing": "q3_progress"
+    },
+    "matchup": {
+      "home_team": "Chicago Bulls",
+      "away_team": "Cleveland Cavaliers",
+      "league": "NBA"
+    },
+    "odds_information": {
+      "totals_line": 251.5,
+      "bookmaker": "consensus"
+    },
+    "predictions": {
+      "model_prediction": 251.66702059200313,
+      "context_adjusted_prediction": 251.66702059200313,
+      "final_prediction": 251.66702059200313,
+      "predictions_list": [
+        {
+          "line": 247.88567336151664,
+          "over_prob": 67.70746845965743,
+          "under_prob": 32.29253154034256
+        },
+        {
+          "line": 249.94283668075832,
+          "over_prob": 58.29843623723428,
+          "under_prob": 41.70156376276572
+        },
+        {
+          "line": 252.0,
+          "over_prob": 48.38608682374118,
+          "under_prob": 51.61391317625882
+        },
+        {
+          "line": 254.05716331924168,
+          "over_prob": 38.5729938346459,
+          "under_prob": 61.4270061653541
+        },
+        {
+          "line": 256.11432663848336,
+          "over_prob": 29.44379046847277,
+          "under_prob": 70.55620953152723
+        }
+      ]
+    },
+    "analysis": {
+      "confidence": 0.75,
+      "recommended_bet": "OVER",
+      "edge_percentage": 0.06640977813245585,
+      "edge_magnitude": 0.16702059200312647
+    },
+    "context": {
+      "quarter_scores": {
+        "q1_home": 33,
+        "q1_away": 34,
+        "q2_home": 29,
+        "q2_away": 24,
+        "q3_home": 26,
+        "q3_away": 17,
+        "q4_home": 0,
+        "q4_away": 0
+      },
+      "meta_adjustment": 0.0,
+      "meta_metadata": {}
+    },
+    "result_tracking": {
+      "status": "pending",
+      "actual_total": null,
+      "actual_result": null,
+      "prediction_accuracy": null,
+      "result_timestamp": null,
+      "notes": []
+    }
+  }
+]

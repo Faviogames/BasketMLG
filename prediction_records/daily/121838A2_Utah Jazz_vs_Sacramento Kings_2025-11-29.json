@@ -1,0 +1,88 @@
+{
+  "prediction_id": "121838A2",
+  "metadata": {
+    "timestamp": "2025-11-29T04:57:12.440861",
+    "date": "2025-11-29",
+    "version": "2.0",
+    "prediction_timing": "q3_progress"
+  },
+  "matchup": {
+    "home_team": "Utah Jazz",
+    "away_team": "Sacramento Kings",
+    "league": "NBA"
+  },
+  "odds_information": {
+    "totals_line": 230.0,
+    "bookmaker": "consensus"
+  },
+  "predictions": {
+    "model_prediction": 205.57443925099238,
+    "context_adjusted_prediction": 171.14299348338145,
+    "final_prediction": 171.14299348338145,
+    "predictions_list": [
+      {
+        "line": 201.88567336151664,
+        "over_prob": 67.30255384880616,
+        "under_prob": 32.69744615119385
+      },
+      {
+        "line": 203.94283668075832,
+        "over_prob": 57.8588198531684,
+        "under_prob": 42.1411801468316
+      },
+      {
+        "line": 206.0,
+        "over_prob": 47.93771204773121,
+        "under_prob": 52.06228795226879
+      },
+      {
+        "line": 208.05716331924168,
+        "over_prob": 38.143392762163096,
+        "under_prob": 61.856607237836904
+      },
+      {
+        "line": 210.11432663848336,
+        "over_prob": 29.05711517637549,
+        "under_prob": 70.94288482362451
+      }
+    ]
+  },
+  "analysis": {
+    "confidence": 0.75,
+    "recommended_bet": "UNDER",
+    "edge_percentage": 25.590002833312415,
+    "edge_magnitude": 58.857006516618554
+  },
+  "context": {
+    "quarter_scores": {
+      "q1_home": 30,
+      "q1_away": 27,
+      "q2_home": 32,
+      "q2_away": 24,
+      "q3_home": 2,
+      "q3_away": 4,
+      "q4_home": 0,
+      "q4_away": 0
+    },
+    "meta_adjustment": -34.43144576761094,
+    "meta_metadata": {
+      "chronos_prediction": 171.14299348338145,
+      "adjustment": -34.43144576761094,
+      "model_version": "v5.0_huber",
+      "components": {
+        "base_prediction": 205.57443925099238,
+        "pacer_projection": 158.66666666666666
+      },
+      "pacer_prob_over": 4.39404272967181e-08,
+      "pacer_prob_under": 0.9999999560595727
+    }
+  },
+  "result_tracking": {
+    "status": "pending",
+    "actual_total": null,
+    "actual_result": null,
+    "prediction_accuracy": null,
+    "result_timestamp": null,
+    "notes": []
+  }
+}
